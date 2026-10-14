@@ -870,7 +870,7 @@ p=[Math.floor(d/DAY),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3
 setInterval(tick,1000);
 
 /* ---------- layout ---------- */
-const NAV=[['ecosystem','Ecosystem'],['tech','Terqyn Tech'],['spotlight','Spotlight'],['careers','Careers'],['about','About us']];
+const NAV=[['ecosystem','Ecosystem'],['tech','Terqyn Nexus'],['spotlight','Spotlight'],['careers','Careers'],['about','About us']];
 function header(cur){return `<header class="site"><div class="wrap bar">
 <a href="#/" class="brand" data-go="">${MARK}<span>Terqyn</span></a>
 <nav class="nav" id="nav" aria-label="Main">${NAV.map(([p,l])=>`<a
@@ -922,9 +922,9 @@ class="ds">${d}</span><span class="go">${ARROW}</span></a>`).join('')}</nav>
 <div class="domains"
 aria-label="Branches">${SUBS.filter(s=>s.url).map(s=>`<button
 data-portal="${s.id}">${s.domain}</button>`).join('')}</div>
-</div></section>`}
+</div></section><div class="wrap"><section aria-label="Terqyn Network fast travel" style="padding:28px 0"><div style="padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--panel)"><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Network · Fast Travel</p><h2 style="font-family:var(--serif);font-size:clamp(25px,3.5vw,40px);margin:0 0 7px">One house. Every destination.</h2><p style="margin:0 0 19px;color:var(--mute)">Go directly to a Terqyn service.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px"><a href="https://terqynsystems.com" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Systems ↗</b><small style="display:block;color:var(--mute)">Business solutions</small></a><a href="https://terqyn.io" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Signal ↗</b><small style="display:block;color:var(--mute)">Creator services</small></a><a href="https://terqyn.tech" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Nexus ↗</b><small style="display:block;color:var(--mute)">DIY intelligence marketplace</small></a></div></div></section></div>`}
 
-function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
+function pEcosystem(){return `<div class="wrap"><section aria-label="Terqyn Network fast travel" style="padding:28px 0"><div style="padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--panel)"><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Network · Fast Travel</p><h2 style="font-family:var(--serif);font-size:clamp(25px,3.5vw,40px);margin:0 0 7px">One house. Every destination.</h2><p style="margin:0 0 19px;color:var(--mute)">Go directly to a Terqyn service.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px"><a href="https://terqynsystems.com" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Systems ↗</b><small style="display:block;color:var(--mute)">Business solutions</small></a><a href="https://terqyn.io" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Signal ↗</b><small style="display:block;color:var(--mute)">Creator services</small></a><a href="https://terqyn.tech" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Nexus ↗</b><small style="display:block;color:var(--mute)">DIY intelligence marketplace</small></a></div></div></section><div class="eco-head"><h1
 class="h1">The Terqyn ecosystem</h1><p class="lede">Each branch serves a
 different kind of person. Choose a door to step inside.</p></div>
 <div class="portal-grid enter">${SUBS.map((s,i)=>`<button class="portal"
