@@ -652,6 +652,19 @@ base:2500, users:140, followers:700, growth:.08, streams:[['Dispatch fees',.7],[
 ];
 const SUB = Object.fromEntries(SUBS.map(s=>[s.id,s]));
 
+const ECOSYSTEM = [
+{id:'systems', name:'Terqyn Systems', mono:'S', for:'Terqyn for business', url:'https://terqynsystems.com', domain:'terqynsystems.com', color:'#4FB4E8', status:'Live',
+desc:'Business technology, websites, automation, and digital operations built to help companies launch, run, and grow.'},
+{id:'signal', name:'Terqyn Signal', mono:'S', for:'Terqyn for creators', url:'https://terqyn.io', domain:'terqyn.io', color:'#A97BFF', status:'Live',
+desc:'Brand, content, presence, and creative systems for creators, influencers, artists, and public-facing professionals.'},
+{id:'nexus', name:'Terqyn Nexus', mono:'N', for:'Terqyn intelligence marketplace', url:'https://terqyn.tech', domain:'terqyn.tech', color:'#73E0DF', status:'Live',
+desc:'A direct gateway to Terqyn intelligence, AI tools, agents, and self-service digital capabilities.'},
+{id:'finance', name:'Terqyn Finance & Trading', mono:'F', for:'Terqyn for markets', url:'', domain:'Coming soon', color:'#5FC48C', status:'Coming Soon',
+desc:'Financial intelligence, market research, portfolio tooling, and trading-focused technology. Coming soon.'},
+{id:'media', name:'Terqyn Media', mono:'M', for:'Terqyn for media', url:'', domain:'Coming soon', color:'#D9A857', status:'Coming Soon',
+desc:'News, reviews, publishing, reputation, and media initiatives across the Terqyn ecosystem. Coming soon.'}
+];
+
 /* ---------- DATA: people ---------- */
 const LEADERS = [
 {name:'Colby Levesque', title:'Founder & Chief Executive Officer',
@@ -907,6 +920,14 @@ const ENTRIES=[
 ['careers','Careers & opportunities','Open roles across every branch.'],
 ['about','About us','Leadership, licensing, white paper, and roadmap.']
 ];
+function ecoMiniCard(e){
+const art=`<div style="width:58px;margin-bottom:18px;opacity:.84">${aperture(e)}</div>`;
+const inner=`${art}<span style="display:block;color:var(--brass);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:7px">${esc(e.for)}</span><b style="display:block;font-family:var(--serif);font-size:clamp(23px,2.2vw,31px);font-weight:500;letter-spacing:-.025em;line-height:1.08">${esc(e.name)}</b><small style="display:block;color:var(--mute);line-height:1.55;margin-top:8px">${esc(e.desc)}</small><span style="display:flex;justify-content:space-between;gap:12px;margin-top:18px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.08em;text-transform:uppercase"><span>${esc(e.domain)}</span><span style="color:var(--brass)">${e.url?'Visit ↗':'Coming Soon'}</span></span>`;
+return e.url?`<a href="${e.url}" target="_blank" rel="noopener" style="--c:${e.color};padding:22px;border:1px solid var(--line);background:var(--panel);display:block;text-decoration:none;color:inherit;min-height:290px">${inner}</a>`:`<article aria-label="${esc(e.name)} coming soon" style="--c:${e.color};padding:22px;border:1px solid var(--line);background:var(--panel);display:block;color:inherit;min-height:290px;opacity:.82">${inner}</article>`;
+}
+function ecoDirectory(compact=false){
+return `<section aria-label="Terqyn Ecosystem" style="padding:${compact?'42px 0 70px':'0 0 110px'}"><div class="row between" style="align-items:end;margin-bottom:22px"><div><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Ecosystem</p><h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin:0">One house. Five focused branches.</h2></div><span class="mute small">Choose a destination</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">${ECOSYSTEM.map(ecoMiniCard).join('')}</div></section>`;
+}
 function pHome(){return `<section class="hero"><div class="wrap">
 <svg class="hero-rings" viewBox="0 0 800 800" aria-hidden="true"><circle
 cx="400" cy="400" r="380"/><circle cx="400" cy="400" r="300"/><circle
@@ -919,22 +940,11 @@ stroke="var(--line)"/></svg>
 here">${ENTRIES.map(([g,n,d,lead])=>`<a href="#/${g}" data-go="${g}"
 class="${lead?'lead':''}"><span class="nm">${n}</span><span
 class="ds">${d}</span><span class="go">${ARROW}</span></a>`).join('')}</nav>
-<div class="domains"
-aria-label="Branches">${SUBS.filter(s=>s.url).map(s=>`<button
-data-portal="${s.id}">${s.domain}</button>`).join('')}</div>
-</div></section><div class="wrap"><section aria-label="Terqyn Network fast travel" style="padding:28px 0"><div style="padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--panel)"><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Network · Fast Travel</p><h2 style="font-family:var(--serif);font-size:clamp(25px,3.5vw,40px);margin:0 0 7px">One house. Every destination.</h2><p style="margin:0 0 19px;color:var(--mute)">Go directly to a Terqyn service.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px"><a href="https://terqynsystems.com" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Systems ↗</b><small style="display:block;color:var(--mute)">Business solutions</small></a><a href="https://terqyn.io" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Signal ↗</b><small style="display:block;color:var(--mute)">Creator services</small></a><a href="https://terqyn.tech" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Nexus ↗</b><small style="display:block;color:var(--mute)">DIY intelligence marketplace</small></a></div></div></section></div>`}
+</div></section><div class="wrap">${ecoDirectory(true)}</div>`}
 
-function pEcosystem(){return `<div class="wrap"><section aria-label="Terqyn Network fast travel" style="padding:28px 0"><div style="padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--panel)"><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Network · Fast Travel</p><h2 style="font-family:var(--serif);font-size:clamp(25px,3.5vw,40px);margin:0 0 7px">One house. Every destination.</h2><p style="margin:0 0 19px;color:var(--mute)">Go directly to a Terqyn service.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px"><a href="https://terqynsystems.com" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Systems ↗</b><small style="display:block;color:var(--mute)">Business solutions</small></a><a href="https://terqyn.io" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Signal ↗</b><small style="display:block;color:var(--mute)">Creator services</small></a><a href="https://terqyn.tech" target="_blank" rel="noopener" style="padding:17px;border:1px solid var(--line);border-radius:10px;display:block"><b>Terqyn Nexus ↗</b><small style="display:block;color:var(--mute)">DIY intelligence marketplace</small></a></div></div></section><div class="eco-head"><h1
-class="h1">The Terqyn ecosystem</h1><p class="lede">Each branch serves a
-different kind of person. Choose a door to step inside.</p></div>
-<div class="portal-grid enter">${SUBS.map((s,i)=>`<button class="portal"
-data-portal="${s.id}" style="--c:${s.color};--i:${i}">
-<div class="ap-wrap">${aperture(s)}</div>
-<span class="p-for">${esc(s.for)}</span><span
-class="p-name">${esc(s.name)}</span><span
-class="p-desc">${esc(s.desc)}</span>
-<span class="p-foot"><span>${esc(s.domain)}</span><span
-class="enter">Enter</span></span></button>`).join('')}</div></div>`}
+function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
+class="h1">The Terqyn ecosystem</h1><p class="lede">Five focused branches under one house. Enter a live destination or preview what is coming next.</p></div>
+${ecoDirectory(false)}</div>`}
 
 function pSub(id){const s=SUB[id];if(!s)return pEcosystem();const
 m=MET[id],l=m[11],p=m[10];
