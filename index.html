@@ -662,7 +662,9 @@ desc:'A direct gateway to Terqyn intelligence, AI tools, agents, and self-servic
 {id:'finance', name:'Terqyn Finance & Trading', mono:'F', for:'Terqyn for markets', url:'', domain:'Coming soon', color:'#5FC48C', status:'Coming Soon',
 desc:'Financial intelligence, market research, portfolio tooling, and trading-focused technology. Coming soon.'},
 {id:'media', name:'Terqyn Media', mono:'M', for:'Terqyn for media', url:'', domain:'Coming soon', color:'#D9A857', status:'Coming Soon',
-desc:'News, reviews, publishing, reputation, and media initiatives across the Terqyn ecosystem. Coming soon.'}
+desc:'News, reviews, publishing, reputation, and media initiatives across the Terqyn ecosystem. Coming soon.'},
+{id:'town-square', name:'Terqyn Town Square', mono:'T', for:'Terqyn for community', url:'https://terqyn.com/#/town-square', domain:'terqyn.com', color:'#78B6A1', status:'In development',
+desc:'A public community noticeboard for missing pets, local jobs, offers, requests for help, and announcements across the Terqyn community.'}
 ];
 
 /* ---------- DATA: people ---------- */
@@ -926,7 +928,7 @@ const inner=`${art}<span style="display:block;color:var(--brass);font-size:10px;
 return e.url?`<a href="${e.url}" target="_blank" rel="noopener" style="--c:${e.color};padding:22px;border:1px solid var(--line);background:var(--panel);display:block;text-decoration:none;color:inherit;min-height:290px">${inner}</a>`:`<article aria-label="${esc(e.name)} coming soon" style="--c:${e.color};padding:22px;border:1px solid var(--line);background:var(--panel);display:block;color:inherit;min-height:290px;opacity:.82">${inner}</article>`;
 }
 function ecoDirectory(compact=false){
-return `<section aria-label="Terqyn Ecosystem" style="padding:${compact?'42px 0 70px':'0 0 110px'}"><div class="row between" style="align-items:end;margin-bottom:22px"><div><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Ecosystem</p><h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin:0">One house. Five focused branches.</h2></div><span class="mute small">Choose a destination</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">${ECOSYSTEM.map(ecoMiniCard).join('')}</div></section>`;
+return `<section aria-label="Terqyn Ecosystem" style="padding:${compact?'42px 0 70px':'0 0 110px'}"><div class="row between" style="align-items:end;margin-bottom:22px"><div><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Ecosystem</p><h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin:0">One house. Six focused branches.</h2></div><span class="mute small">Choose a destination</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">${ECOSYSTEM.map(ecoMiniCard).join('')}</div></section>`;
 }
 function pHome(){return `<section class="hero"><div class="wrap">
 <svg class="hero-rings" viewBox="0 0 800 800" aria-hidden="true"><circle
@@ -943,7 +945,7 @@ class="ds">${d}</span><span class="go">${ARROW}</span></a>`).join('')}</nav>
 </div></section><div class="wrap">${ecoDirectory(true)}</div>`}
 
 function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
-class="h1">The Terqyn ecosystem</h1><p class="lede">Five focused branches under one house. Enter a live destination or preview what is coming next.</p></div>
+class="h1">The Terqyn ecosystem</h1><p class="lede">Six featured destinations under one house. Enter a live destination or preview what is coming next.</p></div>
 ${ecoDirectory(false)}</div>`}
 
 function pSub(id){const s=SUB[id];if(!s)return pEcosystem();const
@@ -976,6 +978,14 @@ class="v">${s.progress}%</div><div class="meter" style="--c:${s.color}"><i
 style="width:${s.progress}%"></i></div></div>
 </div></section></div>`}
 
+function pTownSquare(){return `<div class="wrap">
+<section class="page-head"><a class="back" href="#/ecosystem" data-go="ecosystem">← The Terqyn ecosystem</a><h1 class="h1">Terqyn Town Square</h1>
+<p class="lede">A modern community bulletin board for the Terqyn ecosystem: one public place for missing-pet notices, local jobs, offers, requests for help, and announcements.</p>
+<div class="row" style="margin-top:28px"><span class="tag warn">In development</span><span class="mute small">A planned community showcase</span></div></section>
+<section class="section"><div class="grid g2">
+<article class="panel"><span class="tag">01 / FIND</span><h2 class="h3" style="margin-top:16px">What the community needs</h2><p class="mute">Browse missing and found pets, open roles, local offers, community requests, and notices from across the Terqyn network.</p></article>
+<article class="panel"><span class="tag">02 / SHARE</span><h2 class="h3" style="margin-top:16px">Post something useful</h2><p class="mute">A simple, organized place to share an opportunity, ask for help, or get an important notice in front of the right people.</p></article>
+</div><p class="mute small" style="margin-top:22px">This is a showcase for the planned service; public posting is not open yet.</p></section></div>`}
 function pAbout(){return `<div class="wrap">
 <section class="page-head"><h1 class="h1">About Terqyn</h1><p
 class="lede">Who we are, what we hold, and where we are going. Everything
@@ -1417,12 +1427,12 @@ function parse(){const h=location.hash.replace(/^#\/?/,'');const
 [a='',b='']=h.split('/');return {a,b}}
 function render(keepScroll){const {a,b}=parse();const y=scrollY;let body;
 if(a==='ecosystem')body=b?pSub(b):pEcosystem();else
-if(a==='about')body=pAbout();else if(a==='careers')body=pCareers();else
+if(a==='town-square')body=pTownSquare();else if(a==='about')body=pAbout();else if(a==='careers')body=pCareers();else
 if(a==='spotlight')body=pSpotlight();else if(a==='tech')body=pTech();else
 if(a==='portal')body=pPortal(b);else body=pHome();
 $('#app').innerHTML=header(a)+`<main
 id="content">${body}</main>`+(a==='portal'&&S.role?'':footer());
-document.title=a?`${({ecosystem:b&&SUB[b]?SUB[b].name:'Ecosystem',about:'About',careers:'Careers',spotlight:'Spotlight',tech:'Terqyn Tech',portal:'Personnel portal'})[a]||''} | Terqyn`:'Terqyn';
+document.title=a?`${({ecosystem:b&&SUB[b]?SUB[b].name:'Ecosystem',about:'About',careers:'Careers',spotlight:'Spotlight',tech:'Terqyn Tech',portal:'Personnel portal','town-square':'Town Square'})[a]||''} | Terqyn`:'Terqyn';
 tick();if(keepScroll)scrollTo(0,y);else scrollTo(0,0)}
 const paint=()=>render(true);
 function go(p){closeAll();if(location.hash==='#/'+p)render();else
