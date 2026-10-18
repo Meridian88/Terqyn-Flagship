@@ -653,6 +653,8 @@ base:2500, users:140, followers:700, growth:.08, streams:[['Dispatch fees',.7],[
 const SUB = Object.fromEntries(SUBS.map(s=>[s.id,s]));
 
 const ECOSYSTEM = [
+{id:'vault', name:'Terqyn Vault', mono:'V', for:'Terqyn personal storage', url:'https://terqyn.space', domain:'terqyn.space', color:'#B3A0FF', status:'Connecting domain',
+desc:'A private storage space for photos, videos, documents, code, and client information, organized in editable cabinets with titles and descriptions.'},
 {id:'systems', name:'Terqyn Systems', mono:'S', for:'Terqyn for business', url:'https://terqynsystems.com', domain:'terqynsystems.com', color:'#4FB4E8', status:'Live',
 desc:'Business technology, websites, automation, and digital operations built to help companies launch, run, and grow.'},
 {id:'signal', name:'Terqyn Signal', mono:'S', for:'Terqyn for creators', url:'https://terqyn.io', domain:'terqyn.io', color:'#A97BFF', status:'Live',
@@ -931,7 +933,7 @@ const inner=`${art}<span style="display:block;color:var(--brass);font-size:10px;
 return e.url?`<a href="${e.url}" target="_blank" rel="noopener" style="--c:${e.color};padding:22px;border:1px solid var(--line);background:var(--panel);display:block;text-decoration:none;color:inherit;min-height:290px">${inner}</a>`:`<article aria-label="${esc(e.name)} coming soon" style="--c:${e.color};padding:22px;border:1px solid var(--line);background:var(--panel);display:block;color:inherit;min-height:290px;opacity:.82">${inner}</article>`;
 }
 function ecoDirectory(compact=false){
-return `<section aria-label="Terqyn Ecosystem" style="padding:${compact?'42px 0 70px':'0 0 110px'}"><div class="row between" style="align-items:end;margin-bottom:22px"><div><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Ecosystem</p><h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin:0">One house. Six focused branches.</h2></div><span class="mute small">Choose a destination</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">${ECOSYSTEM.map(ecoMiniCard).join('')}</div></section>`;
+return `<section aria-label="Terqyn Ecosystem" style="padding:${compact?'42px 0 70px':'0 0 110px'}"><div class="row between" style="align-items:end;margin-bottom:22px"><div><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Ecosystem</p><h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin:0">One house. Every destination connected.</h2></div><span class="mute small">Choose a destination</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">${ECOSYSTEM.map(ecoMiniCard).join('')}</div></section>`;
 }
 function pHome(){return `<section class="hero"><div class="wrap">
 <svg class="hero-rings" viewBox="0 0 800 800" aria-hidden="true"><circle
@@ -948,7 +950,7 @@ class="ds">${d}</span><span class="go">${ARROW}</span></a>`).join('')}</nav>
 </div></section><div class="wrap">${ecoDirectory(true)}</div>`}
 
 function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
-class="h1">The Terqyn ecosystem</h1><p class="lede">Six featured destinations under one house. Enter a live destination or preview what is coming next.</p></div>
+class="h1">The Terqyn ecosystem</h1><p class="lede">Explore the destinations under one house. Enter a live destination or preview what is coming next.</p></div>
 ${ecoDirectory(false)}</div>`}
 
 function pSub(id){const s=SUB[id];if(!s)return pEcosystem();const
