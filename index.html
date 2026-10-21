@@ -629,10 +629,10 @@ offers:[['Mobile apps','iOS and Android releases.'],['Desktop software','Mac and
 base:3000, users:900, followers:1400, growth:.11,
 streams:[['Subscriptions',.55],['One-time sales',.3],['Licensing',.15]],
 progress:28},
-{id:'academy', name:'Ate88 Academy', short:'Academy', mono:'8', for:'Terqyn for learners', domain:'Domain pending', url:'', color:'#D9A857',
-status:'Building',
-desc:'Education in AI, blockchain, and markets, taught from the ground up by people who learned it the hard way.',
-offers:[['AI track','From first prompt to building agents.'],['Blockchain track','Wallets, chains, and smart contracts.'],['Markets track','How markets work and how to study them.'],['Certificates','Proof of completion for each track.']],
+{id:'academy', name:'Terqyn Academy', short:'Academy', mono:'A', for:'Terqyn for learners', domain:'terqyn.courses', url:'https://terqyn.courses', color:'#49D9C9',
+status:'Public beta',
+desc:'AI-assisted self-study across artificial intelligence, blockchain, entrepreneurship, investing and fintech, with synced notes, a lesson-aware tutor and automated assessments.',
+offers:[['Five schools','60 courses across technology, business and finance.'],['Terqyn Teacher','A lesson-aware AI study guide.'],['Hands-on practice','Practical labs and server-graded quizzes.'],['Completion records','Self-study records; not accredited qualifications.']],
 base:5000, users:650, followers:2200, growth:.08,
 streams:[['Courses',.62],['Cohorts',.28],['Certificates',.1]], progress:55},
 {id:'flotilla', name:'Flotilla', short:'Flotilla', mono:'F',
@@ -653,6 +653,8 @@ base:2500, users:140, followers:700, growth:.08, streams:[['Dispatch fees',.7],[
 const SUB = Object.fromEntries(SUBS.map(s=>[s.id,s]));
 
 const ECOSYSTEM = [
+{id:'academy', name:'Terqyn Academy', mono:'A', for:'Terqyn for practical learning', url:'https://terqyn.courses', domain:'terqyn.courses', color:'#49D9C9', status:'Public beta',
+desc:'Five schools for AI, blockchain, entrepreneurship, investing and fintech. AI-assisted self-study with synced notes, Terqyn Teacher, practical labs and knowledge checks.'},
 {id:'cortex', name:'Terqyn Cortex', mono:'C', for:'Neural coordination center', url:'https://terqyncortex.network', domain:'terqyncortex.network', color:'#7EF5E5', status:'Live shell',
 desc:'Explore Terqyn’s neural coordination center: an animated home for seven specialist intelligences, with backend connections in development.'},
 {id:'pics', name:'Terqyn Pics', mono:'P', for:'Terqyn public image gallery', url:'https://terqyn.pics', domain:'terqyn.pics', color:'#A8BA70', status:'Live',
@@ -959,7 +961,7 @@ function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
 class="h1">The Terqyn ecosystem</h1><p class="lede">Explore the destinations under one house. Enter a live destination or preview what is coming next.</p></div>
 ${ecoDirectory(false)}</div>`}
 
-function pSub(id){const s=SUB[id];if(!s)return pEcosystem();const
+function pSub(id){const s=SUB[id];if(!s)return pEcosystem();if(id==='academy')return `<div class="wrap"><section class="section"><a class="back" href="#/ecosystem" data-go="ecosystem">← Ecosystem</a><span class="tag">Public beta</span><h1 class="h1">Terqyn Academy</h1><p class="lede">${esc(s.desc)}</p><ul class="offer-list">${s.offers.map(o=>`<li><b>${esc(o[0])}</b><span class="mute">${esc(o[1])}</span></li>`).join('')}</ul><a class="btn primary" href="https://terqyn.courses" target="_blank" rel="noopener">Open Academy ↗</a><p class="mute small" style="margin-top:20px">AI-assisted beta content and automated assessment. No paid subscriptions or human mentoring are currently offered.</p></section></div>`;const
 m=MET[id],l=m[11],p=m[10];
 return `<div class="wrap" style="--c:${s.color}"><a class="back"
 href="#/ecosystem" data-go="ecosystem">← All branches</a>
@@ -1002,7 +1004,7 @@ function pAbout(){return `<div class="wrap">
 class="lede">Who we are, what we hold, and where we are going. Everything
 here is public on purpose.</p></section>
 <section class="section"><h2 class="h2">One Terqyn ecosystem</h2><p class="lede">Terqyn is the umbrella brand for a growing family of technology destinations. Terqyn HQ at terqyn.com is the central home: it explains the ecosystem and connects visitors with each destination.</p><p>Terqyn Systems is our business technology and services destination, focused on websites, software, automation, integrations, and digital operations. Other Terqyn destinations serve distinct needs in creative work, personal storage, news, customer feedback, and coordinated project workflows.</p><p>Terqyn is the shared brand; Terqyn Systems is one part of the wider ecosystem. Each website has its own purpose, available features, and service terms. A common brand does not mean every product shares the same account or private data.</p><div class="row" style="margin-top:24px"><a class="btn primary" href="https://terqynsystems.com/">Visit Terqyn Systems</a><a class="btn" href="#/ecosystem" data-go="ecosystem">Explore the ecosystem</a></div></section>
-<section aria-label="Related Terqyn destinations"><h2>Connected Terqyn destinations</h2><p>Explore the other websites in our shared ecosystem. Each destination serves its own purpose.</p><ul><li><a href="https://terqynsystems.com">Terqyn Systems</a> — Business technology and services</li><li><a href="https://terqyn.io">Terqyn Signal</a> — Creator brand and content workflows</li><li><a href="https://terqyn.tech">Terqyn Nexus</a> — Specialist intelligence and tools</li><li><a href="https://terqyncortex.network">Terqyn Cortex</a> — Coordination and project memory</li><li><a href="https://terqyn.pics">Terqyn Pics</a> — Photo studio and public gallery</li><li><a href="https://terqyn.space">Terqyn Vault</a> — Personal storage cabinets</li><li><a href="https://sorynai.dev">Soryn Social</a> — Social content planning</li><li><a href="https://terqyn.today">Terqyn Today</a> — News and ecosystem information</li><li><a href="https://www.terqyn.digital/beam">Terqyn Beam</a> — Private live screen sharing for agent-to-client guidance</li><li><a href="https://terqyn.reviews">Terqyn Reviews</a> — Customer experiences and sourced reviews</li></ul></section><section class="section"><p class="vision">We build tools and teach skills
+<section aria-label="Related Terqyn destinations"><h2>Connected Terqyn destinations</h2><p>Explore the other websites in our shared ecosystem. Each destination serves its own purpose.</p><ul><li><a href="https://terqynsystems.com">Terqyn Systems</a> — Business technology and services</li><li><a href="https://terqyn.io">Terqyn Signal</a> — Creator brand and content workflows</li><li><a href="https://terqyn.tech">Terqyn Nexus</a> — Specialist intelligence and tools</li><li><a href="https://terqyncortex.network">Terqyn Cortex</a> — Coordination and project memory</li><li><a href="https://terqyn.pics">Terqyn Pics</a> — Photo studio and public gallery</li><li><a href="https://terqyn.space">Terqyn Vault</a> — Personal storage cabinets</li><li><a href="https://sorynai.dev">Soryn Social</a> — Social content planning</li><li><a href="https://terqyn.today">Terqyn Today</a> — News and ecosystem information</li><li><a href="https://www.terqyn.digital/beam">Terqyn Beam</a> — Private live screen sharing for agent-to-client guidance</li><li><a href="https://terqyn.courses">Terqyn Academy</a> — Practical self-study across five schools, with a lesson-aware AI tutor</li><li><a href="https://terqyn.reviews">Terqyn Reviews</a> — Customer experiences and sourced reviews</li></ul></section><section class="section"><p class="vision">We build tools and teach skills
 that used to be locked behind money and connections, and we put them in
 reach of working people.</p></section>
 <section class="section"><h2 class="h2"
