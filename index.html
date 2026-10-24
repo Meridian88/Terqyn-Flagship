@@ -664,56 +664,6 @@ TERQYN HQ — single-file site. Edit the DATA section to evolve content.
 
 /* ---------- DATA: subsidiaries (add a branch = add an object) ----------
 */
-const SUBS = [
-{id:'systems', name:'Terqyn Systems', short:'Systems', mono:'S',
-for:'Terqyn for businesses', domain:'TerqynSystems.com', url:'https://www.terqynsystems.com', color:'#4FB4E8', status:'Live',
-desc:'Websites, AI automation, and digital operations for small and growing businesses. The build shop of the Terqyn house.',
-offers:[['Websites & platforms','Custom sites, booking, and client portals.'],['AI automation','Agents that handle intake, follow-up, and admin.'],['Operations setup','CRM, invoicing, and workflow systems.'],['Ongoing support','Monthly retainers with a dedicated contact.']],
-base:18000, users:420, followers:2600, growth:.07,
-streams:[['Retainers',.46],['Builds',.38],['Support',.16]], progress:72},
-{id:'influence', name:'Terqyn Influence', short:'Influence', mono:'I',
-for:'Terqyn for public figures', domain:'TerqynInfluence.bet', url:'https://www.terqyninfluence.bet', color:'#E0679A', status:'Building',
-desc:'Branding, digital presence, marketing, and online footprint development for creators, athletes, and public figures.',
-offers:[['Brand identity','Name, look, voice, and visual system.'],['Presence building','Profiles, content plans, and growth.'],['Advertising','Paid campaigns across major platforms.'],['Reputation','Monitoring and response for your name online.']],
-base:6000, users:90, followers:5200, growth:.09,
-streams:[['Campaigns',.52],['Brand packages',.33],['Management',.15]],
-progress:41},
-{id:'trading', name:'Terqyn Trading', short:'Trading', mono:'T',
-for:'Terqyn for investors', domain:'TerqynTrading.investments', url:'https://www.terqyntrading.investments', color:'#5FC48C', status:'Building',
-desc:'Market education, research tools, and investor community. Not financial advice; education and tools only.',
-offers:[['Market research','Daily notes and watchlists.'],['Tools','Dashboards, alerts, and journals.'],['Community','Member rooms and live sessions.'],['Education','Courses from basics to strategy.']],
-base:4000, users:310, followers:3100, growth:.06,
-streams:[['Memberships',.6],['Courses',.28],['Tools',.12]], progress:34},
-{id:'app', name:'Terqyn Apps', short:'Apps', mono:'A', for:'Applications, software and tools', domain:'Terqyn.app', url:'https://www.terqyn.app',
-color:'#B8D45A', status:'Building',
-desc:'Every app, software product, and tool built across the Terqyn house, in one place to download and use.',
-offers:[['Mobile apps','iOS and Android releases.'],['Desktop software','Mac and Windows tools.'],['Web tools','Open in a browser, nothing to install.'],['Developer kits','APIs and templates for builders.']],
-base:3000, users:900, followers:1400, growth:.11,
-streams:[['Subscriptions',.55],['One-time sales',.3],['Licensing',.15]],
-progress:28},
-{id:'academy', name:'Terqyn Academy', short:'Academy', mono:'A', for:'Terqyn for learners', domain:'terqyn.courses', url:'https://terqyn.courses', color:'#49D9C9',
-status:'Public beta',
-desc:'AI-assisted self-study across artificial intelligence, blockchain, entrepreneurship, investing and fintech, with synced notes, a lesson-aware tutor and automated assessments.',
-offers:[['Five schools','60 courses across technology, business and finance.'],['Terqyn Teacher','A lesson-aware AI study guide.'],['Hands-on practice','Practical labs and server-graded quizzes.'],['Completion records','Self-study records; not accredited qualifications.']],
-base:5000, users:650, followers:2200, growth:.08,
-streams:[['Courses',.62],['Cohorts',.28],['Certificates',.1]], progress:55},
-{id:'flotilla', name:'Flotilla', short:'Flotilla', mono:'F',
-for:'Entertainment', domain:'Domain pending', url:'', color:'#8B6CF0',
-status:'Concept',
-desc:'An AI-powered entertainment platform for stories, music, and interactive shows.',
-offers:[['Interactive shows','Stories that respond to the audience.'],['Music','AI-assisted production for artists.'],['Creator tools','Make and publish in one place.']],
-base:1500, users:200, followers:1800, growth:.12,
-streams:[['Sponsorships',.5],['Subscriptions',.35],['Licensing',.15]],
-progress:18},
-{id:'roadlogic', name:'RoadLogic', short:'RoadLogic', mono:'R',
-for:'Trucking dispatch', domain:'Domain pending', url:'', color:'#E4704F',
-status:'Building',
-desc:'A dispatch marketplace connecting carriers, drivers, and shippers.',
-offers:[['Load board','Find and post loads.'],['Dispatch','Assign, track, and confirm.'],['Payments','Fast settlement for carriers.']],
-base:2500, users:140, followers:700, growth:.08, streams:[['Dispatch fees',.7],['Subscriptions',.3]], progress:46}
-];
-const SUB = Object.fromEntries(SUBS.map(s=>[s.id,s]));
-
 const ECOSYSTEM = [
 {id:'academy', name:'Terqyn Academy', mono:'A', for:'Terqyn for practical learning', url:'https://terqyn.courses', domain:'terqyn.courses', color:'#49D9C9', status:'Public beta',
 desc:'Five schools for AI, blockchain, entrepreneurship, investing and fintech. AI-assisted self-study with synced notes, Terqyn Teacher, practical labs and knowledge checks.'},
@@ -741,162 +691,25 @@ desc:'Private, instant browser screen sharing for Terqyn agents and clients—bu
 desc:'A public review journal for customer experiences across Terqyn companies, with clear sourcing and room for genuine voices.'}
 ];
 
-/* ---------- DATA: people ---------- */
 const LEADERS = [
 {name:'Colby Levesque', title:'Founder & Chief Executive Officer',
-ini:'CL', bio:'Self-taught builder with roots in warehouse and distribution work. Founded the house that became Terqyn to bring real tools and real education to working people.', edu:'Self-taught', certs:'Add certificates',
-li:'#'},
+ini:'CL', bio:'', edu:'', certs:'',
+li:''},
 {name:'Sebastian', title:'Co-founder & Chief Operating Officer', ini:'S',
-bio:'Bio to be added.', edu:'Add education', certs:'Add certificates',
-li:'#'},
+bio:'', edu:'', certs:'',
+li:''},
 {name:'Will Rodriguez',title:'Chief Technology Officer',ini:'WR',bio:'',edu:'',certs:'',li:''},
 {name:'Bobby House',title:'Chief Financial Officer',ini:'BH',bio:'',edu:'',certs:'',li:''},
 {name:'Jarred Nicholes',title:'Chief Sales Officer',ini:'JN',bio:'',edu:'',certs:'',li:''}
 ];
-const STAFF = [
-{id:'e1',name:'Colby Levesque',title:'Founder & CEO',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Founder equity',email:'colby@terqyn.com',phone:'Add phone',since:'Founding',status:'Active',desc:'Sets direction for the whole house.',inv:'All branches'},
-{id:'e2',name:'Bobby House',title:'Chief Financial Officer',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Compensation details discussed privately',email:'Not listed',phone:'Add phone',since:'Founding',status:'Active',desc:'Owns finance, payroll, and reporting.',inv:'All branches'},
-{id:'e3',name:'Sebastian',title:'Co-founder & COO',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Founder equity',email:'sebastian@terqyn.com',phone:'Add phone',since:'Founding',status:'Active',desc:'Runs operations and hiring.',inv:'All branches'},
-{id:'e4',name:'Dana Whitfield',title:'Lead developer',subs:['systems','app'],pay:'$98,000 / yr',email:'dana@terqyn.com',phone:'(555) 014-2201',since:'Mar 2026',status:'Active',desc:'Leads client builds and the Terqyn Apps codebase.',inv:'Systems builds, Apps releases'},
-{id:'e5',name:'Marcus Hale',title:'People & compliance lead',subs:['systems','influence','academy'],pay:'$72,000 / yr',
-email:'marcus@terqyn.com',phone:'(555) 014-2202',since:'Apr 2026',status:'Active',desc:'Handles HR cases, onboarding, and policy.',inv:'HR across branches, council member'},
-{id:'e6',name:'Aaliyah Brooks',title:'Brand strategist',subs:['influence'],pay:'$34 / hr',email:'aaliyah@terqyn.com',phone:'(555) 014-2203',since:'May 2026',status:'Active',desc:'Runs brand packages for Influence clients.',inv:'Influence client work'},
-{id:'e7',name:'Theo Nakamura',title:'Markets researcher',subs:['trading','academy'],pay:'$30 / hr',email:'theo@terqyn.com',phone:'(555) 014-2204',since:'Jun 2026',status:'Probation',desc:'Writes research notes and Academy market lessons.',inv:'Trading research, Academy content'},
-{id:'e8',name:'Priya Raman',title:'Sales representative',subs:['systems'],pay:'Commission 15%',
-email:'priya@terqyn.com',phone:'(555) 014-2205',since:'Jul 2026',status:'Active',desc:'Door-to-door and outbound sales for Systems.',inv:'Systems pipeline'},
-{id:'e9',name:'Jordan Ellis',title:'Dispatch coordinator',subs:['roadlogic'],pay:'$26 / hr',email:'jordan@terqyn.com',phone:'(555) 014-2206',since:'Aug 2026',status:'Active',desc:'Coordinates carriers and loads.',inv:'RoadLogic dispatch'},
-{id:'e10',name:'Sam Okafor',title:'Content producer',subs:['flotilla','influence'],pay:'$28 / hr',email:'sam@terqyn.com',phone:'(555) 014-2207',since:'Sep 2026',status:'On leave',desc:'Produces video and audio for Flotilla and clients.',inv:'Flotilla shows, Influence content'}
-];
-const STAFF_BY = Object.fromEntries(STAFF.map(s=>[s.id,s]));
-const DEMO = {
-employee:{label:'Employee',staff:'e4',desc:'Meetings, profile, pay, handbook, and your branches.'},
-council:{label:'Council member',staff:'e5',desc:'Everything employees see, plus Council chambers.'},
-executive:{label:'Executive',staff:'e1',desc:'Full access, including The Bridge.'}
-};
-
-/* ---------- DATA: content ---------- */
-const JOBS = [
-{id:'j1',title:'Full-stack developer',sub:'systems',type:'Full-time',loc:'Remote',pay:'Compensation details discussed during the interview process.',sum:'Build client websites and internal tools.',duties:['Ship client sites on React','Maintain integrations and databases','Review code with the team'],reqs:['2+ years building web apps','Comfort with React and SQL','Clear written communication']},
-{id:'j2',title:'Door-to-door sales representative',sub:'systems',type:'Commission',loc:'Local / field',pay:'Compensation details discussed during the interview process.',sum:'Bring Terqyn Systems to local businesses.',duties:['Visit and pitch local businesses','Book discovery calls','Log every lead'],reqs:['Comfortable talking to strangers','Reliable transportation','Self-starter']},
-{id:'j3',title:'Social media manager',sub:'influence',type:'Part-time',loc:'Remote',pay:'Compensation details discussed during the interview process.',sum:'Run content calendars for public-figure clients.',duties:['Plan and post content','Report weekly growth','Respond to comments and DMs'],reqs:['Portfolio of accounts you grew','Strong eye for design','Organized']},
-{id:'j4',title:'Paid ads specialist',sub:'influence',type:'Contract',loc:'Remote',pay:'Compensation details discussed during the interview process.',sum:'Plan and run ad campaigns for clients.',duties:['Build and test campaigns','Manage budgets','Report results'],reqs:['Proven ad results','Analytics skills']},
-{id:'j5',title:'Markets content writer',sub:'trading',type:'Part-time',loc:'Remote',pay:'Compensation details discussed during the interview process.',sum:'Write clear market notes and lessons.',duties:['Daily market notes','Course lesson drafts'],reqs:['Strong market knowledge','Plain-language writing']},
-{id:'j6',title:'Course instructor, AI track',sub:'academy',type:'Contract',loc:'Remote',pay:'Compensation details discussed during the interview process.',sum:'Teach the AI track to new learners.',duties:['Lead live sessions','Grade projects'],reqs:['Hands-on AI building experience','Patience with beginners']},
-{id:'j7',title:'Dispatch coordinator',sub:'roadlogic',type:'Full-time',loc:'Hybrid',pay:'Compensation details discussed during the interview process.',sum:'Match carriers to loads and keep freight moving.',duties:['Book and track loads','Talk to drivers and shippers'],reqs:['Dispatch or logistics experience']},
-{id:'j8',title:'Mobile developer',sub:'app',type:'Full-time',loc:'Remote',pay:'Compensation details discussed during the interview process.',sum:'Build and ship Terqyn mobile apps.',duties:['Ship iOS and Android releases','Own app performance'],reqs:['React Native or Swift/Kotlin','Shipped apps in stores']}
-];
-const now = Date.now(), DAY = 864e5;
-const POSTS = [
-{date:'Oct 1, 2026',title:'Terqyn is the new home of every branch',body:'AnchorLine-Ai becomes Terqyn. Meridian becomes Terqyn Systems. One house, one name, every branch under it.',tag:'Company'},
-{date:'Sep 24, 2026',title:'Terqyn Tech marketplace opens for early access',body:'Members can now browse exclusives, apps, and agents ahead of public launch.',tag:'Product'},
-{date:'Sep 12, 2026',title:'Ate88 Academy opens its first AI cohort',body:'Seats are limited. Applications are open on the Academy page.',tag:'Academy'}
-];
-const EVENTS = [
-{d:new Date(now+9*DAY),title:'Terqyn launch livestream',where:'Online',body:'Walk through every branch with the founders, live Q&A after.'},
-{d:new Date(now+16*DAY),title:'Small business AI workshop',where:'Online, Terqyn Systems',body:'Free one-hour session on automating your front desk.'},
-{d:new Date(now+30*DAY),title:'Academy open house',where:'Online, Ate88 Academy',body:'Meet instructors and preview the AI track.'}
-];
-const GIVEAWAYS = []; // Removed demo giveaways; Spotlight requires manual admin launch.
-const CODES = []; // Removed demo codes; no rolling expiry dates.
-const CATS = [['exclusives','Terqyn exclusives'],['apps','Apps'],['software','Software'],['agents','Agents & AI'],['hardware','Hardware'],['gear','Gear & accessories']];
-const PRODUCTS = [
-{id:'p1',cat:'exclusives',name:'Terqyn Command',kind:'Desktop app',price:0,status:'Members only',ini:'TC',color:'#6FC2B0',desc:'Run every branch from one window.'},
-{id:'p2',cat:'exclusives',name:'Founders pack',kind:'Bundle',price:149,status:'Available',ini:'FP',color:'#C8A25E',desc:'All exclusives, early access, and a founder badge.'},
-{id:'p3',cat:'apps',name:'Terqyn Mobile',kind:'iOS & Android',price:0,status:'Coming soon',ini:'TM',color:'#B8D45A',desc:'Your branches, messages, and alerts on your phone.'},
-{id:'p4',cat:'apps',name:'Ledger Lite',kind:'Web app',price:9,status:'Available',ini:'LL',color:'#5FC48C',desc:'Simple bookkeeping for one-person businesses.'},
-{id:'p5',cat:'software',name:'Site Kit',kind:'Templates',price:79,status:'Available',ini:'SK',color:'#4FB4E8',desc:'The templates Terqyn Systems builds client sites from.'},
-{id:'p6',cat:'software',name:'Dispatch Desk',kind:'Desktop software',price:29,status:'Coming soon',ini:'DD',color:'#E4704F',desc:'RoadLogic dispatch tools for small fleets.'},
-{id:'p7',cat:'agents',name:'Front Desk Agent',kind:'AI agent',price:49,status:'Available',ini:'FD',color:'#4FB4E8',desc:'Answers calls and messages, books appointments.'},
-{id:'p8',cat:'agents',name:'Research Agent',kind:'AI agent',price:39,status:'Available',ini:'RA',color:'#5FC48C',desc:'Searches, reads, and summarizes with sources.'},
-{id:'p9',cat:'agents',name:'Brand Agent',kind:'AI agent',price:59,status:'Coming soon',ini:'BA',color:'#E0679A',desc:'Drafts posts and replies in your voice for review.'},
-{id:'p10',cat:'hardware',name:'Terqyn Node',kind:'Local AI box',price:null,status:'Planned',ini:'TN',color:'#8B6CF0',desc:'Run private agents on hardware you own.'},
-{id:'p11',cat:'gear',name:'House hoodie',kind:'Apparel',price:65,status:'Available',ini:'HH',color:'#C8A25E',desc:'Heavyweight, embroidered mark.'},
-{id:'p12',cat:'gear',name:'Desk mat',kind:'Accessory',price:35,status:'Available',ini:'DM',color:'#6FC2B0',desc:'Wool felt, full-desk size.'}
-];
-const LEGAL = [
-['Terqyn (parent holding company)','LLC','Add state','Formation in progress'],
-['Terqyn Systems','Subsidiary / DBA','Add state','Pending'],
-['Terqyn Influence','Subsidiary / DBA','Add state','Pending'],
-['Terqyn Trading','Subsidiary / DBA','Add state','Pending'],
-['TERQYN word mark','Trademark','USPTO','Filing planned'],
-['Terqyn ring mark','Trademark','USPTO','Filing planned'],
-['Site content & software','Copyright','—','All rights reserved']
-];
-const ROADMAP = [
-['Q4 2026','Launch Terqyn.com headquarters and the personnel portal','now'],
-['Q1 2027','Move Meridian clients to Terqyn Systems',''],
-['Q2 2027','Open the Terqyn Tech marketplace to the public',''],
-['Q4 2027','Public launch of Terqyn Influence and Terqyn Trading','']
-];
-const POLICIES = [
-['Privacy','What we collect, why, and how to ask us to delete it.'],
-['Terms of service','The rules for using any Terqyn site or product.'],
-['Responsible AI','Every agent runs with a human reviewer and a log.'],
-['Code of conduct','How everyone at Terqyn treats clients and each other.'],
-['Refunds','How refunds work across every branch.']
-];
-const ANN = [
-{pin:true,date:'Oct 2',title:'Welcome to the new HQ',body:'All branches now run from this portal. Update your profile by Friday.'},
-{date:'Sep 30',title:'Payroll moves to the 1st and 15th',body:'Starting in November. Check your pay agreement for details.'},
-{date:'Sep 26',title:'New AI tools policy',body:'Read section 7 of the handbook before using client data with any agent.'}
-];
-const HANDBOOK = [
-['1. Code of conduct','Treat clients and teammates with respect. Represent every branch honestly.'],
-['2. Hours & availability','Post your weekly availability in the portal. Core hours are 10am to 3pm in your time zone.'],
-['3. Communication','Use official channels for client work. Answer team messages within one business day.'],
-['4. Data & confidentiality','Client data stays inside Terqyn systems. Never share logins.'],
-['5. Pay & expenses','Pay is set by your agreement. Submit expenses within 30 days with receipts.'],
-['6. Time off','Request time off two weeks ahead through your manager.'],
-['7. Use of AI tools','Agents can draft and research. A person reviews anything sent to a client.'],
-['8. Concerns & appeals','Report concerns to Council chambers. Every report gets a written response.']
-];
-const COURSES = [['Terqyn onboarding',100],['Client data handling',60],['AI oversight basics',20],['Sales foundations',0]];
-const DEF_MEETINGS = [
-{id:'m1',title:'All-hands',when:'Mon, 10:00 AM',branch:'all'},
-{id:'m2',title:'Systems build review',when:'Tue, 2:00 PM',branch:'systems'},
-{id:'m3',title:'Apps release planning',when:'Thu, 11:00 AM',branch:'app'}
-];
-const DEF_CASES = [
-{id:'HR-104',subj:'Late payment on contract invoice',branch:'influence',filed:'Sep 28',status:'Open',by:'e6'},
-{id:'HR-103',subj:'Schedule conflict with client calls',branch:'trading',filed:'Sep 20',status:'In review',by:'e7'},
-{id:'HR-102',subj:'Request for equipment stipend',branch:'systems',filed:'Sep 11',status:'Resolved',by:'e4'},
-{id:'HR-101',subj:'Leave request documentation',branch:'flotilla',filed:'Sep 2',status:'Resolved',by:'e10'}
-];
-const DEF_NOTES = [
-{staff:'e4',kind:'pos',text:'Delivered the dental office build three days early.',date:'Sep 29'},
-{staff:'e8',kind:'pos',text:'Closed 6 new Systems clients in September.',date:'Sep 30'},
-{staff:'e7',kind:'neg',text:'Missed two research deadlines; check in weekly.',date:'Sep 22'},
-{staff:'e6',kind:'pos',text:'Client praised the rebrand presentation.',date:'Sep 18'},
-{staff:'e9',kind:'neg',text:'Load paperwork incomplete twice this month.',date:'Sep 15'}
-];
-
-/* ---------- analytics (sample, deterministic) ---------- */
-const MONTHS = ['Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26','Sep 26'];
-function rng(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
-const MET = {};
-SUBS.forEach((s,k)=>{const r=rng(k*97+13);let
-rev=s.base,u=s.users,f=s.followers;
-MET[s.id
-]=MONTHS.map(()=>{rev*=1+s.growth+(r()-.45)*.14;u*=1+s.growth*.8+(r()-.4)*.08;f*=1+.03+r()*.06;
-return {rev:Math.round(rev),users:Math.round(u),sent:Math.round(55+r()*35),mentions:Math.round(f*.03*(.6+r())),followers:Math.round(f),traffic:Math.round(u*(3+r()*2))}})});
-MET.all = MONTHS.map((_,i)=>{const
-a={rev:0,users:0,mentions:0,followers:0,traffic:0,sent:0};
-SUBS.forEach(s=>{const m=MET[s.id
-][i];a.rev+=m.rev;a.users+=m.users;a.mentions+=m.mentions;a.followers+=m.followers;a.traffic+=m.traffic;a.sent+=m.sent*m.rev});
-a.sent=Math.round(a.sent/a.rev);return a});
-
-/* ---------- state ---------- */
-const KEY='terqyn.hq.v1';
-let S={};try{S=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){S={}}
-S=Object.assign({role:null,cart:[],applied:[],bookings:[],entered:[],meetings:null,cases:null,notes:null,profile:{},balance:1840,payouts:[]},S);
-if(!S.meetings)S.meetings=DEF_MEETINGS.slice();
-if(!S.cases)S.cases=DEF_CASES.slice();
-if(!S.notes)S.notes=DEF_NOTES.slice();
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
-const
-U={jobSub:'all',jobType:'all',jobQ:'',cat:'exclusives',bSub:'all',mA:10,mB:11,cTab:'dir',cSub:'all',dirQ:''};
-try{const
-t=localStorage.getItem('terqyn.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+const SUBS=ECOSYSTEM.map(s=>({...s,short:s.name.replace('Terqyn ', '')}));
+const SUB=Object.fromEntries(SUBS.map(s=>[s.id,s]));
+const DAY=864e5;
+// Retire only this flagship's old browser-local demo state. No live account data is touched.
+try{localStorage.removeItem('terqyn.hq.v1')}catch(e){}
+const S={role:null};
+const U={};
+try{const t=localStorage.getItem('terqyn.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
 
 /* ---------- helpers ---------- */
 const $=(s,r=document)=>r.querySelector(s);
@@ -965,8 +778,7 @@ rights reserved.</p></div>
 data-go="${p}">${l}</a>`).join('')}</div>
 <div><h4>Branches</h4>${SUBS.slice(0,5).map(s=>`<a data-portal="${s.id
 }">${s.short}</a>`).join('')}</div>
-<div><h4>Company</h4><a data-go="about">Legal & licensing</a><a
-data-go="about">White paper</a><a data-go="about">Policies</a><a
+<div><h4>Company</h4><a data-go="about">Leadership</a><a data-go="contact">Contact &amp; Support</a><a
 data-go="portal">Personnel portal</a></div>
 </div></footer>`}
 
@@ -1024,35 +836,7 @@ function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
 class="h1">The Terqyn ecosystem</h1><p class="lede">Explore the destinations under one house. Enter a live destination or preview what is coming next.</p></div>
 ${ecoDirectory(false)}</div>`}
 
-function pSub(id){const s=SUB[id];if(!s)return pEcosystem();if(id==='academy')return `<div class="wrap"><section class="section"><a class="back" href="#/ecosystem" data-go="ecosystem">← Ecosystem</a><span class="tag">Public beta</span><h1 class="h1">Terqyn Academy</h1><p class="lede">${esc(s.desc)}</p><ul class="offer-list">${s.offers.map(o=>`<li><b>${esc(o[0])}</b><span class="mute">${esc(o[1])}</span></li>`).join('')}</ul><a class="btn primary" href="https://terqyn.courses" target="_blank" rel="noopener">Open Academy ↗</a><p class="mute small" style="margin-top:20px">AI-assisted beta content and automated assessment. No paid subscriptions or human mentoring are currently offered.</p></section></div>`;const
-m=MET[id],l=m[11],p=m[10];
-return `<div class="wrap" style="--c:${s.color}"><a class="back"
-href="#/ecosystem" data-go="ecosystem">← All branches</a>
-<section class="sub-hero"><div><span class="tag"><span class="dot"
-style="--c:${s.color}"></span>${s.status}</span>
-<h1 class="h1" style="margin-top:18px">${esc(s.name)}</h1><p class="lede"
-style="color:${s.color}">${esc(s.for)}</p><p class="lede">${esc(s.desc)}</p>
-<div class="row" style="margin-top:28px">${s.url?`<a class="btn primary"
-href="${s.url}" target="_blank" rel="noopener">Visit ${esc(s.domain)}
-${ARROW}</a>`:`<button class="btn" disabled>Site coming soon</button>`}
-<button class="btn" data-go="careers" data-sub="${s.id}">Jobs at
-${esc(s.short)}</button></div></div>
-<div class="ap-wrap">${aperture(s)}</div></section>
-<section class="section"><h2 class="h2" style="margin-bottom:24px">What
-${esc(s.short)} offers</h2><ul
-class="offer-list">${s.offers.map(o=>`<li><b>${esc(o[0])}</b><span
-class="mute">${esc(o[1])}</span></li>`).join('')}</ul></section>
-<section class="section"><div class="grid g3">
-<div class="kpi"><div class="lb">Community reach</div><div
-class="v">${num(l.followers)}</div><div class="mute small">followers across
-platforms</div></div>
-<div class="kpi"><div class="lb">Active members</div><div
-class="v">${num(l.users)}</div><div class="delta up">▲
-${Math.round((l.users/p.users-1)*100)}% this month</div></div>
-<div class="kpi"><div class="lb">Build progress</div><div
-class="v">${s.progress}%</div><div class="meter" style="--c:${s.color}"><i
-style="width:${s.progress}%"></i></div></div>
-</div></section></div>`}
+function pSub(id){const s=SUB[id];if(!s)return pEcosystem();return `<div class="wrap"><section class="section"><a class="back" href="#/ecosystem" data-go="ecosystem">← Ecosystem</a><h1 class="h1">${esc(s.name)}</h1><p class="lede">${esc(s.desc)}</p>${s.url?`<a class="btn primary" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Visit website ↗</a>`:''}</section></div>`}
 
 function pTownSquare(){return `<div class="wrap">
 <section class="page-head"><a class="back" href="#/ecosystem" data-go="ecosystem">← The Terqyn ecosystem</a><h1 class="h1">Terqyn Town Square</h1>
@@ -1078,347 +862,17 @@ class="shot">${p.ini}</div>
 small">${esc(p.title)}</div>${p.bio&&p.bio!=='Bio to be added.'?`<p style="margin:12px 0 0">${esc(p.bio)}</p>`:''}
 ${(p.edu&&!p.edu.startsWith('Add '))||(p.certs&&!p.certs.startsWith('Add '))||(p.li&&p.li!=='#')?`<dl>${p.edu&&!p.edu.startsWith('Add ')?`<dt>Education</dt><dd>${esc(p.edu)}</dd>`:''}${p.certs&&!p.certs.startsWith('Add ')?`<dt>Certificates</dt><dd>${esc(p.certs)}</dd>`:''}${p.li&&p.li!=='#'?`<dt>LinkedIn</dt><dd><a href="${esc(p.li)}" target="_blank" rel="noopener noreferrer">View profile</a></dd>`:''}</dl>`:''}</article>`).join('')}
 </div></section>
-<section class="section"><h2 class="h2">Legal & licensing</h2><p
-class="lede">Our entities, marks, and registrations. Filing numbers appear
-here as they are issued.</p>
-<div class="tbl-wrap" style="margin-top:28px"><table
-class="tbl"><thead><tr><th>Name</th><th>Type</th><th>Jurisdiction</th><th>Status</th></tr></thead><tbody>${LEGAL.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${tagFor(r[3]==='All rights reserved'?'Active':r[3])}</td></tr>`).join('')}</tbody></table></div></section>
-<section class="section grid g2" style="align-items:start">
-<div class="panel"><h2 class="h3">White paper</h2><p class="mute">How the
-Terqyn house works: structure, revenue model, AI oversight, and community
-commitments.</p><div class="row"><button class="btn primary sm"
-data-act="wp">Read the white paper</button><span class="mute small">Version
-0.1 draft</span></div></div>
-<div class="panel"><h2 class="h3">Company policies</h2><div
-class="acc">${POLICIES.map(p=>`<details><summary
-style="font-size:17px">${p[0]}</summary><p>${p[1]}</p></details>`).join('')}</div></div>
-</section>
-<section class="section"><h2 class="h2"
-style="margin-bottom:28px">Roadmap</h2><ol
-class="timeline">${ROADMAP.map(r=>`<li class="${r[2]}"><div
-class="when">${r[0]}${r[2]==='now'?' — in progress':''}</div><div
-class="serif"
-style="font-size:22px">${r[1]}</div></li>`).join('')}</ol></section>
 </div>`}
 
-function jobList(){const q=U.jobQ.toLowerCase();const
-js=JOBS.filter(j=>(U.jobSub==='all'||j.sub===U.jobSub)&&(U.jobType==='all'||j.type===U.jobType)&&(!q||(j.title+j.sum).toLowerCase().includes(q)));
-if(!js.length)return `<p class="mute" style="padding:32px 0">No roles
-match. Clear a filter or join the talent pool below.</p>`;
-return js.map(j=>{const s=SUB[j.sub],ap=S.applied.includes(j.id);return `<details class="job"><summary><span class="jt">${esc(j.title)}</span><span
-class="jp">${esc(j.pay)}</span>
-<span class="jm"><span class="tag"><span class="dot"
-style="--c:${s.color}"></span>${s.short}</span><span
-class="tag">${j.type}</span><span
-class="tag">${j.loc}</span></span></summary>
-<div class="jb"><p>${esc(j.sum)}</p><b>What you will
-do</b><ul>${j.duties.map(d=>`<li>${esc(d)}</li>`).join('')}</ul><b>What you
-bring</b><ul>${j.reqs.map(d=>`<li>${esc(d)}</li>`).join('')}</ul>
-${ap?`<span class="tag good">Application received</span>`:`<button
-class="btn primary sm" data-act="apply" data-id="${j.id}">Apply for this
-role</button>`}</div></details>`}).join('')}
-function pCareers(){const types=['all',...new
-Set(JOBS.map(j=>j.type))];return `<div class="wrap">
-<section class="page-head"><h1 class="h1">Careers & opportunities</h1><p
-class="lede">Work across any Terqyn branch. Full-time, part-time, contract,
-and commission roles.</p></section>
-<section style="padding-bottom:24px"><div class="row between"
-style="align-items:flex-end">
-<div class="stack"><div class="chips">${['all',...new
-Set(JOBS.map(j=>j.sub))].map(s=>`<button class="chip
-${U.jobSub===s?'on':''}" data-act="jobSub"
-data-v="${s}">${subName(s)}</button>`).join('')}</div>
-<div class="chips">${types.map(t=>`<button class="chip
-${U.jobType===t?'on':''}" data-act="jobType" data-v="${t}">${t==='all'?'Any type':t}</button>`).join('')}</div></div>
-<input class="inp search" id="jobq" placeholder="Search roles"
-value="${esc(U.jobQ)}" aria-label="Search roles"></div></section>
-<section id="jobs" style="border-top:1px solid
-var(--line)">${jobList()}</section>
-<section class="section"><h2 class="h2" style="margin-bottom:28px">How
-hiring works</h2><ol class="steps">
-<li><b>Apply</b><p class="mute small">Send your details for a role or the
-talent pool.</p></li><li><b>Intro call</b><p class="mute small">Fifteen
-minutes with the branch lead.</p></li>
-<li><b>Skills check</b><p class="mute small">A role-relevant assessment, with any applicable compensation details discussed in advance.</p></li><li><b>Offer</b><p class="mute small">Role responsibilities and compensation terms provided for review.</p></li>
-<li><b>Onboarding</b><p class="mute small">Portal account, handbook, and
-first course.</p></li></ol></section>
-<section class="section"><div class="panel row between"><div><h2
-class="h3">Don't see your role?</h2><p class="mute" style="margin:6px 0
-0">Join the talent pool and we will reach out when something
-fits.</p></div><button class="btn primary" data-act="apply"
-data-id="pool">Join the talent pool</button></div></section>
-</div>`}
+function pCareers(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Careers &amp; opportunities</h1><p class="lede">Compensation details are discussed during the interview process.</p></section><section class="section"><p>Contact Terqyn for information about current opportunities.</p><a class="btn primary" href="mailto:terqyncso@gmail.com">Contact our team</a></section></div>`}
 
 // Public content is fail-closed until the server authorizes an unlocked state.
 window.spotlightLockedMarkup='<div class="panel"><span class="tag warn">Temporarily locked</span><h2 class="h2" style="margin-top:18px">Spotlight is on hold</h2><p>There are no publicly available giveaways or promotional codes at this time. Terqyn will announce promotions after its team reviews and launches them.</p></div>';
 function pSpotlight(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Spotlight</h1><p class="lede">Giveaways and promotions created, reviewed, and launched by the Terqyn team.</p></section><section class="section"><div id="spotlight-root">${window.spotlightLockedMarkup}</div><a class="back" href="#/spotlight-admin">Authorized admin access →</a></section></div>`}
 function pSpotlightAdmin(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Spotlight management</h1><p class="lede">Create drafts, set dates and perks, and manually launch promotions.</p></section><section class="section"><div id="spotlight-root"><p>Loading verified admin sign-in…</p></div></section></div>`}
 
-function pTech(){const items=PRODUCTS.filter(p=>p.cat===U.cat);return `<div
-class="wrap">
-<section class="page-head row between"
-style="align-items:flex-end"><div><h1 class="h1">Marketplace</h1><p
-class="lede">The house marketplace. Download, buy, or rent what we build,
-from Terqyn’s own product collection.</p></div>
-<button class="btn cart-btn" data-act="cart">Cart${S.cart.length?`<span
-class="n">${S.cart.length}</span>`:''}</button></section>
-<div class="cat-bar" role="tablist">${CATS.map(([id,l])=>`<button
-role="tab" class="${U.cat===id?'on':''}" data-act="cat"
-data-v="${id}">${l}</button>`).join('')}</div>
-<section style="padding-bottom:96px">${`<div
-class="grid g3">${items.map(p=>{const inC=S.cart.includes(p.id);return `<article class="panel tight prod" style="--pc:${p.color}"><div
-class="pic">${p.ini}</div>
-<div class="row between"><span class="mute
-small">${p.kind}</span>${tagFor(p.status)}</div><h3 class="h3">${p.name}</h3><p
-class="mute small" style="margin:0">${p.desc}</p>
-<div class="row between" style="margin-top:auto;padding-top:12px"><span
-class="price">${p.price===null?'Price TBA':p.price===0?'Free':'$'+p.price}</span>
-${p.status==='Available'||p.status==='Members only'?(p.price===0?`<button
-class="btn sm" data-act="dl" data-id="${p.id}">Download</button>`:`<button
-class="btn ${inC?'':'primary'} sm" data-act="add" data-id="${p.id}">${inC?'In cart':'Add to cart'}</button>`):`<button class="btn sm"
-data-act="notify">Notify
-me</button>`}</div></article>`}).join('')}</div>`}</section>
-</div>`}
-
-/* ---------- personnel portal ---------- */
-const PSEC=[['overview','Overview'],['meetings','Meetings'],['profile','My profile'],['handbook','Handbook & SOPs'],['learning','Learning'],['pay','Pay & withdrawals'],['branches','My branches'],['council','Council chambers','council'],['bridge','The Bridge','executive'],['promotions','Spotlight promotions','verified-admin']];
-const
-can=lvl=>lvl!=='verified-admin'&&(!lvl||(lvl==='council'?['council','executive'].includes(S.role):S.role==='executive'));
-const
-me=()=>Object.assign({},STAFF_BY[DEMO[S.role].staff],S.profile[S.role]||{});
-function pSignin(){return `<div class="wrap signin"><h1
-class="h1">Personnel portal</h1><p class="lede">The office for everyone who
-works across Terqyn. Choose a demo account to look around. Real sign-in
-connects later.</p>
-<div class="roles">${Object.entries(DEMO).map(([k,d])=>`<button
-class="role" data-act="signin" data-v="${k}"><b>${d.label}</b><span
-class="mute small">${d.desc}</span><div class="small"
-style="margin-top:12px">${STAFF_BY[d.staff].name}</div></button>`).join('')}</div></div>`}
-function pPortal(sec){if(sec==='promotions'){location.hash='#/spotlight-admin';return pSpotlightAdmin();}if(!S.role)return pSignin();sec=PSEC.find(p=>p[0]===sec)?sec:'overview';const m=me();
-return `<div class="app"><aside class="side" aria-label="Portal">
-<div class="who"><b>${esc(m.name)}</b><span class="mute
-small">${esc(m.title)}</span><div style="margin-top:8px"><span
-class="tag">${DEMO[S.role].label}</span></div></div>
-${PSEC.map(([id,l,lvl],i)=>`${i===7?'<div class="grp">Restricted</div>':''}<button class="${sec===id?'on':''}
-${id==='bridge'?'bridge-btn':''}"
-data-go="portal/${id}">${l}${lvl&&!can(lvl)?'<span aria-label="locked">🔒</span>':''}</button>`).join('')}
-<div class="grp"></div><button data-act="signout">Sign out</button></aside>
-<main class="main">${(()=>{const
-p=PSEC.find(x=>x[0]===sec);if(!can(p[2]))return locked(p);return ({overview:sOverview,meetings:sMeetings,profile:sProfile,handbook:sHandbook,learning:sLearning,pay:sPay,branches:sBranches,council:sCouncil,bridge:sBridge})[sec](m)})()}</main></div>`}
-function locked(p){return `<div class="locked">${LOCK}<h2
-class="h2">${p[1]}</h2><p class="mute" style="margin:12px
-auto">${p[2]==='executive'?'Executive use only.':'Council members and executives only.'} You are signed in as ${DEMO[S.role].label}.</p><button
-class="btn" data-act="signout">Switch account</button></div>`}
-function sOverview(m){const next=S.meetings[0];return `<h1 class="h2">Good
-to see you, ${esc(m.name.split(' ')[0])}</h1><p class="mute">Here is what's
-happening across your branches.</p>
-<div class="grid g2" style="margin-top:28px;align-items:start"><div
-class="panel"><h2 class="h3">Announcements</h2>${ANN.map(a=>`<div
-class="ann">${a.pin?'<span class="tag warn">Pinned</span> ':''}<b>${a.title}</b><p class="mute small" style="margin:6px 0
-0">${a.body}</p><div class="mute
-small">${a.date}</div></div>`).join('')}</div>
-<div class="stack"><div class="panel"><h2 class="h3">Next
-meeting</h2>${next?`<p style="margin:10px 0
-4px"><b>${esc(next.title)}</b></p><p class="mute small" style="margin:0 0
-14px">${esc(next.when)}, ${subName(next.branch)}</p><button class="btn
-primary sm" data-act="join">Join meeting</button>`:'<p class="mute">Nothing scheduled.</p>'}</div>
-<div class="panel"><h2 class="h3">Your branches</h2><div class="chips"
-style="margin-top:12px">${m.subs.map(id=>`<span class="tag"><span
-class="dot"
-style="--c:${SUB[id].color}"></span>${SUB[id].short}</span>`).join('')}</div></div>
-<div class="panel"><h2 class="h3">Pay balance</h2><div class="serif"
-style="font-size:34px;margin:6px
-0">$${S.balance.toLocaleString(undefined,{minimumFractionDigits:2})}</div><button
-class="btn sm" data-go="portal/pay">Withdraw</button></div></div></div>`}
-function sMeetings(){return `<h1 class="h2">Meetings</h1><div class="grid
-g2" style="margin-top:24px;align-items:start"><div
-class="panel">${S.meetings.map(x=>`<div class="ann row
-between"><div><b>${esc(x.title)}</b><div class="mute small">${esc(x.when)},
-${subName(x.branch)}</div></div><button class="btn sm"
-data-act="join">Join</button></div>`).join('')}</div>
-<div class="panel stack"><h2 class="h3">Schedule a meeting</h2><label
-class="f"><span>Title</span><input class="inp" id="mt" placeholder="Weekly
-sync"></label><label class="f"><span>When</span><input class="inp" id="mw"
-placeholder="Fri, 3:00 PM"></label>
-<label class="f"><span>Branch</span><select class="inp" id="mb"><option
-value="all">All branches</option>${SUBS.map(s=>`<option
-value="${s.id}">${s.short}</option>`).join('')}</select></label><button
-class="btn primary" data-act="addMeeting">Schedule
-meeting</button></div></div>`}
-function sProfile(m){const f=[['name','Full name'],['title','Title'],['email','Email'],['phone','Phone'],['emergency','Emergency contact']];return `<h1 class="h2">My profile</h1><p class="mute">Keep your
-contact details current so the team can reach you.</p>
-<div class="panel" style="margin-top:24px;max-width:640px"><div class="grid
-g2">${f.map(([k,l])=>`<label class="f"><span>${l}</span><input class="inp"
-id="pf-${k}" value="${esc(m[k]||'')}"></label>`).join('')}</div>
-<hr class="rule"><div class="mute small">Member since ${esc(m.since)}.
-Status ${tagFor(m.status)}</div><button class="btn primary"
-style="margin-top:16px" data-act="saveProfile">Save profile</button></div>`}
-function sHandbook(){return `<h1 class="h2">Handbook & SOPs</h1><p
-class="mute">Rules, standard procedures, and expectations for every
-branch.</p><div class="acc"
-style="margin-top:20px;max-width:760px">${HANDBOOK.map(h=>`<details><summary>${h[0]}</summary><p>${h[1]}</p></details>`).join('')}</div>`}
-function sLearning(){return `<h1 class="h2">Learning</h1><p
-class="mute">Courses assigned to your role.</p><div class="grid g2"
-style="margin-top:24px">${COURSES.map(([n,p])=>`<div class="panel
-tight"><div class="row between"><b>${n}</b>${p===100?'<span class="tag good">Complete</span>':`<span class="mute small">${p}%</span>`}</div><div
-class="meter" style="margin:14px 0"><i
-style="width:${p}%"></i></div><button class="btn sm"
-data-act="course">${p===0?'Start course':p===100?'Review':'Continue'}</button></div>`).join('')}</div>`}
-function sPay(m){return `<h1 class="h2">Pay & withdrawals</h1><div
-class="grid g2" style="margin-top:24px;align-items:start">
-<div class="stack"><div class="panel"><div class="mute small">Available
-balance</div><div class="serif"
-style="font-size:44px">$${S.balance.toLocaleString(undefined,{minimumFractionDigits:2})}</div>
-<div class="grid g2" style="gap:12px;margin-top:12px"><label
-class="f"><span>Amount</span><input class="inp" id="wamt"
-inputmode="decimal" placeholder="0.00"></label><label class="f"><span>Send
-to</span><select class="inp" id="wm"><option>Direct
-deposit</option><option>PayPal</option><option>Cash
-App</option><option>USDC wallet</option></select></label></div>
-<button class="btn primary" style="margin-top:14px"
-data-act="withdraw">Withdraw funds</button></div>
-<div class="panel"><h2 class="h3">Pay agreement</h2><dl class="person"
-style="margin:0"><dl><dt>Rate</dt><dd>${esc(m.pay)}</dd><dt>Schedule</dt><dd>1st
-and 15th</dd><dt>Branches</dt><dd>${m.subs.map(subName).join(', ')}</dd><dt>Agreement</dt><dd><a href="#" data-act="agreement">View signed
-agreement</a></dd></dl></dl></div></div>
-<div class="panel"><h2 class="h3">History</h2>${[...S.payouts,{d:'Sep 15',t:'Payroll deposit',a:1240},{d:'Sep 1',t:'Payroll deposit',a:1240},{d:'Aug 20',t:'Withdrawal to Direct deposit',a:-600}].map(h=>`<div class="ann row between"><div><b
-style="font-weight:500">${h.t}</b><div class="mute
-small">${h.d}</div></div><span class="delta
-${h.a<0?'down':'up'}">${h.a<0?'−':'+'}$${Math.abs(h.a).toLocaleString()}</span></div>`).join('')}</div></div>`}
-function sBranches(m){return `<h1 class="h2">My branches</h1><p
-class="mute">Branches your account can access. Every Terqyn branch is
-shown; ones you are not part of are dimmed.</p>
-<div class="grid g3" style="margin-top:24px">${SUBS.map(s=>{const
-on=m.subs.includes(s.id);return `<div class="panel tight"
-style="opacity:${on?1:.45};--c:${s.color}"><div
-style="width:72px">${aperture(s)}</div><b class="serif"
-style="font-size:20px;display:block;margin-top:8px">${s.name}</b><div
-class="mute small">${s.for}</div><div style="margin-top:10px">${on?'<span class="tag good">Authorized</span>':'<span class="tag">Not assigned</span>'}</div></div>`}).join('')}</div>`}
-function dirRows(){const q=U.dirQ.toLowerCase();const
-rows=STAFF.filter(s=>(U.cSub==='all'||s.subs.includes(U.cSub))&&(!q||(s.name
-+s.title).toLowerCase().includes(q)));
-return rows.length?rows.map(s=>`<tr class="click" data-act="person"
-data-id="${s.id}" tabindex="0"><td><b
-style="font-weight:500">${esc(s.name)}</b><div
-class="mute small">${esc(s.email)}</div></td><td>${esc(s.title)}</td><td
-class="small">${s.subs.length>4?'All branches':s.subs.map(subName).join(', ')}</td><td
-class="small">${esc(s.pay)}</td><td>${tagFor(s.status)}</td></tr>`).join(''):`<tr><td
-colspan="5" class="mute">No one matches. Clear the search or pick another
-branch.</td></tr>`}
-function sCouncil(){const subChips=`<div class="chips" style="margin:18px
-0">${['all',...SUBS.map(s=>s.id)].map(s=>`<button class="chip
-${U.cSub===s?'on':''}" data-act="cSub"
-data-v="${s}">${subName(s)}</button>`).join('')}</div>`;
-const tabs=[['dir','Employee directory'],['cases','HR cases'],['notes','Reviews & notes']];let body='';
-if(U.cTab==='dir')body=`<div class="row between"><span class="mute
-small">${STAFF.length} people on file</span><input class="inp search"
-id="dirq" placeholder="Search people" value="${esc(U.dirQ)}"
-aria-label="Search people"></div><div class="tbl-wrap"
-style="margin-top:14px"><table
-class="tbl"><thead><tr><th>Name</th><th>Title</th><th>Branches</th><th>Pay</th><th>Status</th></tr></thead><tbody
-id="dir">${dirRows()}</tbody></table></div>`;
-if(U.cTab==='cases'){const
-cs=S.cases.filter(c=>U.cSub==='all'||c.branch===U.cSub);body=`<div
-class="row between"><span class="mute
-small">${cs.filter(c=>c.status!=='Resolved').length} open or in
-review</span><button class="btn primary sm" data-act="newCase">Log a
-case</button></div><div class="tbl-wrap" style="margin-top:14px"><table
-class="tbl"><thead><tr><th>Case</th><th>Subject</th><th>Branch</th><th>Filed</th><th>Status</th></tr></thead><tbody>${cs.length?cs.map(c=>`<tr
-class="click" data-act="cycleCase" data-id="${c.id}" title="Click to change
-status"><td>${c.id}</td><td>${esc(c.subj)}</td><td>${subName(c.branch)}</td><td>${c.filed}</td><td>${tagFor(c.status)}</td></tr>`).join(''):'<tr><td colspan="5" class="mute">No cases for this branch.</td></tr>'}</tbody></table></div><p class="mute small">Click a case
-to move it to the next status.</p>`}
-if(U.cTab==='notes'){const
-ns=S.notes.filter(n=>U.cSub==='all'||STAFF_BY[n.staff].subs.includes(U.cSub));body=`<div
-class="panel">${ns.map(n=>`<div class="ann row"
-style="align-items:flex-start;flex-wrap:nowrap"><span class="tag
-${n.kind==='pos'?'good':'bad'}">${n.kind==='pos'?'Positive':'Concern'}</span><div><b
-style="font-weight:500">${esc(STAFF_BY[n.staff].name)}</b><p class="small"
-style="margin:4px 0">${esc(n.text)}</p><div class="mute
-small">${n.date}</div></div></div>`).join('')||'<p class="mute">No notes for this branch yet.</p>'}</div>`}
-return `<h1 class="h2">Council chambers</h1><p class="mute">Staff records,
-HR cases, and reviews for every branch. Council members and executives
-only.</p>
-<div class="cat-bar" style="margin-top:20px">${tabs.map(([k,l])=>`<button
-class="${U.cTab===k?'on':''}" data-act="cTab"
-data-v="${k}">${l}</button>`).join('')}</div>${subChips}${body}`}
-function delta(a,b,fmt){const d=a?((b/a-1)*100):0;return `<span
-class="delta ${d>=0?'up':'down'}">${d>=0?'▲':'▼'}
-${Math.abs(d).toFixed(1)}%</span> <span class="mute small">vs
-${MONTHS[U.mA]}</span>`}
-function sBridge(){const
-k=U.bSub,M=MET[k],A=M[U.mA],B=M[U.mB],max=Math.max(...M.map(x=>x.rev));const
-col=k==='all'?'var(--accent)':SUB[k].color;
-const W=600,H=200,bw=W/12;
-const bars=M.map((x,i)=>{const h=Math.max(2,x.rev/max*(H-30));const
-c=i===U.mB?col:i===U.mA?'var(--brass)':'var(--panel2)';return `<rect
-x="${i*bw+6}" y="${H-h-18}" width="${bw-12}" height="${h}" rx="4"
-fill="${c}" data-act="bar" data-i="${i}"><title>${MONTHS[i]}:
-${money(x.rev)}</title></rect><text x="${i*bw+bw/2}" y="${H-2}"
-text-anchor="middle">${MONTHS[i].split(' ')[0]}</text>`}).join('');
-const streams=k==='all'?SUBS.map(s=>[s.short,MET[s.id
-][U.mB].rev/B.rev,s.color]):SUB[k].streams.map(x=>[x[0],x[1],SUB[k].color]);
-return `<div class="exec-banner">${LOCK.replace('<svg','<svg width="20" height="20"')}The Bridge. Executive use only. Figures shown are sample data
-until live sources are connected.</div>
-<div class="row between"><h1 class="h2">The Bridge</h1><div
-class="row"><label class="f row" style="gap:8px"><span
-style="margin:0">Compare</span><select class="inp" style="width:auto"
-data-act="mA">${MONTHS.map((x,i)=>`<option value="${i}"
-${i===U.mA?'selected':''}>${x}</option>`).join('')}</select></label><label
-class="f row" style="gap:8px"><span style="margin:0">to</span><select
-class="inp" style="width:auto" data-act="mB">${MONTHS.map((x,i)=>`<option
-value="${i}"
-${i===U.mB?'selected':''}>${x}</option>`).join('')}</select></label></div></div>
-<div class="chips" style="margin:20px 0
-24px">${['all',...SUBS.map(s=>s.id)].map(s=>`<button
-class="chip ${k===s?'on':''}" data-act="bSub"
-data-v="${s}">${s==='all'?'Whole house':SUB[s].short}</button>`).join('')}</div>
-<div class="kpis">
-<div class="kpi"><div class="lb">Revenue, ${MONTHS[U.mB]}</div><div
-class="v">${money(B.rev)}</div>${delta(A.rev,B.rev)}</div>
-<div class="kpi"><div class="lb">Active users</div><div
-class="v">${num(B.users)}</div>${delta(A.users,B.users)}</div>
-<div class="kpi"><div class="lb">Sentiment score</div><div
-class="v">${B.sent}<span class="mute" style="font-size:16px"> /
-100</span></div>${delta(A.sent,B.sent)}</div>
-<div class="kpi"><div class="lb">Online mentions</div><div
-class="v">${num(B.mentions)}</div>${delta(A.mentions,B.mentions)}</div>
-<div class="kpi"><div class="lb">Followers</div><div
-class="v">${num(B.followers)}</div>${delta(A.followers,B.followers)}</div>
-<div class="kpi"><div class="lb">Site visits</div><div
-class="v">${num(B.traffic)}</div>${delta(A.traffic,B.traffic)}</div>
-</div>
-<div class="grid g2"
-style="margin-top:20px;align-items:start;grid-template-columns:minmax(0,1.5fr)
-minmax(0,1fr)">
-<div class="panel"><div class="row between"><h2 class="h3">Revenue, last 12
-months</h2><span class="mute small">Tap a bar to compare that
-month</span></div><svg class="bars" viewBox="0 0 ${W} ${H}"
-style="margin-top:16px">${bars}</svg>
-<div class="row small mute" style="margin-top:8px"><span><span
-class="tag"><span class="dot"
-style="--c:var(--brass)"></span>${MONTHS[U.mA]}</span></span><span
-class="tag"><span class="dot"
-style="--c:${col}"></span>${MONTHS[U.mB]}</span></div></div>
-<div class="panel"><h2 class="h3"
-style="margin-bottom:16px">${k==='all'?'Revenue by branch':'Revenue streams'}</h2>${streams.map(s=>`<div
-class="stream"><span>${s[0]}</span><div class="meter"
-style="--c:${s[2]}"><i
-style="width:${(s[1]*100).toFixed(0)}%"></i></div><span
-class="mute">${(s[1]*100).toFixed(0)}%</span></div>`).join('')}</div></div>
-<div class="panel"
-style="margin-top:20px;padding:0;border:0;background:none"><h2 class="h3"
-style="margin-bottom:14px">Branch comparison, ${MONTHS[U.mB]}</h2><div
-class="tbl-wrap"><table
-class="tbl"><thead><tr><th>Branch</th><th>Revenue</th><th>Change</th><th>Sentiment</th><th>Mentions</th><th>Followers</th><th>Build
-progress</th></tr></thead><tbody>${SUBS.map(s=>{const a=MET[s.id
-][U.mA],b=MET[s.id][U.mB],d=(b.rev/a.rev-1)*100;return `<tr class="click"
-data-act="bSub" data-v="${s.id}"><td><span class="tag"><span class="dot"
-style="--c:${s.color}"></span>${s.short}</span></td><td>${money(b.rev)}</td><td><span
-class="delta ${d>=0?'up':'down'}">${d>=0?'▲':'▼'}
-${Math.abs(d).toFixed(1)}%</span></td><td>${b.sent}</td><td>${num(b.mentions)}</td><td>${num(b.followers)}</td><td
-style="min-width:120px"><div class="meter" style="--c:${s.color}"><i
-style="width:${s.progress}%"></i></div><span class="mute
-small">${s.progress}%</span></td></tr>`}).join('')}</tbody></table></div></div>`}
+function pTech(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Marketplace</h1></section><section class="section"><p>For information about Terqyn services and availability, contact our team.</p><a class="btn primary" href="#/contact" data-go="contact">Contact Terqyn</a></section></div>`}
+function pPortal(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Personnel portal</h1></section><section class="section"><div class="panel"><h2 class="h2">Portal unavailable</h2><p>Staff sign-in and personnel records are not currently available through this HQ page. Contact Terqyn support for assistance.</p><a class="btn primary" href="mailto:support@terqyn.com">Contact support</a></div></section></div>`}
 
 /* ---------- router ---------- */
 function parse(){const h=location.hash.replace(/^#\/?/,'');const
@@ -1446,126 +900,18 @@ ov.innerHTML=`<div class="il"><b>${esc(s.name
 ov.className='iris-ov';void ov.offsetWidth;ov.className='iris-ov open';
 setTimeout(()=>{go('ecosystem/'+id);setTimeout(()=>{ov.className='iris-ov open out';setTimeout(()=>ov.className='iris-ov',600)},500)},800)}
 
-/* ---------- actions ---------- */
+/* ---------- verified public navigation only ---------- */
 const ACT={
 menu:()=>$('#nav').classList.toggle('open'),
-theme:()=>{const r=document.documentElement;const
-dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('terqyn.theme',r.dataset.theme)}catch(e){}},
-close:closeAll,
-jobSub:el=>{U.jobSub=el.dataset.v;paint()},
-jobType:el=>{U.jobType=el.dataset.v;paint()},
-apply:el=>{const id=el.dataset.id,j=JOBS.find(x=>x.id===id);openModal(`<button
-class="x" data-act="close" aria-label="Close">✕</button><h2
-class="h3">${j?'Apply: '+esc(j.title):'Join the talent pool'}</h2><p
-class="mute small">${j?subName(j.sub)+', '+j.type:'Tell us what you do best.'}</p>
-<div class="stack" style="margin-top:16px"><label class="f"><span>Full
-name</span><input class="inp" id="an"></label><label
-class="f"><span>Email</span><input class="inp" id="ae"
-type="email"></label><label class="f"><span>Portfolio or LinkedIn
-link</span><input class="inp" id="al"></label><label class="f"><span>Why
-you</span><textarea class="inp" id="aw"></textarea></label><button
-class="btn primary" data-act="submitApp" data-id="${id}">Send
-application</button></div>`)},
-submitApp:el=>{if(!val('an')||!val('ae').includes('@')){toast('Add your name and a valid email to send.');return}S.applied.push(el.dataset.id);save();closeAll();toast('Application sent. Check your email for next steps.');paint()},
-copy:el=>{const
-v=el.dataset.v;(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast(v+' copied')).catch(()=>toast('Code: '+v))},
-enter:()=>toast('Giveaway entry is closed. Only manually launched entry pages accept entries.'),
-rsvp:()=>toast('RSVP saved. Calendar invites connect later.'),
-wp:()=>openModal(`<button class="x" data-act="close"
-aria-label="Close">✕</button><h2 class="h3">Terqyn white paper</h2><p
-class="mute small">Version 0.1 draft</p><div class="stack
-small"><p><b>Structure.</b> Terqyn is a parent holding company. Each branch
-runs its own product and team, and shares finance, people, and technology
-with the house.</p><p><b>Revenue.</b> Services, subscriptions, courses, and
-marketplace sales, reported per branch.</p><p><b>AI oversight.</b> Agents
-assist; people decide. Every run is logged and
-reviewed.</p><p><b>Community.</b> Free education and local business
-programs in every market we enter.</p><p class="mute">Replace this summary
-with the full document or a PDF download link.</p></div>`),
-cat:el=>{U.cat=el.dataset.v;paint()},
-add:el=>{if(!S.cart.includes(el.dataset.id))S.cart.push(el.dataset.id);save();toast('Added to cart');paint()},
-dl:()=>toast('Download links connect when files are uploaded.'),
-notify:()=>toast("We'll let you know when it's ready."),
-cart:()=>{const
-items=S.cart.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);const
-tot=items.reduce((a,p)=>a+(p.price||0),0);openDrawer(`<button class="x"
-data-act="close" aria-label="Close">✕</button><h2
-class="h2">Cart</h2>${items.length?items.map(p=>`<div class="ann row
-between"><div><b style="font-weight:500">${p.name}</b><div class="mute
-small">${p.kind}</div></div><div
-class="row"><span>$${p.price}</span><button class="btn sm" data-act="rm"
-data-id="${p.id}">Remove</button></div></div>`).join('')+`<div class="row
-between" style="margin:20px 0"><b>Total</b><b class="serif"
-style="font-size:26px">$${tot}</b></div><button class="btn primary"
-style="width:100%" data-act="checkout">Check out</button>`:'<p class="mute">Your cart is empty. Add something from the marketplace.</p>'}`)},
-rm:el=>{S.cart=S.cart.filter(i=>i!==el.dataset.id
-);save();ACT.cart();paint()},
-checkout:()=>{toast('Checkout connects to payments later.')},
-signin:el=>{S.role=el.dataset.v;save();go('portal/overview')},
-signout:()=>{S.role=null;save();go('portal')},
-join:()=>toast('Opening the meeting room. Add your video link in settings later.'),
-addMeeting:()=>{if(!val('mt')||!val('mw')){toast('Add a title and time.');return}S.meetings.push({id:'m'+Date.now(),title:val('mt'),when:val('mw'),branch:val('mb')});save();toast('Meeting scheduled');paint()},
-saveProfile:()=>{const
-p={};['name','title','email','phone','emergency'].forEach(k=>p[k]=val('pf-'+k));S.profile[S.role]=p;save();toast('Profile saved');paint()},
-course:()=>toast('Course player connects later.'),
-agreement:(el,e)=>{e.preventDefault();toast('Upload signed agreements to show them here.')},
-withdraw:()=>{const a=parseFloat(val('wamt'));if(!(a>0)){toast('Enter an amount to withdraw.');return}if(a>S.balance){toast('That is more than your available balance.');return}
-S.balance=+(S.balance-a).toFixed(2);S.payouts.unshift({d:'Today',t:'Withdrawal to '+val('wm'),a:-a});save();toast('Withdrawal requested');paint()},
-cTab:el=>{U.cTab=el.dataset.v;paint()},
-cSub:el=>{U.cSub=el.dataset.v;paint()},
-person:el=>{const s=STAFF_BY[el.dataset.id];const
-ns=S.notes.filter(n=>n.staff===s.id);openDrawer(`<button class="x"
-data-act="close" aria-label="Close">✕</button><h2
-class="h2">${esc(s.name)}</h2><p
-class="mute">${esc(s.title)}</p>${tagFor(s.status)}
-<p>${esc(s.desc)}</p><dl
-class="person"><dl><dt>Involvement</dt><dd>${esc(s.inv)}</dd><dt>Branches</dt><dd>${s.subs.map(subName).join(', ')}</dd><dt>Pay</dt><dd>${esc(s.pay)}</dd><dt>Email</dt><dd>${esc(s.email)}</dd><dt>Phone</dt><dd>${esc(s.phone)}</dd><dt>Since</dt><dd>${esc(s.since)}</dd></dl></dl>
-<hr class="rule"><h3 class="h3">Notes</h3>${ns.map(n=>`<div
-class="ann"><span class="tag
-${n.kind==='pos'?'good':'bad'}">${n.kind==='pos'?'Positive':'Concern'}</span><p
-class="small" style="margin:6px 0 0">${esc(n.text)}</p><div class="mute
-small">${n.date}</div></div>`).join('')||'<p class="mute small">No notes yet.</p>'}
-<div class="stack" style="margin-top:16px"><select class="inp"
-id="nk"><option value="pos">Positive</option><option
-value="neg">Concern</option></select><textarea class="inp" id="nt"
-placeholder="Add a note"></textarea><button class="btn primary"
-data-act="addNote" data-id="${s.id}">Add note</button></div>`)},
-addNote:el=>{if(!val('nt')){toast('Write the note first.');return}S.notes.unshift({staff:el.dataset.id,kind:val('nk'),text:val('nt'),date:'Today'});save();toast('Note added');ACT.person(el);paint()},
-newCase:()=>openModal(`<button class="x" data-act="close"
-aria-label="Close">✕</button><h2 class="h3">Log an HR case</h2><div
-class="stack" style="margin-top:16px"><label
-class="f"><span>Subject</span><input class="inp" id="cs"></label><label
-class="f"><span>Branch</span><select class="inp"
-id="cb">${SUBS.map(s=>`<option
-value="${s.id}">${s.short}</option>`).join('')}</select></label><label
-class="f"><span>Details</span><textarea class="inp"
-id="cd"></textarea></label><button class="btn primary"
-data-act="saveCase">Log case</button></div>`),
-saveCase:()=>{if(!val('cs')){toast('Add a subject.');return}const
-n=Math.max(...S.cases.map(c=>+c.id.split('-')[1]))+1;S.cases.unshift({id:'HR-'+n,subj:val('cs'),branch:val('cb'),filed:'Today',status:'Open'});save();closeAll();toast('Case logged');paint()},
-cycleCase:el=>{const c=S.cases.find(x=>x.id===el.dataset.id);const
-o=['Open','In review','Resolved'];c.status=o[(o.indexOf(c.status)+1)%3];save();toast(c.id+' is now '+c.status);paint()},
-bSub:el=>{U.bSub=el.dataset.v;paint()},
-bar:el=>{U.mB=+el.dataset.i;if(U.mA===U.mB)U.mA=Math.max(0,U.mB-1);paint()}
+theme:()=>{const r=document.documentElement;const dark=r.dataset.theme==='dark';r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('terqyn.theme',r.dataset.theme)}catch(e){}},
+close:closeAll
 };
 document.addEventListener('click',e=>{
-const
-pt=e.target.closest('[data-portal]');if(pt){e.preventDefault();openPortal(pt.dataset.portal,e);return}
-const
-g=e.target.closest('[data-go]');if(g){e.preventDefault();if(g.dataset.sub){U.jobSub=g.dataset.sub}go(g.getAttribute('data-go'));return}
-const
-a=e.target.closest('[data-act]');if(a&&a.tagName!=='SELECT'&&!(a.tagName==='INPUT'&&a.type!=='checkbox')){if(a.tagName==='INPUT')return;ACT[a.dataset.act]&&ACT[a.dataset.act](a,e)}
+const pt=e.target.closest('[data-portal]');if(pt){e.preventDefault();go('ecosystem/'+pt.dataset.portal);return}
+const g=e.target.closest('[data-go]');if(g){e.preventDefault();go(g.getAttribute('data-go'));return}
+const a=e.target.closest('[data-act]');if(a&&ACT[a.dataset.act])ACT[a.dataset.act](a,e);
 });
-document.addEventListener('change',e=>{const a=e.target;
-if(a.matches('input[type=checkbox][data-act]'))ACT[a.dataset.act](a,e);
-if(a.matches('select[data-act=mA]')){U.mA=+a.value;paint()}
-if(a.matches('select[data-act=mB]')){U.mB=+a.value;paint()}});
-document.addEventListener('input',e=>{
-if(e.target.id
-==='jobq'){U.jobQ=e.target.value;$('#jobs').innerHTML=jobList()}
-if(e.target.id
-==='dirq'){U.dirQ=e.target.value;$('#dir').innerHTML=dirRows()}});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();if(e.key==='Enter'&&e.target.matches('[data-act][tabindex]'))e.target.click()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 render();
 </script>
 <script src="/spotlight.js" defer></script>
