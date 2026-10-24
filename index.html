@@ -1435,7 +1435,7 @@ if(a==='spotlight-admin')body=pSpotlightAdmin();else if(a==='spotlight')body=pSp
 if(a==='portal')body=pPortal(b);else body=pHome();
 $('#app').innerHTML=header(a)+`<main
 id="content">${body}</main>`+(a==='portal'&&S.role?'':footer());
-document.title=a?`${({ecosystem:b&&SUB[b]?SUB[b].name:'Ecosystem',contact:'Contact & Support',about:'About',careers:'Careers',spotlight:'Spotlight',tech:'Marketplace',portal:'Personnel portal','town-square':'Town Square'})[a]||''} | Terqyn`:'Terqyn';
+document.title=a?`${({ecosystem:b&&SUB[b]?SUB[b].name:'Ecosystem',contact:'Contact & Support',about:'About',careers:'Careers',spotlight:'Spotlight','spotlight-admin':'Spotlight management',tech:'Marketplace',portal:'Personnel portal','town-square':'Town Square'})[a]||''} | Terqyn`:'Terqyn';
 tick();if(keepScroll)scrollTo(0,y);else scrollTo(0,0)}
 const paint=()=>render(true);
 function go(p){closeAll();if(location.hash==='#/'+p)render();else
