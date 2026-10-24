@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,
@@ -585,6 +585,62 @@ footer.site a:hover{color:var(--text)}
 @media
 (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero-rings
 .draw{stroke-dashoffset:0}}
+
+/* Pearl & gold concept — review only */
+:root,:root[data-theme="dark"],:root[data-theme="light"]{--bg:#edeef4;--panel:#fff;--panel2:#e5e6ee;--text:#202022;--mute:#6c6c72;--line:rgba(35,35,46,.12);--accent:#947124;--brass:#a2833e;--shadow:0 18px 70px #282c4510;--bar:80px}
+body{background:radial-gradient(ellipse at 75% 10%,#fff9e7a0,transparent 46%),#edeef4}
+body::before,body::after{display:none}
+header.site{background:#edeef4ed}.brand{letter-spacing:.16em;font-size:22px;text-transform:uppercase}.brand svg{width:32px}
+.btn,.chip,.tag{border-radius:30px}.btn.primary,.btn.accent{background:#947124;border-color:#947124;color:white}.btn:hover{box-shadow:0 7px 20px #94712420}
+.panel,.tbl-wrap,.offer-list>li,.leaders>.person,.steps>li,.kpis>.kpi{border-radius:16px;box-shadow:0 8px 25px #34364a04}
+.panel::before{display:none}.page-head::before,.hero::before{letter-spacing:.22em}
+.hero{display:block;min-height:0;padding:50px 0 72px;overflow:hidden}.hero::before{display:none}
+.hero>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-copy .eyebrow{font-size:10px;letter-spacing:.24em;color:var(--brass);font-weight:700}
+.wordmark{font-size:clamp(58px,6vw,94px);line-height:1.02;max-width:11ch;letter-spacing:-.045em}
+.wordmark em{font-weight:400;color:var(--accent)}.wordmark::after{display:none}
+.tagline{font-family:var(--sans);font-style:normal;font-size:17px;line-height:1.8;max-width:44ch;margin:24px 0;color:var(--mute)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.orbit-stage{position:relative;aspect-ratio:1;max-width:560px;width:100%;margin:auto;display:grid;place-items:center;perspective:800px}
+.orbit-track{position:absolute;width:84%;height:84%;border:1px solid #a2833e25;border-radius:50%;animation:orbit 36s linear infinite}
+.orbit-track::before{content:"";position:absolute;inset:14%;border:1px dashed #a2833e25;border-radius:50%}
+.orbit-track::after{content:"";position:absolute;inset:-8%;border:1px solid #a2833e0d;border-radius:50%}
+.gold-core{position:relative;width:35%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 26%,#fff5c8 0,#e1c975 14%,#ac8534 37%,#614514 65%,#1d180d 91%);box-shadow:inset -15px -12px 24px #0005,0 20px 48px #7d632622,0 0 100px #d9c27b30;display:grid;place-items:center}
+.gold-core::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent,#fff7ca50,transparent 40%);mix-blend-mode:soft-light;animation:orbit 12s linear infinite}
+.gold-core span{font-family:var(--serif);font-size:62px;color:#fff3cba0;text-shadow:0 1px 3px #0003}
+.satellite{position:absolute;left:calc(50% - 31px);top:calc(50% - 31px);width:62px;height:62px;transform:rotate(var(--a)) translateY(-224px) rotate(calc(-1 * var(--a)));display:grid;place-items:center}
+.satellite a{display:grid;place-items:center;background:#ffffffed;border:1px solid #fff;border-radius:18px;width:62px;height:62px;box-shadow:0 8px 30px #34364a0b;text-decoration:none;animation:counter 36s linear infinite;font-size:12px;font-weight:600;color:var(--sc)}
+.orbit-caption{position:absolute;bottom:0;font-size:9px;letter-spacing:.25em;color:var(--mute)}
+@keyframes orbit{to{transform:rotate(360deg)}}@keyframes counter{to{transform:rotate(-360deg)}}
+.hero-index{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:0;border:0}
+.hero-index a{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:180px;background:#ffffffb0;border:1px solid #fff;border-radius:16px;padding:24px;text-decoration:none}
+.hero-index a:hover{background:white;transform:translateY(-3px)}
+.hero-index .nm{font-family:var(--serif);font-size:26px}.hero-index .ds{font-size:13px;color:var(--mute)}.hero-index .go{margin-top:auto;color:var(--accent)}
+.portal-grid{gap:16px;background:none;border:0}.portal{border:1px solid #fff;border-radius:18px;box-shadow:0 10px 35px #34364a05;min-height:310px}
+.portal .ap-wrap{margin-bottom:20px}.portal::before{opacity:.25}
+footer{background:#e7e8ef}.preview-note{position:fixed;bottom:14px;left:14px;z-index:150;background:#fffef5ee;border:1px solid #a2833e40;color:#7a6029;border-radius:30px;padding:8px 14px;font:11px var(--sans);box-shadow:0 5px 20px #0001}
+@media(max-width:920px){.hero>.wrap{grid-template-columns:1fr;gap:35px}.orbit-stage{grid-row:1;max-width:420px}.hero-copy{max-width:650px}.hero-index{grid-template-columns:repeat(2,1fr)}.satellite{transform:rotate(var(--a)) translateY(-168px) rotate(calc(-1 * var(--a)))}.wordmark{max-width:14ch;font-size:58px}}
+@media(max-width:480px){.hero{padding-top:26px}.orbit-stage{max-width:310px}.satellite{width:48px;height:48px;left:calc(50% - 24px);top:calc(50% - 24px);transform:rotate(var(--a)) translateY(-125px) rotate(calc(-1 * var(--a)))}.satellite a{width:48px;height:48px;border-radius:14px;font-size:10px}.gold-core span{font-size:40px}.wordmark{font-size:43px}.hero-index a{padding:18px;min-height:180px}.hero-index .nm{font-size:22px}.brand{font-size:19px}.hero-copy .eyebrow{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.orbit-track,.satellite a,.gold-core::after{animation:none}}
+
+/* Live planetarium: every orb derives from the ecosystem directory. */
+.planetarium{width:100%;max-width:650px;aspect-ratio:1;isolation:isolate}
+.planetarium .gold-core{position:absolute;inset:38%;width:24%;z-index:3;box-shadow:0 0 70px #ccb45640,0 20px 45px #80601f20}
+.gold-core b{position:absolute;top:104%;white-space:nowrap;color:#947124;font:700 9px var(--sans);letter-spacing:.15em}
+.planet-halo{position:absolute;inset:6%;border-radius:50%;border:1px solid #a2833e20;background:repeating-radial-gradient(circle at center,transparent 0 18%,#a2833e12 18.2% 18.4%,transparent 18.6% 27%)}
+.planet-orbit{position:absolute;inset:0;pointer-events:none;animation:planet-revolve var(--duration) linear infinite;transform:rotate(var(--angle))}
+.planet-position{position:absolute;left:50%;top:calc(50% - var(--radius));width:0;height:0}
+.subsidiary-planet{position:absolute;left:-32px;top:-27px;display:flex;align-items:center;flex-direction:column;width:64px;text-decoration:none;pointer-events:auto;animation:planet-upright var(--duration) linear infinite;transform:rotate(calc(-1 * var(--angle)))}
+.planet-ball{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 30% 24%,#fff 0,color-mix(in srgb,var(--planet-color),white 35%) 20%,var(--planet-color) 48%,color-mix(in srgb,var(--planet-color),black 58%) 100%);box-shadow:inset -4px -5px 9px #0002,0 5px 14px #3332;color:#fff;font:500 17px var(--serif);text-shadow:0 1px 3px #0006;transition:scale .2s}
+.planet-name{font:600 9px var(--sans);margin-top:4px;padding:3px 5px;background:#f5f5f9e8;color:#55515b;border-radius:7px;text-align:center;max-width:90px;line-height:1.2}
+.subsidiary-planet:hover .planet-ball,.subsidiary-planet:focus-visible .planet-ball{scale:1.15}
+.planetarium:focus-within .planet-orbit,.planetarium:focus-within .subsidiary-planet,.planetarium:hover .planet-orbit,.planetarium:hover .subsidiary-planet{animation-play-state:paused}
+@keyframes planet-revolve{from{transform:rotate(var(--angle))}to{transform:rotate(calc(var(--angle) + 360deg))}}
+@keyframes planet-upright{from{transform:rotate(calc(-1 * var(--angle)))}to{transform:rotate(calc(-1 * var(--angle) - 360deg))}}
+.hero>.wrap{grid-template-columns:1.12fr 1fr;gap:36px}.hero .planetarium{grid-column:1;grid-row:1}.hero-copy{grid-column:2;grid-row:1}.hero-index{grid-row:2}
+@media(max-width:920px){.hero>.wrap{grid-template-columns:1fr}.hero .planetarium{grid-column:1;grid-row:1;max-width:520px}.hero-copy{grid-column:1;grid-row:2}.hero-index{grid-row:3}.orbit-caption{bottom:-5px}}
+@media(max-width:480px){.planetarium{max-width:none!important}.planet-ball{width:31px;height:31px;font-size:13px}.subsidiary-planet{left:-27px;top:-20px;width:54px}.planet-name{font-size:8px;padding:2px 3px}.planetarium .gold-core span{font-size:32px}.gold-core b{font-size:8px}.orbit-caption{font-size:8px;letter-spacing:.13em}.hero>.wrap{gap:42px}}
+@media(prefers-reduced-motion:reduce){.planet-orbit,.subsidiary-planet{animation:none}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://terqyn.com/#organization", "name": "Terqyn", "url": "https://terqyn.com/", "description": "Terqyn is the shared brand for specialized technology, business services and learning destinations.", "subOrganization": {"@type": "Organization", "@id": "https://terqyn.courses/#organization", "name": "Terqyn Academy", "url": "https://terqyn.courses/", "parentOrganization": {"@id": "https://terqyn.com/#organization"}}}, {"@type": "WebSite", "@id": "https://terqyn.com/#website", "url": "https://terqyn.com/", "name": "Terqyn HQ", "publisher": {"@id": "https://terqyn.com/#organization"}}]}</script>
 </head>
@@ -934,19 +990,12 @@ function ecoDirectory(compact=false){
 return `<section aria-label="Terqyn Ecosystem" style="padding:${compact?'42px 0 70px':'0 0 110px'}"><div class="row between" style="align-items:end;margin-bottom:22px"><div><p style="letter-spacing:.13em;text-transform:uppercase;font-size:11px;color:var(--brass);font-weight:800;margin:0 0 8px">Terqyn Ecosystem</p><h2 style="font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin:0">One house. Every destination connected.</h2></div><span class="mute small">Choose a destination</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">${ECOSYSTEM.map(ecoMiniCard).join('')}</div></section>`;
 }
 function pHome(){return `<section class="hero"><div class="wrap">
-<svg class="hero-rings" viewBox="0 0 800 800" aria-hidden="true"><circle
-cx="400" cy="400" r="380"/><circle cx="400" cy="400" r="300"/><circle
-class="draw" cx="400" cy="400" r="220"/><circle cx="400" cy="400"
-r="140"/><line x1="20" y1="400" x2="780" y2="400"
-stroke="var(--line)"/></svg>
-<h1 class="wordmark">Terqyn<sup>HQ</sup></h1>
-<p class="tagline">One house. Every branch under it.</p>
-<nav class="index" aria-label="Start
-here">${ENTRIES.map(([g,n,d,lead])=>`<a href="#/${g}" data-go="${g}"
-class="${lead?'lead':''}"><span class="nm">${n}</span><span
-class="ds">${d}</span><span class="go">${ARROW}</span></a>`).join('')}</nav>
-</div></section><div class="wrap">${ecoDirectory(true)}</div>`}
-
+<div class="orbit-stage planetarium" aria-label="Terqyn HQ and its orbiting subsidiaries">
+<div class="planet-halo"></div><div class="gold-core" role="img" aria-label="Terqyn HQ, the center of the ecosystem"><span>T</span><b>TERQYN HQ</b></div>
+${ECOSYSTEM.map((s,i)=>{const rings=Math.ceil(ECOSYSTEM.length/6),ring=Math.floor(i/6),count=Math.min(6,ECOSYSTEM.length-ring*6),angle=(i%6)*360/count+(ring%2?30:0),radius= rings===1?39:27+ring*(17/Math.max(1,rings-1));return `<div class="planet-orbit" style="--radius:${radius}%;--duration:${48+ring*18}s;--angle:${angle}deg"><div class="planet-position"><a class="subsidiary-planet" href="${s.url||'#/ecosystem'}" ${s.url&&!s.url.startsWith('https://terqyn.com')?'target="_blank" rel="noopener noreferrer"':''} style="--planet-color:${s.color}" aria-label="${esc(s.name)} — ${esc(s.status)}"><span class="planet-ball">${esc(s.mono)}</span><span class="planet-name">${esc(s.name.replace('Terqyn ',''))}</span></a></div></div>`}).join('')}
+<span class="orbit-caption">ONE CENTER. EVERY DESTINATION CONNECTED.</span></div>
+<div class="hero-copy"><p class="eyebrow">TERQYN HEADQUARTERS · ONE CONNECTED ECOSYSTEM</p><h1 class="wordmark">Built to move<br><em>possibility</em><br>forward.</h1><p class="tagline">Specialized technology, business services, and learning. Distinct destinations, connected by one purpose: helping you turn the next idea into something real.</p><div class="hero-actions"><a class="btn primary" href="#/ecosystem" data-go="ecosystem">Explore the ecosystem →</a><a class="btn" href="#/about" data-go="about">Meet Terqyn</a></div></div>
+<nav class="hero-index" aria-label="Start here">${ENTRIES.map(([g,n,d,lead])=>`<a href="#/${g}" data-go="${g}"><span class="nm">${n}</span><span class="ds">${d}</span><span class="go">Explore →</span></a>`).join('')}</nav></div></section><div class="wrap">${ecoDirectory(true)}</div>`}
 function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
 class="h1">The Terqyn ecosystem</h1><p class="lede">Explore the destinations under one house. Enter a live destination or preview what is coming next.</p></div>
 ${ecoDirectory(false)}</div>`}
