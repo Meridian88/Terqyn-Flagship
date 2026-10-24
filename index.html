@@ -776,8 +776,7 @@ style="margin-top:12px">One house for every branch.<br>© 2026 Terqyn. All
 rights reserved.</p></div>
 <div><h4>Explore</h4>${NAV.map(([p,l])=>`<a
 data-go="${p}">${l}</a>`).join('')}</div>
-<div><h4>Branches</h4>${SUBS.slice(0,5).map(s=>`<a data-portal="${s.id
-}">${s.short}</a>`).join('')}</div>
+<div><h4>Official Socials</h4>${OFFICIAL_SOCIALS.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div>
 <div><h4>Company</h4><a data-go="about">Leadership</a><a data-go="contact">Contact &amp; Support</a><a
 data-go="portal">Personnel portal</a></div>
 </div></footer>`}
@@ -810,7 +809,7 @@ ${ECOSYSTEM.map((s,i)=>{const rings=Math.ceil(ECOSYSTEM.length/6),ring=Math.floo
 
 /* Official contacts supplied by Terqyn ownership. Add approved public social
 links to OFFICIAL_SOCIALS only; no inferred handles or personal staff records. */
-const OFFICIAL_SOCIALS = [];
+const OFFICIAL_SOCIALS = [{"name":"Facebook","url":"https://www.facebook.com/profile.php?id=61595139479284"},{"name":"YouTube","url":"https://youtube.com/@terqynsystems"},{"name":"Instagram","url":"https://www.instagram.com/terqynmedia/"}];
 function pContact(){return `<div class="wrap contact-page">
 <section class="page-head"><p class="contact-kicker">TERQYN HEADQUARTERS</p><h1 class="h1">Contact &amp; Support</h1><p class="lede">One place to find the right Terqyn team. Get help with an existing project, ask about our services, or report a technical issue.</p><div class="contact-jumps"><a class="chip" href="#support-team">General support</a><a class="chip" href="#technical-team">IT &amp; technical help</a><a class="chip" href="#department-contacts">Departments</a><a class="chip" href="#ecosystem-contacts">Ecosystem directory</a><a class="chip" href="#official-socials">Official socials</a></div></section>
 <section class="section" aria-label="Contact departments"><div class="grid g2">
@@ -829,7 +828,7 @@ ${[['New service or business inquiry','General support','mailto:support@terqyn.c
 <section class="section" id="ecosystem-contacts"><span class="contact-kicker">OFFICIAL DESTINATIONS</span><h2 class="h2">Across the ecosystem</h2><p class="lede">Choose your destination below. General support routes inquiries for every Terqyn destination; IT handles technical issues across the ecosystem.</p><div class="contact-directory">
 ${ECOSYSTEM.map(s=>`<article class="panel"><span class="tag"><span class="dot" style="--c:${s.color}"></span>${esc(s.status)}</span><h3 class="h3" style="margin:18px 0 12px">${esc(s.name)}</h3><p class="mute small">${esc(s.for)}</p><div class="contact-directory-links">${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Official website ↗</a>`:'<span class="mute small">Website coming soon</span>'}<a href="mailto:support@terqyn.com?subject=${encodeURIComponent(s.name+' — Support request')}">Contact support ↗</a><a href="mailto:terqyncto@gmail.com?subject=${encodeURIComponent(s.name+' — Technical issue')}">Technical help ↗</a></div></article>`).join('')}
 </div></section>
-<section class="section" id="official-socials"><div class="panel"><span class="contact-kicker">OFFICIAL CHANNELS</span><h2 class="h2">Social media</h2>${OFFICIAL_SOCIALS.length?`<div class="contact-actions">${OFFICIAL_SOCIALS.map(s=>`<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div>`:'<p class="mute">Confirmed official social profile links will be listed here as they are approved by Terqyn. For now, use the email, phone, and official website links in this directory.</p>'}</div></section>
+<section class="section" id="official-socials"><div class="panel"><span class="contact-kicker">OFFICIAL CHANNELS</span><h2 class="h2">Official Socials</h2>${OFFICIAL_SOCIALS.length?`<div class="contact-actions">${OFFICIAL_SOCIALS.map(s=>`<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div>`:'<p class="mute">Confirmed official social profile links will be listed here as they are approved by Terqyn. For now, use the email, phone, and official website links in this directory.</p>'}</div></section>
 </div>`}
 
 function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
