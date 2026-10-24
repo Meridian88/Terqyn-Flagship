@@ -708,7 +708,23 @@ const DAY=864e5;
 // Retire only this flagship's old browser-local demo state. No live account data is touched.
 try{localStorage.removeItem('terqyn.hq.v1')}catch(e){}
 const S={role:null};
-const U={};
+const U={cat:'exclusives'};
+const CATS = [['exclusives','Terqyn exclusives'],['apps','Apps'],['software','Software'],['agents','Agents & AI'],['hardware','Hardware'],['gear','Gear & accessories']];
+const PRODUCTS = [
+{id:'p1',cat:'exclusives',name:'Terqyn Command',kind:'Desktop app',price:0,status:'Members only',ini:'TC',color:'#6FC2B0',desc:'Run every branch from one window.'},
+{id:'p2',cat:'exclusives',name:'Founders pack',kind:'Bundle',price:149,status:'Available',ini:'FP',color:'#C8A25E',desc:'All exclusives, early access, and a founder badge.'},
+{id:'p3',cat:'apps',name:'Terqyn Mobile',kind:'iOS & Android',price:0,status:'Coming soon',ini:'TM',color:'#B8D45A',desc:'Your branches, messages, and alerts on your phone.'},
+{id:'p4',cat:'apps',name:'Ledger Lite',kind:'Web app',price:9,status:'Available',ini:'LL',color:'#5FC48C',desc:'Simple bookkeeping for one-person businesses.'},
+{id:'p5',cat:'software',name:'Site Kit',kind:'Templates',price:79,status:'Available',ini:'SK',color:'#4FB4E8',desc:'The templates Terqyn Systems builds client sites from.'},
+{id:'p6',cat:'software',name:'Dispatch Desk',kind:'Desktop software',price:29,status:'Coming soon',ini:'DD',color:'#E4704F',desc:'RoadLogic dispatch tools for small fleets.'},
+{id:'p7',cat:'agents',name:'Front Desk Agent',kind:'AI agent',price:49,status:'Available',ini:'FD',color:'#4FB4E8',desc:'Answers calls and messages, books appointments.'},
+{id:'p8',cat:'agents',name:'Research Agent',kind:'AI agent',price:39,status:'Available',ini:'RA',color:'#5FC48C',desc:'Searches, reads, and summarizes with sources.'},
+{id:'p9',cat:'agents',name:'Brand Agent',kind:'AI agent',price:59,status:'Coming soon',ini:'BA',color:'#E0679A',desc:'Drafts posts and replies in your voice for review.'},
+{id:'p10',cat:'hardware',name:'Terqyn Node',kind:'Local AI box',price:null,status:'Planned',ini:'TN',color:'#8B6CF0',desc:'Run private agents on hardware you own.'},
+{id:'p11',cat:'gear',name:'House hoodie',kind:'Apparel',price:65,status:'Available',ini:'HH',color:'#C8A25E',desc:'Heavyweight, embroidered mark.'},
+{id:'p12',cat:'gear',name:'Desk mat',kind:'Accessory',price:35,status:'Available',ini:'DM',color:'#6FC2B0',desc:'Wool felt, full-desk size.'}
+];
+
 try{const t=localStorage.getItem('terqyn.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
 
 /* ---------- helpers ---------- */
@@ -870,7 +886,10 @@ window.spotlightLockedMarkup='<div class="panel"><span class="tag warn">Temporar
 function pSpotlight(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Spotlight</h1><p class="lede">Giveaways and promotions created, reviewed, and launched by the Terqyn team.</p></section><section class="section"><div id="spotlight-root">${window.spotlightLockedMarkup}</div><a class="back" href="#/spotlight-admin">Authorized admin access →</a></section></div>`}
 function pSpotlightAdmin(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Spotlight management</h1><p class="lede">Create drafts, set dates and perks, and manually launch promotions.</p></section><section class="section"><div id="spotlight-root"><p>Loading verified admin sign-in…</p></div></section></div>`}
 
-function pTech(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Marketplace</h1></section><section class="section"><p>For information about Terqyn services and availability, contact our team.</p><a class="btn primary" href="#/contact" data-go="contact">Contact Terqyn</a></section></div>`}
+function pTech(){const items=PRODUCTS.filter(p=>p.cat===U.cat);return `<div class="wrap">
+<section class="page-head"><h1 class="h1">Marketplace</h1><p class="lede">Explore Terqyn’s product concepts: apps, software, agents, hardware, and gear.</p><div class="panel tight" style="margin-top:24px"><b>Marketplace preview</b><p class="small mute" style="margin:6px 0 0">These are sample product concepts and illustrative prices. They are not confirmed products, launch dates, or offers for sale. Purchases and downloads are not available here.</p></div></section>
+<div class="cat-bar" role="tablist" aria-label="Product categories">${CATS.map(([id,label])=>`<button role="tab" aria-selected="${U.cat===id}" class="${U.cat===id?'on':''}" data-act="cat" data-v="${id}">${esc(label)}</button>`).join('')}</div>
+<section style="padding-bottom:96px"><div class="grid g3">${items.map(p=>`<article class="panel tight prod" style="--pc:${p.color}"><div class="pic">${esc(p.ini)}</div><div class="row between"><span class="mute small">${esc(p.kind)}</span><span class="tag">Concept preview</span></div><h3 class="h3">${esc(p.name)}</h3><p class="mute small" style="margin:0">${esc(p.desc)}</p><div class="row between" style="margin-top:auto;padding-top:12px"><div><span class="price">${p.price===null?'Not priced':p.price===0?'Free':'$'+p.price}</span><div class="mute small">Illustrative price</div></div><button class="btn sm" data-act="productPreview" data-id="${p.id}">Preview details</button></div></article>`).join('')}</div></section></div>`}
 function pPortal(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Personnel portal</h1></section><section class="section"><div class="panel"><h2 class="h2">Portal unavailable</h2><p>Staff sign-in and personnel records are not currently available through this HQ page. Contact Terqyn support for assistance.</p><a class="btn primary" href="mailto:support@terqyn.com">Contact support</a></div></section></div>`}
 
 /* ---------- router ---------- */
@@ -901,6 +920,8 @@ setTimeout(()=>{go('ecosystem/'+id);setTimeout(()=>{ov.className='iris-ov open o
 
 /* ---------- verified public navigation only ---------- */
 const ACT={
+cat:el=>{if(CATS.some(([id])=>id===el.dataset.v)){U.cat=el.dataset.v;paint()}},
+productPreview:el=>{const p=PRODUCTS.find(p=>p.id===el.dataset.id);if(!p)return;openModal(`<button class="x" data-act="close" aria-label="Close">✕</button><span class="tag">Concept preview</span><h2 class="h2" style="margin-top:16px">${esc(p.name)}</h2><p>${esc(p.desc)}</p><p class="mute small">This is a sample product concept. Pricing, availability, and features are not confirmed.</p><a class="btn primary" href="mailto:support@terqyn.com">Ask about this concept</a>`)},
 menu:()=>$('#nav').classList.toggle('open'),
 theme:()=>{const r=document.documentElement;const dark=r.dataset.theme==='dark';r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('terqyn.theme',r.dataset.theme)}catch(e){}},
 close:closeAll
