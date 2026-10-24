@@ -744,7 +744,7 @@ const CODES = [
 {code:'FOUNDING10',what:'10% off Terqyn Tech exclusives for founding members',ends:now+3*DAY+2*3600e3},
 {code:'LEARN88',what:'$50 off the Academy AI track',ends:now+14*DAY}
 ];
-const CATS = [['exclusives','Terqyn exclusives'],['apps','Apps'],['software','Software'],['agents','Agents & AI'],['hardware','Hardware'],['gear','Gear & accessories'],['workshop','The Workshop']];
+const CATS = [['exclusives','Terqyn exclusives'],['apps','Apps'],['software','Software'],['agents','Agents & AI'],['hardware','Hardware'],['gear','Gear & accessories']];
 const PRODUCTS = [
 {id:'p1',cat:'exclusives',name:'Terqyn Command',kind:'Desktop app',price:0,status:'Members only',ini:'TC',color:'#6FC2B0',desc:'Run every branch from one window.'},
 {id:'p2',cat:'exclusives',name:'Founders pack',kind:'Bundle',price:149,status:'Available',ini:'FP',color:'#C8A25E',desc:'All exclusives, early access, and a founder badge.'},
@@ -759,15 +759,6 @@ const PRODUCTS = [
 {id:'p11',cat:'gear',name:'House hoodie',kind:'Apparel',price:65,status:'Available',ini:'HH',color:'#C8A25E',desc:'Heavyweight, embroidered mark.'},
 {id:'p12',cat:'gear',name:'Desk mat',kind:'Accessory',price:35,status:'Available',ini:'DM',color:'#6FC2B0',desc:'Wool felt, full-desk size.'}
 ];
-const MODELS = [
-['claude','Claude','Anthropic'],['gpt','GPT','OpenAI'],['gemini','Gemini','Google'],['perplexity','Perplexity','Perplexity'],
-['llama','Llama','Meta'],['mistral','Mistral','Mistral AI'],['grok','Grok','xAI'],['private','Terqyn private labels','In development']
-];
-const PLANS = [
-{id:'starter',name:'Starter',price:'$19 / mo',lim:'2 hrs per day, 50 runs'},
-{id:'builder',name:'Builder',price:'$59 / mo',lim:'6 hrs per day, 300 runs'},
-{id:'studio',name:'Studio',price:'$149 / mo',lim:'Reserved blocks, fair use'}
-];
 const LEGAL = [
 ['Terqyn (parent holding company)','LLC','Add state','Formation in progress'],
 ['Terqyn Systems','Subsidiary / DBA','Add state','Pending'],
@@ -781,7 +772,6 @@ const ROADMAP = [
 ['Q4 2026','Launch Terqyn.com headquarters and the personnel portal','now'],
 ['Q1 2027','Move Meridian clients to Terqyn Systems',''],
 ['Q2 2027','Open the Terqyn Tech marketplace to the public',''],
-['Q3 2027','Beta of the Workshop multi-model console',''],
 ['Q4 2027','Public launch of Terqyn Influence and Terqyn Trading','']
 ];
 const POLICIES = [
@@ -850,7 +840,7 @@ if(!S.cases)S.cases=DEF_CASES.slice();
 if(!S.notes)S.notes=DEF_NOTES.slice();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const
-U={jobSub:'all',jobType:'all',jobQ:'',cat:'exclusives',models:['claude','perplexity'],mode:'council',plan:'builder',bSub:'all',mA:10,mB:11,cTab:'dir',cSub:'all',dirQ:''};
+U={jobSub:'all',jobType:'all',jobQ:'',cat:'exclusives',bSub:'all',mA:10,mB:11,cTab:'dir',cSub:'all',dirQ:''};
 try{const
 t=localStorage.getItem('terqyn.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
 
@@ -930,7 +920,7 @@ data-go="portal">Personnel portal</a></div>
 const ENTRIES=[
 ['ecosystem','Our ecosystem','Every Terqyn company, what it does, and the door into each one.',true],
 ['portal','Personnel portal','Sign in for meetings, announcements, pay, and your profile.'],
-['tech','Marketplace','Apps, software, AI agents, gear, and the Workshop.'],
+['tech','Marketplace','Apps, software, AI agents, gear, and accessories.'],
 ['spotlight','Spotlight','News, events, giveaways, and limited-time offers.'],
 ['careers','Careers & opportunities','Open roles across every branch.'],
 ['about','About us','Leadership, licensing, white paper, and roadmap.']
@@ -1131,57 +1121,18 @@ style="margin:0">${p.body}</p><div class="mute small"
 style="margin-top:8px">${p.date}</div></div>`).join('')}</div></section>
 </div>`}
 
-function workshop(){return `<div class="grid g2" style="align-items:start">
-<div class="panel"><h2 class="h3">Model console</h2><p class="mute
-small">Pick the models to run together. Every run waits for a person to
-approve it before anything is sent or executed.</p>
-<div class="stack" style="margin-top:16px">${MODELS.map(([id,n,by])=>{const
-on=U.models.includes(id);return `<label class="model ${on?'on':''}"><input
-type="checkbox" data-act="model" data-id="${id}" ${on?'checked':''}><span
-style="flex:1"><b style="font-weight:500">${n}</b><br><span class="mute
-small">${by}</span></span><span class="tag
-${id==='private'?'warn':''}">${id==='private'?'Coming':'Planned link'}</span></label>`}).join('')}</div>
-<hr class="rule"><b>How the models work together</b><div class="chips"
-style="margin-top:10px">${[['single','One at a time'],['parallel','Side by side'],['council','Council: compare, then a person decides']].map(([v,l])=>`<button class="chip ${U.mode===v?'on':''}"
-data-act="mode" data-v="${v}">${l}</button>`).join('')}</div>
-<label class="model on" style="margin-top:16px;cursor:default"><input
-type="checkbox" checked disabled><span><b style="font-weight:500">Human
-oversight</b><br><span class="mute small">Always on. A reviewer approves
-every run.</span></span></label></div>
-<div class="stack"><div class="panel"><h2 class="h3">Reserve time</h2><p
-class="mute small">Rent Workshop time with usage limits that fit your
-project.</p>
-<div class="grid g3" style="margin-top:16px;gap:10px">${PLANS.map(p=>`<div
-class="plan ${U.plan===p.id?'on':''}" data-act="plan" data-v="${p.id}"
-role="button" tabindex="0"><b>${p.name}</b><div
-class="small">${p.price}</div><div class="mute small"
-style="margin-top:6px">${p.lim}</div></div>`).join('')}</div>
-<div class="grid g2" style="margin-top:16px;gap:12px"><label
-class="f"><span>Date</span><input type="date" class="inp"
-id="wdate"></label><label class="f"><span>Hours</span><select class="inp"
-id="whrs">${[1,2,3,4,6,8].map(h=>`<option>${h}</option>`).join('')}</select></label></div>
-<button class="btn primary" style="margin-top:16px;width:100%"
-data-act="reserve">Reserve ${U.models.length}
-model${U.models.length===1?'':'s'}</button></div>
-<div class="panel"><h2 class="h3">Your
-reservations</h2>${S.bookings.length?S.bookings.map(b=>`<div
-class="ann"><b>${b.date} for ${b.hrs} hr</b><div class="mute
-small">${b.plan} plan, ${b.models.join(', ')}, ${b.mode}
-mode</div></div>`).join(''):`<p class="mute small">No reservations yet.
-Pick a date and reserve your first block.</p>`}</div></div>
-</div>`}
 function pTech(){const items=PRODUCTS.filter(p=>p.cat===U.cat);return `<div
 class="wrap">
 <section class="page-head row between"
 style="align-items:flex-end"><div><h1 class="h1">Marketplace</h1><p
 class="lede">The house marketplace. Download, buy, or rent what we build,
-and run every major AI model in one supervised place.</p></div>
+from Terqyn’s own product collection.</p></div>
 <button class="btn cart-btn" data-act="cart">Cart${S.cart.length?`<span
 class="n">${S.cart.length}</span>`:''}</button></section>
 <div class="cat-bar" role="tablist">${CATS.map(([id,l])=>`<button
 role="tab" class="${U.cat===id?'on':''}" data-act="cat"
 data-v="${id}">${l}</button>`).join('')}</div>
-<section style="padding-bottom:96px">${U.cat==='workshop'?workshop():`<div
+<section style="padding-bottom:96px">${`<div
 class="grid g3">${items.map(p=>{const inC=S.cart.includes(p.id);return `<article class="panel tight prod" style="--pc:${p.color}"><div
 class="pic">${p.ini}</div>
 <div class="row between"><span class="mute
@@ -1517,12 +1468,6 @@ style="width:100%" data-act="checkout">Check out</button>`:'<p class="mute">Your
 rm:el=>{S.cart=S.cart.filter(i=>i!==el.dataset.id
 );save();ACT.cart();paint()},
 checkout:()=>{toast('Checkout connects to payments later.')},
-model:el=>{const id=el.dataset.id;U.models=el.checked?[...new
-Set([...U.models,id])]:U.models.filter(m=>m!==id);paint()},
-mode:el=>{U.mode=el.dataset.v;paint()},
-plan:el=>{U.plan=el.dataset.v;paint()},
-reserve:()=>{const d=val('wdate');if(!d){toast('Pick a date to reserve time.');return}if(!U.models.length){toast('Choose at least one model.');return}
-S.bookings.unshift({date:d,hrs:val('whrs'),plan:PLANS.find(p=>p.id===U.plan).name,models:U.models.map(m=>MODELS.find(x=>x[0]===m)[1]),mode:U.mode});save();toast('Time reserved');paint()},
 signin:el=>{S.role=el.dataset.v;save();go('portal/overview')},
 signout:()=>{S.role=null;save();go('portal')},
 join:()=>toast('Opening the meeting room. Add your video link in settings later.'),
