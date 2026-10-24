@@ -746,16 +746,16 @@ const LEADERS = [
 {name:'Colby Levesque', title:'Founder & Chief Executive Officer',
 ini:'CL', bio:'Self-taught builder with roots in warehouse and distribution work. Founded the house that became Terqyn to bring real tools and real education to working people.', edu:'Self-taught', certs:'Add certificates',
 li:'#'},
-{name:'Key', title:'Co-founder & Chief Financial Officer', ini:'K',
-bio:'Bio to be added.', edu:'Add education', certs:'Add certificates',
-li:'#'},
 {name:'Sebastian', title:'Co-founder & Chief Operating Officer', ini:'S',
 bio:'Bio to be added.', edu:'Add education', certs:'Add certificates',
-li:'#'}
+li:'#'},
+{name:'Will Rodriguez',title:'Chief Technology Officer',ini:'WR',bio:'',edu:'',certs:'',li:''},
+{name:'Bobby House',title:'Chief Financial Officer',ini:'BH',bio:'',edu:'',certs:'',li:''},
+{name:'Jarred Nicholes',title:'Chief Sales Officer',ini:'JN',bio:'',edu:'',certs:'',li:''}
 ];
 const STAFF = [
 {id:'e1',name:'Colby Levesque',title:'Founder & CEO',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Founder equity',email:'colby@terqyn.com',phone:'Add phone',since:'Founding',status:'Active',desc:'Sets direction for the whole house.',inv:'All branches'},
-{id:'e2',name:'Key',title:'Co-founder & CFO',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Founder equity',email:'key@terqyn.com',phone:'Add phone',since:'Founding',status:'Active',desc:'Owns finance, payroll, and reporting.',inv:'All branches'},
+{id:'e2',name:'Bobby House',title:'Chief Financial Officer',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Compensation details discussed privately',email:'Not listed',phone:'Add phone',since:'Founding',status:'Active',desc:'Owns finance, payroll, and reporting.',inv:'All branches'},
 {id:'e3',name:'Sebastian',title:'Co-founder & COO',subs:['systems','influence','trading','app','academy','flotilla','roadlogic'],pay:'Founder equity',email:'sebastian@terqyn.com',phone:'Add phone',since:'Founding',status:'Active',desc:'Runs operations and hiring.',inv:'All branches'},
 {id:'e4',name:'Dana Whitfield',title:'Lead developer',subs:['systems','app'],pay:'$98,000 / yr',email:'dana@terqyn.com',phone:'(555) 014-2201',since:'Mar 2026',status:'Active',desc:'Leads client builds and the Terqyn Apps codebase.',inv:'Systems builds, Apps releases'},
 {id:'e5',name:'Marcus Hale',title:'People & compliance lead',subs:['systems','influence','academy'],pay:'$72,000 / yr',
@@ -1075,12 +1075,9 @@ style="margin-bottom:32px">Leadership</h2><div
 class="leaders">${LEADERS.map(p=>`<article class="person"><div
 class="shot">${p.ini}</div>
 <h3 class="h3">${esc(p.name)}</h3><div class="mute
-small">${esc(p.title)}</div><p style="margin:12px 0 0">${esc(p.bio)}</p>
-<dl><dt>Education</dt><dd>${esc(p.edu)}</dd><dt>Certificates</dt><dd>${esc(p.certs)}</dd><dt>LinkedIn</dt><dd><a
-href="${p.li}">Add profile link</a></dd></dl></article>`).join('')}
-<article class="person"><div class="shot" style="font-size:40px">+</div><h3
-class="h3">Add a team member</h3><p class="mute small">Edit the LEADERS
-list in the file to add headshots and bios.</p></article></div></section>
+small">${esc(p.title)}</div>${p.bio&&p.bio!=='Bio to be added.'?`<p style="margin:12px 0 0">${esc(p.bio)}</p>`:''}
+${(p.edu&&!p.edu.startsWith('Add '))||(p.certs&&!p.certs.startsWith('Add '))||(p.li&&p.li!=='#')?`<dl>${p.edu&&!p.edu.startsWith('Add ')?`<dt>Education</dt><dd>${esc(p.edu)}</dd>`:''}${p.certs&&!p.certs.startsWith('Add ')?`<dt>Certificates</dt><dd>${esc(p.certs)}</dd>`:''}${p.li&&p.li!=='#'?`<dt>LinkedIn</dt><dd><a href="${esc(p.li)}" target="_blank" rel="noopener noreferrer">View profile</a></dd>`:''}</dl>`:''}</article>`).join('')}
+</div></section>
 <section class="section"><h2 class="h2">Legal & licensing</h2><p
 class="lede">Our entities, marks, and registrations. Filing numbers appear
 here as they are issued.</p>
