@@ -641,6 +641,11 @@ footer{background:#e7e8ef}.preview-note{position:fixed;bottom:14px;left:14px;z-i
 @media(max-width:920px){.hero>.wrap{grid-template-columns:1fr}.hero .planetarium{grid-column:1;grid-row:1;max-width:520px}.hero-copy{grid-column:1;grid-row:2}.hero-index{grid-row:3}.orbit-caption{bottom:-5px}}
 @media(max-width:480px){.planetarium{max-width:none!important}.planet-ball{width:31px;height:31px;font-size:13px}.subsidiary-planet{left:-27px;top:-20px;width:54px}.planet-name{font-size:8px;padding:2px 3px}.planetarium .gold-core span{font-size:32px}.gold-core b{font-size:8px}.orbit-caption{font-size:8px;letter-spacing:.13em}.hero>.wrap{gap:42px}}
 @media(prefers-reduced-motion:reduce){.planet-orbit,.subsidiary-planet{animation:none}}
+
+.contact-page .page-head{padding-top:76px}.contact-kicker{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--brass);margin-bottom:16px}
+.contact-jumps,.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.contact-jumps a{text-decoration:none}.contact-card{display:flex;flex-direction:column;scroll-margin-top:105px}.contact-card .h2{font-size:38px}.contact-card>p{line-height:1.8}.contact-details{margin:18px 0 24px}.contact-details dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:16px}.contact-details dd{margin:5px 0 0;font-size:clamp(17px,2vw,23px);overflow-wrap:anywhere}.contact-details a{color:var(--accent);text-underline-offset:5px}.contact-notice{padding:20px;background:#f6f3e9;border:1px solid #a2833e25;border-radius:14px;font-size:14px;line-height:1.7}.contact-notice p{margin:8px 0 0;color:var(--mute)}.contact-card .contact-actions{margin-top:auto;padding-top:24px}.contact-routing{margin-top:30px;background:#ffffffa0;border:1px solid var(--line);border-radius:16px;overflow:hidden}.contact-routing>div{padding:22px 26px;display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.contact-routing>div:last-child{border:0}.contact-routing a{color:var(--accent);white-space:nowrap;text-underline-offset:4px}.contact-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}.contact-directory-links{display:flex;flex-direction:column;gap:13px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--accent)}#ecosystem-contacts,#official-socials{scroll-margin-top:100px}
+@media(max-width:1100px){.nav a:not(.btn){padding-inline:9px;font-size:12px}.contact-directory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.contact-directory{grid-template-columns:1fr}.contact-routing>div{flex-direction:column;gap:10px}.contact-page .page-head{padding-top:50px}.contact-card .h2{font-size:32px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://terqyn.com/#organization", "name": "Terqyn", "url": "https://terqyn.com/", "description": "Terqyn is the shared brand for specialized technology, business services and learning destinations.", "subOrganization": {"@type": "Organization", "@id": "https://terqyn.courses/#organization", "name": "Terqyn Academy", "url": "https://terqyn.courses/", "parentOrganization": {"@id": "https://terqyn.com/#organization"}}}, {"@type": "WebSite", "@id": "https://terqyn.com/#website", "url": "https://terqyn.com/", "name": "Terqyn HQ", "publisher": {"@id": "https://terqyn.com/#organization"}}]}</script>
 </head>
@@ -944,7 +949,7 @@ p=[Math.floor(d/DAY),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3
 setInterval(tick,1000);
 
 /* ---------- layout ---------- */
-const NAV=[['ecosystem','Ecosystem'],['tech','Marketplace'],['spotlight','Spotlight'],['careers','Careers'],['about','About us']];
+const NAV=[['ecosystem','Ecosystem'],['tech','Marketplace'],['spotlight','Spotlight'],['careers','Careers'],['about','About us'],['contact','Contact & Support']];
 function header(cur){return `<header class="site"><div class="wrap bar">
 <a href="#/" class="brand" data-go="">${MARK}<span>Terqyn</span></a>
 <nav class="nav" id="nav" aria-label="Main">${NAV.map(([p,l])=>`<a
@@ -979,7 +984,8 @@ const ENTRIES=[
 ['tech','Marketplace','Apps, software, AI agents, gear, and accessories.'],
 ['spotlight','Spotlight','News, events, giveaways, and limited-time offers.'],
 ['careers','Careers & opportunities','Open roles across every branch.'],
-['about','About us','Leadership, licensing, white paper, and roadmap.']
+['about','About us','Leadership, licensing, white paper, and roadmap.'],
+['contact','Contact & Support','Find the right team, official contact details, and ecosystem destinations.']
 ];
 function ecoMiniCard(e){
 const art=`<div style="width:58px;margin-bottom:18px;opacity:.84">${aperture(e)}</div>`;
@@ -996,6 +1002,25 @@ ${ECOSYSTEM.map((s,i)=>{const rings=Math.ceil(ECOSYSTEM.length/6),ring=Math.floo
 <span class="orbit-caption">ONE CENTER. EVERY DESTINATION CONNECTED.</span></div>
 <div class="hero-copy"><p class="eyebrow">TERQYN HEADQUARTERS · ONE CONNECTED ECOSYSTEM</p><h1 class="wordmark">Built to move<br><em>possibility</em><br>forward.</h1><p class="tagline">Specialized technology, business services, and learning. Distinct destinations, connected by one purpose: helping you turn the next idea into something real.</p><div class="hero-actions"><a class="btn primary" href="#/ecosystem" data-go="ecosystem">Explore the ecosystem →</a><a class="btn" href="#/about" data-go="about">Meet Terqyn</a></div></div>
 <nav class="hero-index" aria-label="Start here">${ENTRIES.map(([g,n,d,lead])=>`<a href="#/${g}" data-go="${g}"><span class="nm">${n}</span><span class="ds">${d}</span><span class="go">Explore →</span></a>`).join('')}</nav></div></section><div class="wrap">${ecoDirectory(true)}</div>`}
+
+/* Official contacts supplied by Terqyn ownership. Add approved public social
+links to OFFICIAL_SOCIALS only; no inferred handles or personal staff records. */
+const OFFICIAL_SOCIALS = [];
+function pContact(){return `<div class="wrap contact-page">
+<section class="page-head"><p class="contact-kicker">TERQYN HEADQUARTERS</p><h1 class="h1">Contact &amp; Support</h1><p class="lede">One place to find the right Terqyn team. Get help with an existing project, ask about our services, or report a technical issue.</p><div class="contact-jumps"><a class="chip" href="#support-team">General support</a><a class="chip" href="#technical-team">IT &amp; technical help</a><a class="chip" href="#ecosystem-contacts">Ecosystem directory</a><a class="chip" href="#official-socials">Official socials</a></div></section>
+<section class="section" aria-label="Contact departments"><div class="grid g2">
+<article class="panel contact-card" id="support-team"><span class="contact-kicker">CLIENTS · VISITORS · GENERAL QUESTIONS</span><h2 class="h2">General support</h2><p class="mute">For service questions, project updates, account or billing inquiries, and help reaching the right department across Terqyn.</p><dl class="contact-details"><dt>Email</dt><dd><a href="mailto:support@terqyn.com">support@terqyn.com</a></dd><dt>Voicemail or text</dt><dd><a href="tel:+17728009663">(772) 800-9663</a></dd></dl><div class="contact-notice"><b>Please leave a voicemail or send a text first.</b><p>This number does not answer first-time calls without a voicemail or text beforehand. Include your name, the Terqyn destination or project, and a brief description of what you need.</p></div><div class="contact-actions"><a class="btn primary" href="mailto:support@terqyn.com">Email support ↗</a><a class="btn" href="sms:+17728009663">Send a text ↗</a><a class="btn" href="tel:+17728009663">Call &amp; leave voicemail</a></div></article>
+<article class="panel contact-card" id="technical-team"><span class="contact-kicker">IT · TECHNICAL ISSUES</span><h2 class="h2">IT &amp; technology</h2><p class="mute">For website or application errors, technical access problems, integrations, and other IT-related questions.</p><dl class="contact-details"><dt>Email</dt><dd><a href="mailto:TerqynCTO@gmail.com">TerqynCTO@gmail.com</a></dd><dt>Phone</dt><dd><a href="tel:+17728371793">(772) 837-1793</a></dd></dl><div class="contact-notice"><b>Help us identify the issue.</b><p>Include the affected website, what you were trying to do, any error message, and a screenshot if available. Never send passwords, API keys, or payment card details.</p></div><div class="contact-actions"><a class="btn primary" href="mailto:TerqynCTO@gmail.com">Email technical support ↗</a><a class="btn" href="tel:+17728371793">Call IT</a></div></article></div>
+<p class="mute small" style="margin-top:20px">Contact details above are provided by Terqyn leadership. Response times and live phone availability are not guaranteed.</p></section>
+<section class="section"><div class="row between"><div><span class="contact-kicker">FIND YOUR ROUTE</span><h2 class="h2">Who should I contact?</h2></div></div><div class="contact-routing">
+${[['New service or business inquiry','General support','mailto:support@terqyn.com'],['Existing project or customer support','General support','mailto:support@terqyn.com'],['Billing or account question','General support','mailto:support@terqyn.com'],['Website, application, or integration issue','IT & technical support','mailto:TerqynCTO@gmail.com'],['Login trouble or technical access problem','IT & technical support','mailto:TerqynCTO@gmail.com'],['Partnership, media, or department routing','General support','mailto:support@terqyn.com']].map(([need,team,url])=>`<div><span>${need}</span><a href="${url}">${team} ↗</a></div>`).join('')}
+</div></section>
+<section class="section" id="ecosystem-contacts"><span class="contact-kicker">OFFICIAL DESTINATIONS</span><h2 class="h2">Across the ecosystem</h2><p class="lede">Choose your destination below. General support routes inquiries for every Terqyn destination; IT handles technical issues across the ecosystem.</p><div class="contact-directory">
+${ECOSYSTEM.map(s=>`<article class="panel"><span class="tag"><span class="dot" style="--c:${s.color}"></span>${esc(s.status)}</span><h3 class="h3" style="margin:18px 0 12px">${esc(s.name)}</h3><p class="mute small">${esc(s.for)}</p><div class="contact-directory-links">${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Official website ↗</a>`:'<span class="mute small">Website coming soon</span>'}<a href="mailto:support@terqyn.com?subject=${encodeURIComponent(s.name+' — Support request')}">Contact support ↗</a><a href="mailto:TerqynCTO@gmail.com?subject=${encodeURIComponent(s.name+' — Technical issue')}">Technical help ↗</a></div></article>`).join('')}
+</div></section>
+<section class="section" id="official-socials"><div class="panel"><span class="contact-kicker">OFFICIAL CHANNELS</span><h2 class="h2">Social media</h2>${OFFICIAL_SOCIALS.length?`<div class="contact-actions">${OFFICIAL_SOCIALS.map(s=>`<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`).join('')}</div>`:'<p class="mute">Confirmed official social profile links will be listed here as they are approved by Terqyn. For now, use the email, phone, and official website links in this directory.</p>'}</div></section>
+</div>`}
+
 function pEcosystem(){return `<div class="wrap"><div class="eco-head"><h1
 class="h1">The Terqyn ecosystem</h1><p class="lede">Explore the destinations under one house. Enter a live destination or preview what is coming next.</p></div>
 ${ecoDirectory(false)}</div>`}
@@ -1441,12 +1466,12 @@ function parse(){const h=location.hash.replace(/^#\/?/,'');const
 [a='',b='']=h.split('/');return {a,b}}
 function render(keepScroll){const {a,b}=parse();const y=scrollY;let body;
 if(a==='ecosystem')body=b?pSub(b):pEcosystem();else
-if(a==='town-square')body=pTownSquare();else if(a==='about')body=pAbout();else if(a==='careers')body=pCareers();else
+if(a==='contact')body=pContact();else if(a==='town-square')body=pTownSquare();else if(a==='about')body=pAbout();else if(a==='careers')body=pCareers();else
 if(a==='spotlight')body=pSpotlight();else if(a==='tech')body=pTech();else
 if(a==='portal')body=pPortal(b);else body=pHome();
 $('#app').innerHTML=header(a)+`<main
 id="content">${body}</main>`+(a==='portal'&&S.role?'':footer());
-document.title=a?`${({ecosystem:b&&SUB[b]?SUB[b].name:'Ecosystem',about:'About',careers:'Careers',spotlight:'Spotlight',tech:'Marketplace',portal:'Personnel portal','town-square':'Town Square'})[a]||''} | Terqyn`:'Terqyn';
+document.title=a?`${({ecosystem:b&&SUB[b]?SUB[b].name:'Ecosystem',contact:'Contact & Support',about:'About',careers:'Careers',spotlight:'Spotlight',tech:'Marketplace',portal:'Personnel portal','town-square':'Town Square'})[a]||''} | Terqyn`:'Terqyn';
 tick();if(keepScroll)scrollTo(0,y);else scrollTo(0,0)}
 const paint=()=>render(true);
 function go(p){closeAll();if(location.hash==='#/'+p)render();else
