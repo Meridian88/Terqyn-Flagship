@@ -796,15 +796,8 @@ const EVENTS = [
 {d:new Date(now+16*DAY),title:'Small business AI workshop',where:'Online, Terqyn Systems',body:'Free one-hour session on automating your front desk.'},
 {d:new Date(now+30*DAY),title:'Academy open house',where:'Online, Ate88 Academy',body:'Meet instructors and preview the AI track.'}
 ];
-const GIVEAWAYS = [
-{id:'g1',title:'Launch giveaway: free website build',body:'One local business wins a full Terqyn Systems site build.',ends:now+12*DAY+5*3600e3},
-{id:'g2',title:'Academy scholarship',body:'Three full seats in the first AI cohort.',ends:now+20*DAY}
-];
-const CODES = [
-{code:'TERQYN25',what:'25% off any Terqyn Systems build',ends:now+6*DAY+7*3600e3},
-{code:'FOUNDING10',what:'10% off Terqyn Tech exclusives for founding members',ends:now+3*DAY+2*3600e3},
-{code:'LEARN88',what:'$50 off the Academy AI track',ends:now+14*DAY}
-];
+const GIVEAWAYS = []; // Removed demo giveaways; Spotlight requires manual admin launch.
+const CODES = []; // Removed demo codes; no rolling expiry dates.
 const CATS = [['exclusives','Terqyn exclusives'],['apps','Apps'],['software','Software'],['agents','Agents & AI'],['hardware','Hardware'],['gear','Gear & accessories']];
 const PRODUCTS = [
 {id:'p1',cat:'exclusives',name:'Terqyn Command',kind:'Desktop app',price:0,status:'Members only',ini:'TC',color:'#6FC2B0',desc:'Run every branch from one window.'},
@@ -1161,45 +1154,10 @@ fits.</p></div><button class="btn primary" data-act="apply"
 data-id="pool">Join the talent pool</button></div></section>
 </div>`}
 
-function pSpotlight(){return `<div class="wrap">
-<section class="page-head"><h1 class="h1">Spotlight</h1><p
-class="lede">News, events, giveaways, and offers from across the
-house.</p></section>
-<article class="feature"><div
-class="art">${aperture({id:'feat',color:'#6FC2B0',mono:'T'})}</div><div
-class="body"><span class="tag good">${POSTS[0].tag}</span><h2 class="h2"
-style="margin:14px 0 10px">${POSTS[0].title}</h2><p
-class="mute">${POSTS[0].body}</p><p class="small
-mute">${POSTS[0].date}</p></div></article>
-<section class="section"><h2 class="h2" style="margin-bottom:24px">Offers
-ending soon</h2><div class="grid g3">${CODES.map(c=>`<div class="panel
-tight"><p style="margin:0 0 12px">${c.what}</p><div class="row
-between"><span class="code">${c.code}</span><button class="btn sm"
-data-act="copy" data-v="${c.code}">Copy
-code</button></div>${countdown(c.ends)}</div>`).join('')}</div></section>
-<section class="section"><h2 class="h2"
-style="margin-bottom:24px">Giveaways</h2><div class="grid
-g2">${GIVEAWAYS.map(g=>{const e=S.entered.includes(g.id);return `<div
-class="panel"><h3 class="h3">${g.title}</h3><p
-class="mute">${g.body}</p>${countdown(g.ends)}${e?`<span class="tag
-good">You're entered</span>`:`<button class="btn primary sm"
-data-act="enter" data-id="${g.id}">Enter
-giveaway</button>`}</div>`}).join('')}</div></section>
-<section class="section grid g2" style="align-items:start"><div><h2
-class="h2" style="margin-bottom:20px">Events</h2>${EVENTS.map(e=>`<div
-class="row" style="align-items:flex-start;padding:16px 0;border-bottom:1px
-solid var(--line);flex-wrap:nowrap"><div
-class="date-block"><small>${e.d.toLocaleString('en',{month:'short'})}</small><b>${e.d.getDate()}</b></div><div><b>${e.title}</b><div
-class="mute small">${e.where}</div><p class="small" style="margin:6px 0
-10px">${e.body}</p><button class="btn sm"
-data-act="rsvp">RSVP</button></div></div>`).join('')}</div>
-<div><h2 class="h2"
-style="margin-bottom:20px">News</h2>${POSTS.slice(1).map(p=>`<div
-class="ann"><span class="tag">${p.tag}</span><h3 class="h3"
-style="margin:10px 0 6px">${p.title}</h3><p class="mute small"
-style="margin:0">${p.body}</p><div class="mute small"
-style="margin-top:8px">${p.date}</div></div>`).join('')}</div></section>
-</div>`}
+// Public content is fail-closed until the server authorizes an unlocked state.
+window.spotlightLockedMarkup='<div class="panel"><span class="tag warn">Temporarily locked</span><h2 class="h2" style="margin-top:18px">Spotlight is on hold</h2><p>There are no publicly available giveaways or promotional codes at this time. Terqyn will announce promotions after its team reviews and launches them.</p></div>';
+function pSpotlight(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Spotlight</h1><p class="lede">Giveaways and promotions created, reviewed, and launched by the Terqyn team.</p></section><section class="section"><div id="spotlight-root">${window.spotlightLockedMarkup}</div><a class="back" href="#/spotlight-admin">Authorized admin access →</a></section></div>`}
+function pSpotlightAdmin(){return `<div class="wrap"><section class="page-head"><h1 class="h1">Spotlight management</h1><p class="lede">Create drafts, set dates and perks, and manually launch promotions.</p></section><section class="section"><div id="spotlight-root"><p>Loading verified admin sign-in…</p></div></section></div>`}
 
 function pTech(){const items=PRODUCTS.filter(p=>p.cat===U.cat);return `<div
 class="wrap">
@@ -1228,9 +1186,9 @@ me</button>`}</div></article>`}).join('')}</div>`}</section>
 </div>`}
 
 /* ---------- personnel portal ---------- */
-const PSEC=[['overview','Overview'],['meetings','Meetings'],['profile','My profile'],['handbook','Handbook & SOPs'],['learning','Learning'],['pay','Pay & withdrawals'],['branches','My branches'],['council','Council chambers','council'],['bridge','The Bridge','executive']];
+const PSEC=[['overview','Overview'],['meetings','Meetings'],['profile','My profile'],['handbook','Handbook & SOPs'],['learning','Learning'],['pay','Pay & withdrawals'],['branches','My branches'],['council','Council chambers','council'],['bridge','The Bridge','executive'],['promotions','Spotlight promotions','verified-admin']];
 const
-can=lvl=>!lvl||(lvl==='council'?['council','executive'].includes(S.role):S.role==='executive');
+can=lvl=>lvl!=='verified-admin'&&(!lvl||(lvl==='council'?['council','executive'].includes(S.role):S.role==='executive'));
 const
 me=()=>Object.assign({},STAFF_BY[DEMO[S.role].staff],S.profile[S.role]||{});
 function pSignin(){return `<div class="wrap signin"><h1
@@ -1241,7 +1199,7 @@ connects later.</p>
 class="role" data-act="signin" data-v="${k}"><b>${d.label}</b><span
 class="mute small">${d.desc}</span><div class="small"
 style="margin-top:12px">${STAFF_BY[d.staff].name}</div></button>`).join('')}</div></div>`}
-function pPortal(sec){if(!S.role)return pSignin();sec=PSEC.find(p=>p[0]===sec)?sec:'overview';const m=me();
+function pPortal(sec){if(sec==='promotions'){location.hash='#/spotlight-admin';return pSpotlightAdmin();}if(!S.role)return pSignin();sec=PSEC.find(p=>p[0]===sec)?sec:'overview';const m=me();
 return `<div class="app"><aside class="side" aria-label="Portal">
 <div class="who"><b>${esc(m.name)}</b><span class="mute
 small">${esc(m.title)}</span><div style="margin-top:8px"><span
@@ -1473,7 +1431,7 @@ function parse(){const h=location.hash.replace(/^#\/?/,'');const
 function render(keepScroll){const {a,b}=parse();const y=scrollY;let body;
 if(a==='ecosystem')body=b?pSub(b):pEcosystem();else
 if(a==='contact')body=pContact();else if(a==='town-square')body=pTownSquare();else if(a==='about')body=pAbout();else if(a==='careers')body=pCareers();else
-if(a==='spotlight')body=pSpotlight();else if(a==='tech')body=pTech();else
+if(a==='spotlight-admin')body=pSpotlightAdmin();else if(a==='spotlight')body=pSpotlight();else if(a==='tech')body=pTech();else
 if(a==='portal')body=pPortal(b);else body=pHome();
 $('#app').innerHTML=header(a)+`<main
 id="content">${body}</main>`+(a==='portal'&&S.role?'':footer());
@@ -1516,7 +1474,7 @@ application</button></div>`)},
 submitApp:el=>{if(!val('an')||!val('ae').includes('@')){toast('Add your name and a valid email to send.');return}S.applied.push(el.dataset.id);save();closeAll();toast('Application sent. Check your email for next steps.');paint()},
 copy:el=>{const
 v=el.dataset.v;(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast(v+' copied')).catch(()=>toast('Code: '+v))},
-enter:el=>{S.entered.push(el.dataset.id);save();toast("You're entered. Winners are announced in Spotlight.");paint()},
+enter:()=>toast('Giveaway entry is closed. Only manually launched entry pages accept entries.'),
 rsvp:()=>toast('RSVP saved. Calendar invites connect later.'),
 wp:()=>openModal(`<button class="x" data-act="close"
 aria-label="Close">✕</button><h2 class="h3">Terqyn white paper</h2><p
@@ -1615,5 +1573,6 @@ if(e.target.id
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();if(e.key==='Enter'&&e.target.matches('[data-act][tabindex]'))e.target.click()});
 render();
 </script>
+<script src="/spotlight.js" defer></script>
 </body>
 </html>
