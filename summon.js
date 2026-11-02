@@ -1,0 +1,24 @@
+(()=>{'use strict';if(document.getElementById('terqyn-summon-frame'))return;
+const script=document.currentScript,origin=new URL(script.src).origin,site=script.dataset.terqynSite||'Terqyn';
+const frame=document.createElement('iframe');frame.id='terqyn-summon-frame';frame.title='Terqyn AI summoning orb and guidance';frame.src=origin+'/summon.html?site='+encodeURIComponent(site);frame.referrerPolicy='no-referrer';frame.setAttribute('allow','');
+Object.assign(frame.style,{position:'fixed',right:'max(12px, env(safe-area-inset-right))',bottom:'max(12px, env(safe-area-inset-bottom))',width:'100px',height:'112px',border:'0',background:'transparent',zIndex:'2147483000',colorScheme:'dark',display:'block'});
+let open=false,ready=false;function resize(){frame.style.width=open?'min(440px, calc(100vw - 24px))':'100px';frame.style.height=open?'min(730px, calc(100dvh - 24px))':'112px';if(open&&window.visualViewport){const v=window.visualViewport;frame.style.height=Math.min(730,v.height-24)+'px';frame.style.bottom=Math.max(12,innerHeight-v.height-v.offsetTop+12)+'px'}else frame.style.bottom='max(12px, env(safe-area-inset-bottom))'}
+addEventListener('message',e=>{if(e.source!==frame.contentWindow||e.origin!==origin||!e.data||e.data.channel!=='terqyn-summon-v1')return;if(e.data.type==='ready'){ready=true;document.documentElement.classList.add('terqyn-summon-ready');frame.contentWindow.postMessage({channel:'terqyn-summon-v1',type:'host',site},origin)}if(e.data.type==='resize'){open=e.data.open===true;resize()}});addEventListener('resize',resize);window.visualViewport?.addEventListener('resize',resize);
+for(const [event,persona] of [['open-mina-widget','mina'],['open-cortana-widget','vela']])addEventListener(event,e=>{if(!ready||location.hash.startsWith('#portal')||['internal','demo'].includes(e.detail?.mode))return;e.stopImmediatePropagation();frame.contentWindow.postMessage({channel:'terqyn-summon-v1',type:'summon',persona},origin)},true);
+const style=document.createElement('style');style.textContent='.terqyn-summon-ready .hq-oracles,.terqyn-summon-ready #hq-oracle-chat,.terqyn-summon-ready [data-terqyn-legacy-oracles]{display:none!important}';document.head.append(style);document.body.append(frame);
+})();
+
+// One shared route directory for every subsidiary using the Terqyn launcher.
+(()=>{'use strict';
+function mount(){if(document.getElementById('terqyn-destination-nav'))return;
+const internal=['terqyn.cloud','www.terqyn.cloud','terqyncortex.network','www.terqyncortex.network','terqynsovereign.center','www.terqynsovereign.center'].includes(location.hostname);
+const nav=document.createElement('nav');nav.id='terqyn-destination-nav';nav.setAttribute('aria-label',internal?'Terqyn team navigation':'Terqyn services and team access');
+const title=document.createElement('strong');title.textContent=internal?'Terqyn team workspace':'Find your next step with Terqyn';nav.append(title);
+const links=internal?[['Team home','https://terqynsovereign.center/'],['Staff operations','https://www.terqynsystems.com/#portal/dashboard'],['Shared knowledge','https://terqyncortex.network/memory/'],['My account','https://terqyn.cloud/']]:[['Business help','https://terqynsystems.com/'],['Shop products','https://terqynstore.shop/'],['Create with Forge','https://terqynforge.app/'],['Services & tools','https://terqyn.com/#/ecosystem']];
+const group=document.createElement('div');for(const[label,url]of links){const a=document.createElement('a');a.href=url;a.textContent=label+' ↗';group.append(a);}nav.append(group);
+if(!internal){const team=document.createElement('a');team.href='https://terqynsovereign.center/';team.textContent='Team workspace ↗';team.className='terqyn-team-entry';nav.append(team);}
+else{let meta=document.querySelector('meta[name="robots"]');if(!meta){meta=document.createElement('meta');meta.name='robots';document.head.append(meta);}meta.content='noindex, nofollow';}
+const style=document.createElement('style');style.textContent='#terqyn-destination-nav{position:relative;box-sizing:border-box;display:block;padding:28px max(24px,5vw) 40px;margin-top:32px;background:#0d1720;color:#edf2f5;border-top:1px solid #ad9867;font:14px/1.6 system-ui,sans-serif;text-align:left}#terqyn-destination-nav strong{display:block;margin-bottom:14px;font-size:17px}#terqyn-destination-nav>div{display:flex;gap:12px;flex-wrap:wrap}#terqyn-destination-nav a{display:inline-block;border:1px solid #8a9da955;border-radius:8px;padding:10px 16px;text-decoration:none;color:#edf2f5;min-height:44px;box-sizing:border-box}#terqyn-destination-nav a:hover,#terqyn-destination-nav a:focus-visible{background:#233742;border-color:#d7bd83}#terqyn-destination-nav .terqyn-team-entry{margin-top:18px;font-size:12px;border:0;padding-left:0}';document.head.append(style);document.body.append(nav);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
+})();
