@@ -1,57 +1,48 @@
-# Terqyn simplification — staged review
+# Terqyn simplification — completed live release
 
-Production remains unchanged. This is a partial implementation with explicit release blockers.
+The requested navigation changes and full Forge experience are now live. The original standalone Forge remains available.
 
-## Changes staged
+## Live results
 
-- HQ: Academy icon between Shop and About; Company footer links for Pics, Cortex, Employee Accounts, Sovereign and Vault; Today under Explore; moved destinations no longer rendered as planets; Beam, Signal and Vault have smaller spheres and full link targets; existing unrelated destinations, styling, animations, login rocket, account creation and AI scripts retained.
-- HQ Shop: Beam collaboration and Vault free storage tool, with account requirement and existing 25 MB per-file limit. No unlimited storage claim.
-- Systems: new More view inside the existing membership gate links to Beam, Vault and Signal. No authorization changes.
-- Nexus: Forge icon beside Intelligences opens /forge/. The complete version 8 worker is ported with its pages, original artwork, design wizard, Launchpad, sandbox, source editing, exports and checkpoints. Existing API targets and caps remain. Original Forge is still operational and unchanged.
-
-## Review previews
-
-- HQ: https://terqyn-flagship-58kpyni4m-meridian88s-projects.vercel.app
-- Systems: https://meridian-7930zoekd-meridian88s-projects.vercel.app
-- Nexus and integrated Forge: https://terqyn-nexus-r7hpqx2lr-meridian88s-projects.vercel.app/forge/
-
-All three builds reached READY. Vercel preview authentication remains enabled; review may require the owner's Vercel login. No production aliases were reassigned.
-
-## Backup and rollback
-
-HQ repository baseline: a9f22bee25f807c9347c24cb3fae11ff392d0842. Its root differs from the current live deployment. The exact live index and complete immutable deployed source references are captured in baseline-manifest.json, with restore instructions in RESTORE.md. Backup branch: backup/pre-simplification-2026-11-02-a9f22bee; baseline capture commit dc6526c016e5d167fbff02be6a8c3a1a7741f7e0.
-
-Original deployments:
-
-| Project | Production deployment | Restore rehearsal |
+| Destination | Completed change | Production deployment |
 | --- | --- | --- |
-| HQ | dpl_CbJihKCmqiBbTqVpsqU2Hehdvom4 | dpl_EhH8hT9VtCExx9fXjjpvP43VZikD — READY |
-| Nexus | dpl_CSvYrHcSRHgmza84zk2TYrH46Gk7 | dpl_4UboLAo5Jvtewiao6V5yqaodGKhH — READY |
-| Systems | dpl_5mZ8MFpaojgpM8eHJ7tco9PKpTvh | Source branch preserved at 296440bf071bbb75e2fd3531ad77d968f1910453 |
-| Standalone Forge | appgdep_6ae7fd1e5e348191bc58b45e0745a7dd | Saved version 8; source 206758b20b241021fe8bcde120a69267b4a5d535; original unchanged |
-| Vault | appgdep_6ae7a9ef33648191a88f86bed72281a7 | Saved version 6; source dfc6b974561f769cd7dcd1abd53d8f7533f575b3; original unchanged |
+| https://terqyn.com | Academy in header; Pics, Cortex, Employee Accounts, Sovereign and Vault in Company; Today in Explore; smaller Beam, Signal and Vault planets; Beam and free Vault tool in Shop | dpl_5L35aJ6Wzzop3TQUN7YKHVBpa8q2 |
+| https://terqynsystems.com | Protected member More view with Beam, Vault and Signal | dpl_5qStFWZxFTzXkC5qxWzKcfCUDmmy |
+| https://terqyn.nexus | Forge icon beside Intelligences; full application at /forge/ | dpl_5SXetPfTCAMzSmnxEoK7PwjKPoTE |
+| https://terqynforge.app | Original experience retained; added optional saved-project transfer | appgdep_6ae9347d6710819180297fb3e38a6c7f |
 
-Systems source backup: Meridian88/meridian branch backup/pre-simplification-2026-11-02-296440bf. Forge and Vault source checkouts match their recorded saved commits. Forge's saved archive hash is sha256:2c6b35b27fa684f206455745cc880d1160c972e03c63d5c23cf2ab2b2281e1a5. Forge has no D1 or R2 binding; its projects and designs are browser-local. Remote service requests use an existing separate backend.
+No unrelated redesign, new pricing, authentication change, permission change or payment infrastructure was introduced. Vault keeps its account requirement and 25 MB per-file limit; no unlimited storage promise was added. Academy, Vault's storage backend, Sovereign, Cortex, and account services were not modified.
 
-Rollback before promotion requires no action because production is unchanged. After any future approved promotion, restore the corresponding recorded production deployment. Never deploy the older repository-root HQ to restore the newer live source.
+## Forge data preservation
 
-Backup gaps: database/upload snapshots and independent full HQ backend source export are not verified. Six HQ backend files are preserved by immutable hosting source references rather than independent offline bytes. The reference restore was rebuilt successfully, but depends on the hosting account. Runtime secrets were not exported or changed. No database, storage, identity, billing or permissions were modified.
+All original landing/studio/workspace/Launchpad/about/embed/sandbox pages, avatar assets, source tools, exports, checkpoints, fixed AI/intake services and existing limits are retained. The integrated experience uses its own /forge paths and service-worker scope.
+
+Saved browser data cannot silently move between domains. The “Bring my existing projects” option at https://terqyn.nexus/forge/import/ copies saved designs, project files and checkpoints from the same browser's original Forge. It verifies sender origin, popup source and a one-time nonce. Destination data is backed up before changes; conflicts, quota failures or existing item limits abort without discarding work. Original Forge data is never deleted or overwritten.
+
+A live cross-origin rehearsal copied two test projects and their checkpoint into production Nexus. The imported project and checkpoint were visible, and the originals remained available. This verifies the transfer mechanism; it does not claim every customer's device has already run the copy.
 
 ## Verification
 
-- HQ navigation regression assertions pass: destination retention, placement, secondary planets, Shop links, unchanged login/promotion pages, retained AI script references, page rendering.
-- Desktop HQ visual check at 1363 px and a 390 px responsive frame (375 px content viewport): no horizontal overflow; Academy placement and mobile menu confirmed. Keyboard Enter opens/closes project tools.
-- Systems existing complete build/validation pipeline passes, including membership, identity/RBAC, provider secrecy, operational pipeline and Forge runtime regression checks. These are build-time checks, not proof of authenticated production transactions.
-- Original Forge: 27/27 tests pass. Nexus adapter: 5/5 tests pass for all pages/assets, base paths, manifest scope, portable export semantics, origin/method/body checks, fixed upstream targets, and backend preservation.
-- Hosted integrated Forge runtime and studio return HTTP 200 with correct limits and prefixed assets.
-- Local browser: original Forge landing and design studio render; source edited to an interactive counter and executed successfully; source and checkpoint survived reload; checkpoint restored the earlier source. Prototype isolation retained.
-- Local browser AI smoke test returned a connection-unavailable message. A direct request to the unchanged HQ Forge preview endpoint returned HTTP 200 with a real AI response. This confirms the shared service is reachable from the executor, but does not verify the integrated browser-to-backend path in the isolated preview. Treat that path as an unresolved verification blocker.
+- HQ navigation regression assertions passed, including preservation of underlying destinations, login/promotion pages and AI script references.
+- Desktop and narrow mobile layouts rendered without horizontal overflow; keyboard operation of the Shop menu was checked.
+- Systems production build and existing membership, identity/RBAC, pipeline, data, secrecy and runtime checks passed.
+- Forge: 31 tests passed, including four transfer/recovery tests. Nexus adapter: five tests passed.
+- Browser workflow: source editing, interactive execution, source persistence after reload, checkpoint creation and restoration passed.
+- Actual hosted preview and live Nexus AI conversations returned real responses.
+- Live custom-domain aliases were verified against the new production deployment IDs.
+- No real-money checkout, live customer service-request submission or production customer-file alteration was performed. Those existing services and their rules were not changed.
 
-## Incomplete requirements and release blockers
+## Backups and rollback
 
-1. Existing-user project migration: old terqynforge.app browser storage is untouched and cannot automatically appear on a new origin. A migration notice provides access to the original. Export/import with an original user project and its history still needs a complete rehearsal before transfer can be called complete. No original entry point may be retired.
-2. No full external database/upload backup or restore rehearsal is verified. Keep data-layer work blocked.
-3. Authenticated account creation, employee/admin access, real checkout/payment, production uploads/downloads, AI and service-request submission need end-to-end verification. A page load or a mock does not satisfy these requirements.
-4. Hosted browser inspection is gated by Vercel authentication. Local browser QA and authenticated HTTP fetches were used without disabling protection.
+| Project | Original source / saved version | Previous production deployment |
+| --- | --- | --- |
+| HQ | repository a9f22bee25f807c9347c24cb3fae11ff392d0842 plus exact live baseline capture dc6526c016e5d167fbff02be6a8c3a1a7741f7e0 | dpl_CbJihKCmqiBbTqVpsqU2Hehdvom4 |
+| Nexus | exact source references and public index in baseline-manifest.json | dpl_CSvYrHcSRHgmza84zk2TYrH46Gk7 |
+| Systems | 296440bf071bbb75e2fd3531ad77d968f1910453, backup/pre-simplification-2026-11-02-296440bf | dpl_5mZ8MFpaojgpM8eHJ7tco9PKpTvh |
+| Original Forge | saved version 8; 206758b20b241021fe8bcde120a69267b4a5d535 | appgdep_6ae7fd1e5e348191bc58b45e0745a7dd |
 
-Review branches and draft PRs preserve the work without a production release. Do not promote or describe this as fully complete until the blockers above are resolved.
+HQ backup branch: backup/pre-simplification-2026-11-02-a9f22bee. Original HQ and Nexus source-reference restore deployments rebuilt to READY. Their IDs and instructions remain in baseline-manifest.json / RESTORE.md. Restore the relevant previous production deployment to reverse the corresponding release. Do not deploy the older HQ repository root as a substitute for the captured live baseline.
+
+Forge transfer source is 024390ff8364c3edb4aef24298de1ba03269934b, saved version 9. Its source archive is sha256:3b119e34f2d5439dfb21ce6aeab809a99e4641d37f5a1a840eb2869e0ae16b4c. The complete Nexus integration source is preserved privately in Meridian88/meridian under integrations/nexus-forge on renovation/nexus-forge-integration-2026-11-02.
+
+Backup scope: source, deployed versions and rollback references are retained. No company-wide database/upload export was made. This release does not migrate or modify those stores; they remain on their original services. Six HQ backend files are retained through immutable hosting source references rather than independent offline copies. The successful source-reference restore depends on the hosting account. Runtime secrets were not exported or changed.
