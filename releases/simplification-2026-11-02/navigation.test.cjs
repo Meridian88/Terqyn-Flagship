@@ -1,0 +1,14 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=__dirname,original=fs.readFileSync(root+'/baseline-hq/index.html','utf8'),changed=fs.readFileSync(root+'/preview-hq/index.html','utf8');
+function page(source){const code=[...source.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).sort((a,b)=>b.length-a.length)[0].replace(/render\(\);\s*$/,'');const context=vm.createContext({window:{},document:{documentElement:{dataset:{theme:'light'}},addEventListener(){}},localStorage:{removeItem(){}},matchMedia:()=>({matches:false}),setInterval(){},addEventListener(){}});vm.runInContext(code,context);return expression=>vm.runInContext(expression,context);}
+const before=page(original),after=page(changed);
+assert.equal(after('ECOSYSTEM.length'),before('ECOSYSTEM.length'),'All underlying destinations retained');
+const nav=after('header("")');assert(nav.indexOf('<summary>Shop ')<nav.indexOf('🎓 Academy'));assert(nav.indexOf('🎓 Academy')<nav.indexOf('>About us</a>'));assert(nav.includes('href="https://terqyn.courses"'));assert(nav.includes('Create Terqyn Account'));assert(nav.includes('account-login'));assert(nav.includes('https://www.terqyn.digital/beam'));assert(nav.includes('https://terqyn.space'));
+const footer=after('footer()'),company=footer.split('<h4>Company</h4>')[1];for(const name of ['Terqyn Pics','Terqyn Cortex','Employee Accounts','Terqyn Sovereign','Terqyn Vault'])assert(company.includes(name),name);assert(footer.split('<h4>Explore</h4>')[1].split('<h4>Official Socials</h4>')[0].includes('https://terqyn.today'));
+const planets=after('planetMap(ECOSYSTEM)');for(const removed of ['terqyn.courses','terqyncortex.network','terqyn.pics','terqyn.today','terqynsovereign.center','terqyn.cloud','terqynforge.app'])assert(!planets.includes('href="https://'+removed),'Removed planet '+removed);
+for(const id of ['beam','signal','vault'])assert(planets.includes('class="subsidiary-planet secondary-planet" href="'+after('SUB.'+id+'.url')+'"'));
+for(const id of ['finance','systems','reviews','store','nexus'])assert(planets.includes(after('esc(SUB.'+id+'.name)')),'Preserve '+id);
+assert.equal(after('pPortal()'),before('pPortal()'),'Employee login flow unchanged');assert.equal(after('pSpotlight()'),before('pSpotlight()'),'Promotion gates unchanged');
+const assets=s=>[...s.matchAll(/<script[^>]*src="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(assets(changed),assets(original),'AI and other scripts retained');assert(after('pTech()').includes('https://terqyn.space'));assert(after('pTech()').includes('https://www.terqyn.digital/beam'));
+for(const p of ['pHome()','pEcosystem()','pTech()','pAbout()','pContact()','pPortal()'])assert(after(p).length>100,p+' renders');
+console.log('PASS: destinations, Academy placement, Company/Explore footer, secondary planets, Shop tools, login/promotion preservation, scripts, and page rendering');

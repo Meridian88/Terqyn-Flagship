@@ -1,0 +1,203 @@
+{
+  "capturedFor": "2026-11-02 Terqyn simplification",
+  "repositoryBaseline": "a9f22bee25f807c9347c24cb3fae11ff392d0842",
+  "projects": {
+    "hq": {
+      "productionDeployment": "dpl_CbJihKCmqiBbTqVpsqU2Hehdvom4",
+      "restorePreview": "dpl_EhH8hT9VtCExx9fXjjpvP43VZikD",
+      "restoreBuild": "READY",
+      "files": [
+        {
+          "file": "404.html",
+          "sha": "fffc157f86b1b8a263cbea940575b9837bce89c5"
+        },
+        {
+          "file": "agent-profiles.js",
+          "sha": "2dc3c7301f73651757646ae8a1b526151b64104c"
+        },
+        {
+          "file": "agent-profiles.json",
+          "sha": "214ef86a137d1d2a696c757b3137bc91082eddd6"
+        },
+        {
+          "file": "api/forge-preview.mjs",
+          "sha": "37a305f7beb3d2dc973cd8ea862ec9102cda7d89"
+        },
+        {
+          "file": "api/oracle.mjs",
+          "sha": "f24d83f8a0d316a0b0360b02b71e4ef13e8c44f5"
+        },
+        {
+          "file": "avatars/aegis-v3.webp",
+          "sha": "bc9352ea011d8d5d6df4f439f8480495f18c62ef"
+        },
+        {
+          "file": "avatars/aethon-v3.webp",
+          "sha": "0c46170c6f48e8cf819c69f142531813ca227cf7"
+        },
+        {
+          "file": "avatars/caelis-v3.webp",
+          "sha": "19142a0ab9b293a91d67a84cb89c8e698db52606"
+        },
+        {
+          "file": "avatars/mina-v3.webp",
+          "sha": "17d23fcbbf1536dc5285c21942d711352e57e458"
+        },
+        {
+          "file": "avatars/muse-v3.webp",
+          "sha": "5ce9774108f939cd759e752a5756d777289b378a"
+        },
+        {
+          "file": "avatars/prime-v3.webp",
+          "sha": "10814f12d193fc184ecb26f0f0d5b2dc5d16db6f"
+        },
+        {
+          "file": "avatars/ryx-v3.webp",
+          "sha": "ba79b0ee5e4e7d8d0f51488deabfa9d73f5ff87b"
+        },
+        {
+          "file": "avatars/soryn-v3.webp",
+          "sha": "2cbc929315f7c86ceca5db027b0ef73555168de9"
+        },
+        {
+          "file": "avatars/vector-v3.webp",
+          "sha": "658c754f85cdc623594b60f15f63b79540b38956"
+        },
+        {
+          "file": "avatars/vela-v3.webp",
+          "sha": "e38474e529ab012319433e705dc639ff01d21716"
+        },
+        {
+          "file": "avatars/vera-v3.webp",
+          "sha": "38018b9905f58cd5b2d4eefaa1ab605412e202ee"
+        },
+        {
+          "file": "avatars/vyra-v3.webp",
+          "sha": "7f1139f731ec82625617382c05a89261192086cd"
+        },
+        {
+          "file": "index.html",
+          "sha": "26e8d374c75d76b9d009f20e8aeae4bd27a68e70"
+        },
+        {
+          "file": "lib/agent-slots.mjs",
+          "sha": "ceb00e1f4fdb1a808c049f480b8aba0acaf734f3"
+        },
+        {
+          "file": "lib/character-routing.mjs",
+          "sha": "f08663350152d15dbc0c1b992b34433866691d81"
+        },
+        {
+          "file": "lib/chat-quota-feedback.mjs",
+          "sha": "374d30c15509a0b9ebac083d890f318e8264f581"
+        },
+        {
+          "file": "lib/cortex-context.mjs",
+          "sha": "7278da37681d1441f42c93d0d8a3949caa22ecb0"
+        },
+        {
+          "file": "lib/forge-config.mjs",
+          "sha": "6158ff106dceaa7e494726785a3bce8b390396c0"
+        },
+        {
+          "file": "lib/nexus-origin.mjs",
+          "sha": "47adf85fc551d9fcc7678c9f67e48c92a2ead920"
+        },
+        {
+          "file": "lib/oracle-handler.mjs",
+          "sha": "fd6a16134427929520b5d8dd3bf11b108a03494e"
+        },
+        {
+          "file": "lib/oracle-policy.mjs",
+          "sha": "f8d22463eb1121ae6cbfe8dd3afe497696d54a9b"
+        },
+        {
+          "file": "lib/public-chat.mjs",
+          "sha": "c75e56333b9b3b6909e4bc46f3b4af80092e134c"
+        },
+        {
+          "file": "oracle.css",
+          "sha": "e8dda10b799c2a52c8baa94c08427a0133756383"
+        },
+        {
+          "file": "oracle.js",
+          "sha": "5ab9641a0f331b585c8d81f77213c44c18be2830"
+        },
+        {
+          "file": "spotlight.js",
+          "sha": "0804915cbc1e71f9945381299056df5416ec061a"
+        },
+        {
+          "file": "summon-app.js",
+          "sha": "de488fdba13315a930016333f2f1154bea4867f1"
+        },
+        {
+          "file": "summon.css",
+          "sha": "56115e57b1054a26e063b0f8615a51616aa62ba0"
+        },
+        {
+          "file": "summon.html",
+          "sha": "5618d72f79c0448feb1a7ecadabdbea395047ca0"
+        },
+        {
+          "file": "summon.js",
+          "sha": "4a407f44085417f33791a68c719fc62a80a4332a"
+        },
+        {
+          "file": "vercel.json",
+          "sha": "fedc8a0174e24fcf7f52a5e02aba37bb8284dbb3"
+        }
+      ]
+    },
+    "nexus": {
+      "productionDeployment": "dpl_CSvYrHcSRHgmza84zk2TYrH46Gk7",
+      "restorePreview": "dpl_4UboLAo5Jvtewiao6V5yqaodGKhH",
+      "restoreBuild": "READY",
+      "files": [
+        {
+          "file": "404.html",
+          "sha": "b06ea8c327d1303473d5c9456225c7860511ffc0"
+        },
+        {
+          "file": "about/index.html",
+          "sha": "40d1b6431eb783452a9acaddf2f7a73eaf9d0aa8"
+        },
+        {
+          "file": "deck.css",
+          "sha": "196cc95b0e7cb5581e2d6f7d6d0cf6e507c72900"
+        },
+        {
+          "file": "deck.js",
+          "sha": "3107823f0442149762648f762c9da0d9c452077f"
+        },
+        {
+          "file": "index.html",
+          "sha": "5801a9138037444b94622a0287acc9469bb9b145"
+        },
+        {
+          "file": "lib/agent-slots.mjs",
+          "sha": "ceb00e1f4fdb1a808c049f480b8aba0acaf734f3"
+        },
+        {
+          "file": "nexus-chat.js",
+          "sha": "e49450dc9d59bdd664a421515faa17645ce2a5c2"
+        },
+        {
+          "file": "vercel.json",
+          "sha": "a636686394f88dd16f91f8300712ecfe56ed54ed"
+        }
+      ]
+    },
+    "systems": {
+      "repository": "Meridian88/meridian",
+      "commit": "296440bf071bbb75e2fd3531ad77d968f1910453",
+      "productionDeployment": "dpl_5mZ8MFpaojgpM8eHJ7tco9PKpTvh",
+      "backupBranch": "backup/pre-simplification-2026-11-02-296440bf"
+    }
+  },
+  "backupLimits": [
+    "No database or upload snapshot verified. No data-layer changes are included.",
+    "Six HQ backend source exports are truncated by the file-content tool. Immutable source SHA references were restored successfully in a separate preview; these are not independent offline copies.",
+    "Forge production source/data and Vault free-use terms are not verified. No Forge migration or Vault free-pricing claim is included."
+  ]
+}

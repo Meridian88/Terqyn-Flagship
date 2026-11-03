@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080e17">
+<title>Terqyn Nexus — The Intelligence Deck</title>
+<style>
+:root{--bg:#080d16;--panel:#111c2a;--panel2:#162436;--stroke:#304058;--text:#eef7ff;--muted:#93a7be;--aqua:#7de6e5;--gold:#f6c884}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}a{color:inherit;text-decoration:none}.wrap{width:min(1240px,calc(100% - 44px));margin:auto}.top{border-bottom:1px solid #273448;background:#09111dbd;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}.top-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.logo{font-weight:900;letter-spacing:.17em;font-size:20px;white-space:nowrap}.logo span{color:var(--aqua)}.menu{display:flex;align-items:center;gap:25px;color:#b6c9d9;font-size:13px}.pill{border:1px solid #49667a;border-radius:30px;padding:9px 15px;color:#d5eef5;background:#142637;font-weight:700}.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 77% 22%,#244259 0,transparent 35%),radial-gradient(ellipse at 40% 90%,#242348 0,transparent 48%),#080d16;border-bottom:1px solid #223246}.hero:after{content:'';position:absolute;inset:0;opacity:.38;pointer-events:none;background-image:radial-gradient(#fff9 0.75px,transparent 1.15px);background-size:37px 37px;mask-image:linear-gradient(to bottom,#000,transparent)}.hero-inner{position:relative;z-index:1;padding:88px 0 78px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.kicker{text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--aqua);font-weight:850}.hero h1{font-size:clamp(47px,6vw,86px);letter-spacing:-.07em;line-height:1.035;margin:17px 0 23px;max-width:830px}.shine{background:linear-gradient(95deg,#baffff,#9aaafc,#f4c98d);color:transparent;background-clip:text}.sub{color:#acc0d2;font-size:17px;line-height:1.75;max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.primary,.secondary{border-radius:9px;padding:13px 20px;font-weight:800;border:1px solid transparent}.primary{background:#95f1ea;color:#07141e}.secondary{background:#17283a;color:#eaf7ff;border-color:#4b637a}.micro{font-size:12px;color:#8ca1b4}.orbit{height:390px;position:relative;display:grid;place-items:center}.orb{width:245px;height:245px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ddffff 0,#77d9f1 11%,#2a799e 30%,#182a60 58%,#11182e 72%);box-shadow:0 0 80px #3b85ad71,inset -18px -24px 32px #090f28;border:1px solid #9ee0f9;position:relative;display:grid;place-items:center}.orb:before,.orb:after{content:'';position:absolute;width:340px;height:340px;border:1px solid #5bc8ed77;border-radius:50%;transform:rotateX(68deg) rotate(-20deg)}.orb:after{width:385px;height:385px;transform:rotateY(63deg) rotate(20deg);border-color:#b18efe66}.orb strong{letter-spacing:.14em;font-size:18px;text-shadow:0 1px 15px #04102d}.sat{position:absolute;border-radius:50%;border:1px solid #7aacc5;background:#152f44;width:56px;height:56px;display:grid;place-items:center;font-weight:850;color:#b8edf1;box-shadow:0 0 20px #2d749a66}.s1{top:18px;left:20%}.s2{top:45px;right:9%}.s3{bottom:55px;left:3%}.s4{bottom:15px;right:21%}.section{padding:78px 0}.section.alt{background:#0d1623;border-block:1px solid #203046}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:27px}.section h2{letter-spacing:-.055em;line-height:1.1;font-size:clamp(31px,4.7vw,52px);margin:11px 0}.section-head p{max-width:420px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.agent{border:1px solid #31435b;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#192b40,#101c2b);display:flex;flex-direction:column;transition:.18s;position:relative;min-height:380px}.agent:hover,.agent.selected{border-color:#9ae6e7;transform:translateY(-2px);box-shadow:0 0 0 1px #6ed8d83b,0 12px 34px #0005}.portrait{height:192px;position:relative;overflow:hidden;background:radial-gradient(circle at 60% 34%,var(--glow),transparent 48%),linear-gradient(145deg,#17253a,#090f1b)}.portrait:before{content:'';position:absolute;inset:8%;border:1px solid #c5eff31a;border-radius:50%;box-shadow:0 0 0 28px #bbecf00a,0 0 0 57px #bbecf006}.portrait:after{content:'';position:absolute;left:50%;bottom:-36px;transform:translateX(-50%);width:183px;height:180px;border-radius:46% 46% 25% 25%;background:radial-gradient(ellipse at 50% 25%,#e4f5ff89 0,#a4d0e055 15%,transparent 37%),linear-gradient(110deg,#16273c 10%,var(--glow) 48%,#172a48 80%);clip-path:polygon(33% 0,67% 0,72% 26%,100% 57%,100% 100%,0 100%,0 57%,28% 26%);filter:drop-shadow(0 0 16px var(--glow))}.portrait .head{position:absolute;z-index:1;width:83px;height:101px;top:32px;left:50%;transform:translateX(-50%);border-radius:46% 46% 42% 42%;background:linear-gradient(110deg,#203d55,#b4eff6 49%,#1c3655);box-shadow:0 0 30px var(--glow);clip-path:polygon(28% 3%,72% 3%,95% 20%,88% 72%,65% 98%,35% 98%,12% 72%,5% 20%)}.portrait .head:after{content:'';position:absolute;top:46%;left:14%;width:72%;height:5px;background:#d8ffff;box-shadow:0 0 13px 5px var(--glow)}.portrait .glyph{position:absolute;left:18px;top:11px;font-size:45px;color:#e4faff38;font-weight:800}.agent-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}.agent-name{font-size:23px;letter-spacing:.045em;font-weight:900}.agent-type{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--aqua);margin-top:2px}.agent p{color:#acbed1;font-size:13px;line-height:1.6;flex:1}.agent-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#9baec0;font-size:12px}.choose{border:1px solid #668293;background:#1b3245;color:#e3faff;border-radius:8px;padding:9px 13px;font-weight:750}.agent.selected .choose{background:var(--aqua);color:#08141d}.prime{grid-column:span 3;min-height:280px;display:grid;grid-template-columns:1.1fr .9fr;background:radial-gradient(circle at 75% 40%,#2d3e7b,#101c2b 57%);border-color:#766dba}.prime .portrait{height:auto;min-height:278px;order:2;background:radial-gradient(circle at 50% 50%,#657be7aa,transparent 46%),#111b35}.prime .portrait:after{display:none}.prime .portrait .head{width:140px;height:140px;top:60px;border-radius:50%;clip-path:none;background:radial-gradient(circle at 34% 31%,#fff,#98a4ff 11%,#4641a0 38%,#0c1441 70%);box-shadow:0 0 40px #888bf4,0 0 0 27px #7c7add25,0 0 0 57px #7c7add12}.prime .portrait .head:after{display:none}.prime .agent-body{padding:36px 38px}.prime .agent-name{font-size:39px}.prime p{max-width:610px;font-size:15px}.hot{background:#7264b7;color:#fff;border-radius:99px;padding:6px 10px;font-size:10px;letter-spacing:.08em;display:inline-block;width:max-content;margin-bottom:15px}.workgrid{display:grid;grid-template-columns:1fr .8fr;gap:18px}.panel{border:1px solid #31435b;border-radius:15px;background:#132032;padding:26px}.panel h3{font-size:24px;letter-spacing:-.03em;margin:5px 0}.desc{color:#9eb4c9;font-size:13px}.field{display:block;color:#c1d3e3;font-size:12px;font-weight:700;margin:22px 0 8px}textarea{width:100%;height:135px;resize:vertical;background:#0b1625;border:1px solid #40546b;border-radius:9px;color:#fff;padding:14px}input[type=range]{width:100%;accent-color:#9af0ea}.range-head{display:flex;justify-content:space-between;align-items:center;margin-top:18px}.bigmoney{font-size:28px;color:#aefff0;font-weight:850}.tiers{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.quick{background:#1b3145;color:#cde3f2;border:1px solid #48657e;border-radius:7px;padding:8px 13px}.quick.on{background:#a4f5e9;color:#091927}.summary-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #314257;color:#b3c6d8}.summary-row strong{color:#f3fcff;text-align:right}.noticebox{margin-top:18px;padding:14px;background:#0d2a35;border:1px solid #336473;border-radius:8px;color:#c3ebed;font-size:12px}.wide{width:100%;margin-top:20px}.status{display:none;margin-top:16px;padding:14px;border:1px solid #557284;background:#1a3542;border-radius:9px;color:#dff6f7}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{border:1px solid #30435b;background:#132133;border-radius:12px;padding:23px}.feature .num{color:#83e5e6;font-size:12px;letter-spacing:.15em}.feature strong{display:block;font-size:18px;margin:10px 0}.feature p{font-size:13px;color:#a9bdd1}.foot{border-top:1px solid #263950;padding:28px 0;font-size:12px;color:#8a9daf}.foot .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}@media(max-width:850px){.menu a:not(.pill){display:none}.hero-inner{grid-template-columns:1fr;padding:70px 0 40px}.orbit{height:260px}.orb{transform:scale(.72)}.sat{transform:scale(.8)}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.prime{grid-column:span 2}.workgrid{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.wrap{width:calc(100% - 28px)}.logo{font-size:16px}.pill{font-size:11px}.hero h1{font-size:49px}.section{padding:55px 0}.cards{grid-template-columns:1fr}.prime{grid-column:span 1;display:flex;flex-direction:column}.prime .portrait{order:0;min-height:190px}.prime .portrait .head{top:27px}.prime .agent-body{padding:24px}.prime .agent-name{font-size:30px}.features{grid-template-columns:1fr}.section-head{display:block}.panel{padding:19px}}
+</style>
+<style id="nexus-live-environment">
+html{background:#030812}
+body{position:relative;isolation:isolate;background:transparent!important}
+#nexus-scene{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;background:
+radial-gradient(ellipse at 76% 22%,rgba(69,198,231,.13),transparent 31%),
+radial-gradient(ellipse at 19% 73%,rgba(120,92,234,.12),transparent 34%),
+linear-gradient(180deg,#020712 0%,#07111d 48%,#030914 100%)}
+#nexus-scene:before{content:"";position:absolute;inset:-28%;background:
+conic-gradient(from 210deg at 62% 46%,transparent 0 19%,rgba(76,224,232,.07) 25%,transparent 31% 56%,rgba(124,99,244,.07) 63%,transparent 70%);
+filter:blur(42px);animation:nxAurora 20s ease-in-out infinite alternate}
+#nexus-scene:after{content:"";position:absolute;inset:0;background:
+linear-gradient(180deg,rgba(2,7,14,.08),rgba(2,8,16,.2) 45%,rgba(2,7,14,.5)),
+radial-gradient(ellipse at center,transparent 18%,rgba(1,5,12,.22) 73%,rgba(1,4,10,.55) 100%)}
+.nx-svg{position:absolute;inset:-5%;width:110%;height:110%;opacity:.92}
+.nx-grid path{stroke:#5b90ac;stroke-width:.9;opacity:.16;vector-effect:non-scaling-stroke}
+.nx-grid .major{stroke:#7ee9ec;opacity:.23}
+.nx-orbit{transform-origin:1185px 335px;animation:nxOrbit 38s linear infinite}
+.nx-orbit circle{fill:none;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.nx-orbit .o1{stroke:#6ee8eb;opacity:.38;stroke-dasharray:5 12}
+.nx-orbit .o2{stroke:#8b7ff6;opacity:.28;stroke-dasharray:2 15}
+.nx-orbit .o3{stroke:#9eefff;opacity:.17;stroke-dasharray:26 12}
+.nx-core{fill:url(#nxCore);filter:url(#nxGlow);opacity:.78}
+.nx-halo{fill:none;stroke:#9cf5f1;stroke-width:1;opacity:.35;filter:url(#nxGlow)}
+.nx-link{fill:none;stroke:url(#nxLine);stroke-width:1.35;stroke-linecap:round;stroke-dasharray:8 15;opacity:.4;filter:url(#nxSoftGlow);animation:nxFlow 12s linear infinite;vector-effect:non-scaling-stroke}
+.nx-link.alt{stroke:url(#nxLine2);animation-duration:17s;animation-direction:reverse;opacity:.32}
+.nx-node{fill:#b9ffff;filter:url(#nxGlow);animation:nxPulse 3.4s ease-in-out infinite}
+.nx-node.violet{fill:#b8adff;animation-delay:-1.4s}
+.nx-node.dim{opacity:.45;animation-delay:-2.1s}
+.nx-particle{fill:#e7ffff;filter:url(#nxGlow)}
+.nx-p1{animation:nxP1 8s linear infinite}.nx-p2{animation:nxP2 11s linear infinite}.nx-p3{animation:nxP3 9.5s linear infinite}
+.nx-scan{stroke:#8bf3ef;stroke-width:1;opacity:.08;animation:nxScan 7s ease-in-out infinite}
+.top{background:rgba(4,10,18,.70);border-bottom-color:rgba(107,206,220,.18)}
+.hero{background:transparent!important}
+.hero:after{opacity:.13;background-image:radial-gradient(#c8ffffa8 .65px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000 0%,transparent 90%)}
+.section.alt{background:linear-gradient(180deg,rgba(7,17,29,.84),rgba(9,19,32,.91));backdrop-filter:blur(13px);border-block-color:rgba(104,182,210,.16)}
+.agent,.panel,.feature{background-color:rgba(14,28,44,.76);backdrop-filter:blur(12px);box-shadow:inset 0 1px rgba(255,255,255,.025)}
+.agent{background:linear-gradient(180deg,rgba(23,43,63,.78),rgba(9,20,32,.86))}
+.feature{background:rgba(14,29,45,.72)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(2,6,13,.30),transparent 42%,rgba(2,6,13,.07) 68%,rgba(2,6,13,.18))}
+@keyframes nxAurora{0%{transform:translate3d(-2%,-1%,0) rotate(-4deg) scale(1)}100%{transform:translate3d(3%,2%,0) rotate(5deg) scale(1.08)}}
+@keyframes nxOrbit{to{transform:rotate(360deg)}}
+@keyframes nxFlow{to{stroke-dashoffset:-180}}
+@keyframes nxPulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes nxScan{0%,100%{transform:translateY(-180px);opacity:0}18%,72%{opacity:.08}50%{transform:translateY(460px);opacity:.14}}
+@keyframes nxP1{0%{transform:translate(0,0);opacity:0}12%,84%{opacity:1}100%{transform:translate(610px,245px);opacity:0}}
+@keyframes nxP2{0%{transform:translate(0,0);opacity:0}12%,84%{opacity:1}100%{transform:translate(-470px,330px);opacity:0}}
+@keyframes nxP3{0%{transform:translate(0,0);opacity:0}12%,84%{opacity:1}100%{transform:translate(520px,-265px);opacity:0}}
+@media(max-width:760px){.nx-svg{width:155%;height:115%;left:-42%;top:-2%}.nx-grid{opacity:.72}.nx-orbit{opacity:.72}.hero:after{opacity:.09}}
+@media(prefers-reduced-motion:reduce){#nexus-scene:before,.nx-orbit,.nx-link,.nx-node,.nx-particle,.nx-scan{animation:none!important}}
+</style>
+<link rel="canonical" href="https://terqyn.nexus/">
+<meta property="og:url" content="https://terqyn.nexus/">
+<style>.reserved-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.reserved-entity{border:1px dashed #6786a5;border-radius:16px;background:linear-gradient(160deg,#1a2b43,#0c1728);overflow:hidden}.reserved-entity h3{margin:14px 0 4px}.reserved-entity p{color:#acbed1;font-size:14px}.reservation-badge{width:max-content;padding:5px 10px;border:1px solid #8b9cb166;border-radius:30px;color:#cbdae7;font-size:11px}.reserved-entity details{border-top:1px solid #ffffff22;padding-top:14px;margin-top:14px}.reserved-entity summary{cursor:pointer;color:#b9e4ff;font-weight:700}.reserved-entity summary:focus-visible{outline:2px solid #fff;outline-offset:4px}@media(max-width:620px){.reserved-grid{grid-template-columns:1fr}}</style><link rel="stylesheet" href="/deck.css"></head>
+<body>
+<div id="nexus-scene" aria-hidden="true">
+<svg class="nx-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="nxLine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#63e7e8"/><stop offset=".52" stop-color="#8fdcff"/><stop offset="1" stop-color="#947eff"/></linearGradient>
+  <linearGradient id="nxLine2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e78ff"/><stop offset=".55" stop-color="#65d8ff"/><stop offset="1" stop-color="#6cf0d6"/></linearGradient>
+  <radialGradient id="nxCore"><stop offset="0" stop-color="#dfffff"/><stop offset=".12" stop-color="#7de8ed"/><stop offset=".38" stop-color="#357da2"/><stop offset=".7" stop-color="#192957"/><stop offset="1" stop-color="#091127" stop-opacity=".1"/></radialGradient>
+  <filter id="nxGlow" x="-200%" y="-200%" width="400%" height="400%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="nxSoftGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g class="nx-grid">
+  <path class="major" d="M800 415 L-60 900 M800 415 L180 900 M800 415 L420 900 M800 415 L650 900 M800 415 L950 900 M800 415 L1180 900 M800 415 L1420 900 M800 415 L1660 900"/>
+  <path d="M150 790 H1450 M235 720 H1365 M320 655 H1280 M395 600 H1205 M460 552 H1140 M520 512 H1080 M575 478 H1025 M625 451 H975"/>
+  <path d="M90 160 C420 250 620 250 800 415 C990 590 1240 625 1540 700"/>
+  <path d="M60 255 C390 330 605 315 800 415 C1035 535 1240 485 1570 510"/>
+</g>
+<g class="nx-links">
+  <path class="nx-link" d="M160 206 C430 120 610 265 800 415 S1180 590 1490 420"/>
+  <path class="nx-link alt" d="M85 590 C360 660 560 560 800 415 S1190 160 1510 245"/>
+  <path class="nx-link" d="M265 830 C455 625 575 515 800 415 S1125 350 1400 86"/>
+  <path class="nx-link alt" d="M40 365 C350 390 540 340 800 415 S1210 455 1580 320"/>
+  <path class="nx-link" d="M470 70 C600 235 670 310 800 415 S1010 650 1190 840"/>
+</g>
+<g class="nx-orbit">
+  <circle class="o3" cx="1185" cy="335" r="245"/>
+  <circle class="o2" cx="1185" cy="335" r="185"/>
+  <circle class="o1" cx="1185" cy="335" r="132"/>
+</g>
+<circle class="nx-halo" cx="1185" cy="335" r="82"/>
+<circle class="nx-core" cx="1185" cy="335" r="54"/>
+<g>
+  <circle class="nx-node" cx="160" cy="206" r="4"/><circle class="nx-node violet" cx="85" cy="590" r="5"/>
+  <circle class="nx-node dim" cx="265" cy="830" r="4"/><circle class="nx-node" cx="40" cy="365" r="3.5"/>
+  <circle class="nx-node violet" cx="470" cy="70" r="4"/><circle class="nx-node" cx="800" cy="415" r="5"/>
+  <circle class="nx-node violet" cx="1490" cy="420" r="4"/><circle class="nx-node dim" cx="1510" cy="245" r="5"/>
+  <circle class="nx-node" cx="1400" cy="86" r="3.5"/><circle class="nx-node violet" cx="1580" cy="320" r="4"/>
+  <circle class="nx-node dim" cx="1190" cy="840" r="4"/>
+</g>
+<circle class="nx-particle nx-p1" cx="280" cy="220" r="2.8"/>
+<circle class="nx-particle nx-p2" cx="1320" cy="215" r="2.8"/>
+<circle class="nx-particle nx-p3" cx="630" cy="650" r="2.8"/>
+<line class="nx-scan" x1="130" y1="300" x2="1470" y2="300"/>
+</svg>
+</div>
+<header class="top">
+<div class="wrap top-inner">
+<a class="logo" href="#top">TERQYN <span>NEXUS</span>
+</a>
+<nav class="menu">
+<a href="#agents">The Intelligences</a>
+<a href="/forge/" aria-label="Open Terqyn Forge"><span aria-hidden="true">⚒</span> Forge ↗</a>
+<a href="#workspace">Engine Lab</a>
+<a href="#community">Community</a>
+<a class="pill" href="https://terqyn.com">↗ Terqyn HQ</a>
+</nav>
+</div>
+</header>
+<main id="top">
+<section id="entrance" class="entry">
+<div class="entry-coordinates"><span>NEXUS / INTELLIGENCE EXCHANGE</span><span>TERQYN ECOSYSTEM • 001</span></div>
+<p class="kicker">YOUR IDEAS. AN ENTIRE UNIVERSE OF INTELLIGENCE.</p>
+<h1>ENTER THE <em>NEXUS.</em></h1><p class="entry-copy">Multiple minds. One command. Your next possibility starts here.</p>
+<div class="portal-stage" aria-hidden="true"><div class="portal-floor"></div><div class="portal-assembly"><div class="portal-ring ring-back"></div><div class="portal-ring ring-outer"></div><div class="portal-ring ring-teeth"></div><div class="portal-ring ring-inner"></div><div class="portal-core"><div class="door door-left"></div><div class="door door-right"></div><div class="portal-symbol">N</div></div></div><span class="portal-caption">INTELLIGENCE GATEWAY<br>COORDINATES / YOUR NEXT IDEA</span></div>
+<button id="enter-deck" class="primary enter-button">ENTER COMMAND DECK <span>↗</span></button><button id="skip-entry" class="secondary">Open accessible list view</button>
+<p class="micro">Explore freely · Complimentary conversations · Paid missions coming next</p>
+</section>
+<section id="deck" class="deck" hidden aria-labelledby="deck-title">
+<div class="deck-heading"><div><p class="kicker">TERQYN NEXUS / THE INTELLIGENCE DECK</p><h1 id="deck-title" tabindex="-1">YOUR NEXT <em>POSSIBILITY.</em></h1></div><button id="return-gate" class="secondary">↶ Gateway</button></div>
+<div class="deck-toolbar"><span class="live-label">◉ NAVIGATION ONLINE</span><span id="bearing" aria-live="off">000°</span><button id="view-toggle" class="secondary" aria-pressed="false">List view</button><button id="motion-toggle" class="secondary" aria-pressed="false">Reduce motion</button></div>
+<div id="viewport" class="viewport" tabindex="0" role="region" aria-label="360 degree command deck. Drag or swipe to turn, or use left and right arrow keys."><div class="deck-sky" aria-hidden="true"></div><div class="ceiling" aria-hidden="true"></div><div class="deck-floor" aria-hidden="true"></div><div class="center-holo" aria-hidden="true"><div class="holo-globe"></div><span>NEXUS CORE</span></div><div id="room" class="room"></div></div>
+<div class="deck-controls"><button id="rotate-left" class="secondary" aria-label="Rotate deck left">←</button><p>DRAG TO EXPLORE <span> / SWIPE / ARROW KEYS</span></p><button id="rotate-right" class="secondary" aria-label="Rotate deck right">→</button></div><nav id="quick-nav" class="quick-nav" aria-label="Deck destinations"></nav>
+</section>
+<section class="section wrap" id="orbital-map"><div class="section-head"><div><p class="kicker">YOUR INTELLIGENCE CONSTELLATION</p><h2>Every mind.<br><em>A different orbit.</em></h2></div><p>Choose a signal to inspect its intelligence. Open a conversation with a current specialist, or explore the identities coming next.</p></div><div class="map-layout"><div id="orbit-map" class="orbit-map" role="group" aria-label="Interactive intelligence orbital map"><div class="map-orbit one"></div><div class="map-orbit two"></div><div class="map-orbit three"></div><div class="map-core" aria-hidden="true">N</div></div><article id="map-detail" class="panel"><p class="kicker">SELECT A SIGNAL</p><h3>Nexus Prime</h3><p>One coordinated mission. Choose an intelligence on the map to learn more.</p><button id="map-select" class="primary">Meet Nexus Prime ↗</button></article></div></section>
+<section class="section wrap" id="agents">
+<div class="section-head">
+<div>
+<div class="kicker">01 · Select an intelligence</div>
+<h2>Built for different minds.<br>Made to work together.</h2>
+</div>
+<p>Meet each intelligence through a complimentary conversation. Explore its specialty and plan your project before arranging paid work.</p>
+</div>
+<div class="cards" id="cards">
+</div>
+</section>
+<section class="section wrap" id="reserved-intelligences" aria-labelledby="reserved-title"><div class="section-head"><div><div class="kicker">New arrivals · Being prepared</div><h2 id="reserved-title">Two new places.<br>Reserved for what comes next.</h2></div><p>Meet the next additions. These identities are reserved; live conversations and missions are not active yet.</p></div><div class="reserved-grid"><article class="reserved-entity" data-reserved-agent="vera" style="--glow:#d6a0b3"><div class="portrait" aria-hidden="true"><span class="glyph">V</span><span class="head"></span></div><div class="agent-body"><span class="reservation-badge">Reserved · Not active</span><h3 class="agent-name">Vera</h3><div class="agent-type">Intelligence slot reserved</div><p>A new Terqyn intelligence. Specialty and connection to be configured.</p><details><summary>View reserved profile</summary><p>Vera has her own identity and secure configuration slot. Her purpose, capabilities and final personality will be defined before activation.</p></details></div></article><article class="reserved-entity" data-reserved-agent="caelis" style="--glow:#78bcff"><div class="portrait" aria-hidden="true"><span class="glyph">C</span><span class="head"></span></div><div class="agent-body"><span class="reservation-badge">Reserved · Not active</span><h3 class="agent-name">Caelis</h3><div class="agent-type">The Research Sentinel</div><p>Designed to turn questions into clear, source-aware research: investigate, compare, verify, and explain what the evidence supports.</p><details><summary>Meet Caelis</summary><p>Calm, precise, curious and constructively skeptical. Caelis checks publication dates, prioritizes original sources, exposes contradictions and separates established facts from interpretation. Sources remain visible; uncertainty is stated plainly.</p><p>“Clarity begins with evidence.”</p></details></div></article></div></section>
+<section class="section alt" id="workspace">
+<div class="wrap">
+<div class="kicker">02 · The self-service workspace</div>
+<h2>You pick the power.<br>You control the spend.</h2>
+<p class="sub" style="margin:0 0 28px">Set a maximum budget before any task begins. The live platform will estimate usage, meter actual consumption, and stop or request approval before exceeding your limit.</p>
+<div class="workgrid">
+<div class="panel">
+<div class="kicker">Your selected intelligence</div>
+<h3 id="selectedName">Nexus Prime</h3>
+<p class="desc" id="selectedDesc">Multiple intelligences, one coordinated mission.</p>
+<label class="field" for="request">WHAT DO YOU WANT TO CREATE?</label>
+<textarea id="request" placeholder="Example: Build a complete marketing plan, compare competitors, create a website outline, and prepare a video campaign...">
+</textarea>
+<div class="range-head">
+<label class="field" for="budget" style="margin:5px 0">MAXIMUM TASK BUDGET</label>
+<span class="bigmoney" id="budgetDisplay">$10.00</span>
+</div>
+<input type="range" id="budget" min="1" max="100" step="1" value="10" aria-label="Maximum task budget">
+<div class="tiers">
+<button class="quick" data-amount="2">$2</button>
+<button class="quick on" data-amount="10">$10</button>
+<button class="quick" data-amount="25">$25</button>
+<button class="quick" data-amount="50">$50</button>
+<button class="quick" data-amount="100">$100</button>
+</div>
+<button class="primary wide" id="preview">Preview My Mission ↗</button>
+<div class="status" id="status" role="status">
+</div>
+</div>
+<aside class="panel">
+<div class="kicker">Transparent usage estimate</div>
+<h3>Mission preview</h3>
+<p class="desc">Sample pricing for the prototype, not an actual provider-rate quote. Live rates require secure server-side metering.</p>
+<div class="summary-row">
+<span>Intelligence</span>
+<strong id="sumAgent">Nexus Prime</strong>
+</div>
+<div class="summary-row">
+<span>Illustrative base service cost</span>
+<strong id="baseCost">$0.94</strong>
+</div>
+<div class="summary-row">
+<span>Illustrative rounded-up user price</span>
+<strong id="userPrice">$1.25</strong>
+</div>
+<div class="summary-row">
+<span>Estimated missions in budget</span>
+<strong id="missions">8</strong>
+</div>
+<div class="summary-row">
+<span>Your maximum authorized spend</span>
+<strong id="maxBudget">$10.00</strong>
+</div>
+<div class="noticebox">
+<strong>Built for fairness, not surprise bills.</strong>
+<br>Every task will have a displayed estimate and a spending ceiling. Unused wallet funds should remain available; final charges will reflect measured usage and published pricing.</div>
+<button class="secondary wide" id="wallet">Wallet & Checkout (Demo)</button>
+<p class="micro" style="margin-top:15px">Demonstration only · No payment collected · Public guidance available · Paid missions not active · No balance deducted</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="section wrap" id="community">
+<div class="kicker">03 · Your DIY launchpad</div>
+<h2>All the tools. One community.</h2>
+<div class="features">
+<div class="feature">
+<span class="num">01 / EXPLORE</span>
+<strong>Discover</strong>
+<p>Find the right intelligence for your mission with curated use cases and guided starting points.</p>
+</div>
+<div class="feature">
+<span class="num">02 / CREATE</span>
+<strong>Build</strong>
+<p>Develop brands, marketing, websites, documents, creative assets, and real-world projects.</p>
+</div>
+<div class="feature">
+<span class="num">03 / LEARN</span>
+<strong>Academy</strong>
+<p>Community templates, tutorials, prompts, learning pathways, and reusable workflows.</p>
+</div>
+<div class="feature">
+<span class="num">04 / SCALE</span>
+<strong>Collaborate</strong>
+<p>Bring multiple intelligences together to critique, refine, and package stronger results.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap">
+<span>© 2026 Terqyn Nexus · Part of the Terqyn ecosystem</span>
+<span>Public conversations open · Paid mission execution coming next</span>
+</div>
+</footer>
+<script>
+const agents=[{id:'mina',name:'Mina',type:'Operations Intelligence',desc:'Turn complex plans into organized workflows, task sequences, projects and execution plans.',base:.12,glow:'#75c5c4',glyph:'M'},{id:'vela',name:'Vela',type:'Reasoning & Strategy',desc:'Navigate tough questions, explore possibilities, plan decisions and design practical solutions.',base:.17,glow:'#8ca9ff',glyph:'V'},{id:'soryn',name:'Soryn',type:'Research Intelligence',desc:'Investigate topics, collect evidence, compare claims and build source-aware research briefs.',base:.22,glow:'#5fcfa3',glyph:'S'},{id:'aethon',name:'Aethon',type:'Multimodal Intelligence',desc:'Understand long documents and mixed media; connect ideas across text, images and more.',base:.25,glow:'#7ac8ee',glyph:'A'},{id:'ryx',name:'Ryx',type:'Challenger Intelligence',desc:'Pressure-test ideas, question assumptions and look for perspectives others might miss.',base:.18,glow:'#e89581',glyph:'R'},{id:'prime',name:'Nexus Prime',type:'Unified Intelligence',desc:'Unite multiple specialists in a structured mission: investigate, challenge, synthesize, create and deliver.',base:.94,glow:'#a5a1fa',glyph:'N'},{"id": "vera", "name": "Lurnix", "type": "The Mentor", "desc": "Design a lesson around the learner\u2019s level, objective, worked example and practice questions.", "base": 0.15, "glow": "#eee3c7", "glyph": "L"},{"id": "caelis", "name": "Quorik", "type": "The Discovery Scout", "desc": "Map unexplored questions, useful search queries, competing hypotheses and validation steps. Never invent live search results.", "base": 0.15, "glow": "#78bcff", "glyph": "Q"},{"id": "aegis", "name": "Vantrek", "type": "The Security Guardian", "desc": "Build a defensive threat model with assets, trust boundaries, threats, mitigations and response steps. No claim of live scans.", "base": 0.15, "glow": "#bbd9a4", "glyph": "V"},{"id": "vector", "name": "Tinkra", "type": "The Systems Engineer", "desc": "Outline interfaces, data contracts, failure paths, reproduction steps and verification. No claim of code execution.", "base": 0.15, "glow": "#e8b78a", "glyph": "T"},{"id": "muse", "name": "Lumvox", "type": "The Media Director", "desc": "Turn a concept into a shot list with camera, lighting, timing, sound and edit notes. No claim of media generation.", "base": 0.15, "glow": "#d4b4ef", "glyph": "L"}];let active='prime';const $=id=>document.getElementById(id);const fmt=n=>'$'+n.toFixed(2);function price(a){return Math.ceil((a.base*1.3+.02)*20)/20}function choose(id){active=id;document.querySelectorAll('.agent').forEach(n=>{const selected=n.dataset.id===id;n.classList.toggle('selected',selected);n.querySelector('.choose').textContent=selected?'Selected ✓':'Choose '+n.dataset.short});const a=agents.find(n=>n.id===id);$('selectedName').textContent=a.name;$('selectedDesc').textContent=a.desc;update();$('status').style.display='none'}function update(){const a=agents.find(n=>n.id===active),budget=Number($('budget').value),p=price(a);$('budgetDisplay').textContent=fmt(budget);$('sumAgent').textContent=a.name;$('baseCost').textContent=fmt(a.base);$('userPrice').textContent=fmt(p);$('missions').textContent=String(Math.floor(budget/p));$('maxBudget').textContent=fmt(budget);document.querySelectorAll('.quick').forEach(b=>b.classList.toggle('on',Number(b.dataset.amount)===budget))}const cards=$('cards');agents.forEach(a=>{const card=document.createElement('article');card.className='agent'+(a.id==='prime'?' prime':'');card.dataset.id=a.id;card.dataset.short=a.name;card.style.setProperty('--glow',a.glow);card.innerHTML=`<div class="portrait" aria-hidden="true">
+<span class="glyph">${a.glyph}</span>
+<span class="head">
+</span>
+</div>
+<div class="agent-body">${a.id==='prime'?'<span class="hot">THE POWERHOUSE · ALL TOGETHER</span>':''}<div class="agent-name">${a.name}</div>
+<div class="agent-type">${a.type}</div>
+<p>${a.desc}</p>
+<div class="agent-footer">
+<span>${a.id==='prime'?'Multi-agent missions':'Specialized on-demand access'}</span>
+<button type="button" class="choose">Choose ${a.name}</button>
+</div>
+</div>`;card.querySelector('button').addEventListener('click',()=>{choose(a.id);$('workspace').scrollIntoView({behavior:'smooth',block:'start'})});cards.append(card)});$('budget').addEventListener('input',update);document.querySelectorAll('.quick').forEach(b=>b.addEventListener('click',()=>{$('budget').value=b.dataset.amount;update()}));$('preview').addEventListener('click',()=>{const task=$('request').value.trim(),a=agents.find(n=>n.id===active);$('status').style.display='block';$('status').textContent=task?`Demo mission prepared for ${a.name}. You set a ${fmt(Number($('budget').value))} spending ceiling. Actual execution, usage measurement, and billing must be connected before launch.`:'Describe your mission first to generate a preview.'});$('wallet').addEventListener('click',()=>{$('status').style.display='block';$('status').textContent='Wallet demo only. No checkout is connected and no money has been collected.';$('workspace').scrollIntoView({behavior:'smooth'})});choose(active);
+</script>
+<nav aria-label="About and ecosystem" style="padding:20px 5%;display:flex;flex-wrap:wrap;gap:20px;border-top:1px solid #87939b55;font:14px/1.6 Arial,sans-serif"><a href="/about">About us</a><a href="https://terqyn.com/#/ecosystem">Terqyn HQ &amp; ecosystem</a></nav><script src="/nexus-chat.js" defer></script>
+<div id="transition-shutter" aria-hidden="true"><i></i><i></i></div><script src="/deck.js" defer></script><script src="https://terqyn.com/summon.js" data-terqyn-site="Terqyn Nexus" defer></script></body>
+</html>
