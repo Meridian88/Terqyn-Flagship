@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head><script>try{if(sessionStorage.getItem("terqyn-portal-nexus")!=="entered")location.replace("/")}catch{location.replace("/")}</script><style>#entrance{display:none!important}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080e17">
+<title>Terqyn Nexus — The Intelligence Deck</title>
+<style>
+:root{--bg:#080d16;--panel:#111c2a;--panel2:#162436;--stroke:#304058;--text:#eef7ff;--muted:#93a7be;--aqua:#7de6e5;--gold:#f6c884}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}a{color:inherit;text-decoration:none}.wrap{width:min(1240px,calc(100% - 44px));margin:auto}.top{border-bottom:1px solid #273448;background:#09111dbd;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}.top-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.logo{font-weight:900;letter-spacing:.17em;font-size:20px;white-space:nowrap}.logo span{color:var(--aqua)}.menu{display:flex;align-items:center;gap:25px;color:#b6c9d9;font-size:13px}.pill{border:1px solid #49667a;border-radius:30px;padding:9px 15px;color:#d5eef5;background:#142637;font-weight:700}.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 77% 22%,#244259 0,transparent 35%),radial-gradient(ellipse at 40% 90%,#242348 0,transparent 48%),#080d16;border-bottom:1px solid #223246}.hero:after{content:'';position:absolute;inset:0;opacity:.38;pointer-events:none;background-image:radial-gradient(#fff9 0.75px,transparent 1.15px);background-size:37px 37px;mask-image:linear-gradient(to bottom,#000,transparent)}.hero-inner{position:relative;z-index:1;padding:88px 0 78px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.kicker{text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--aqua);font-weight:850}.hero h1{font-size:clamp(47px,6vw,86px);letter-spacing:-.07em;line-height:1.035;margin:17px 0 23px;max-width:830px}.shine{background:linear-gradient(95deg,#baffff,#9aaafc,#f4c98d);color:transparent;background-clip:text}.sub{color:#acc0d2;font-size:17px;line-height:1.75;max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.primary,.secondary{border-radius:9px;padding:13px 20px;font-weight:800;border:1px solid transparent}.primary{background:#95f1ea;color:#07141e}.secondary{background:#17283a;color:#eaf7ff;border-color:#4b637a}.micro{font-size:12px;color:#8ca1b4}.orbit{height:390px;position:relative;display:grid;place-items:center}.orb{width:245px;height:245px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ddffff 0,#77d9f1 11%,#2a799e 30%,#182a60 58%,#11182e 72%);box-shadow:0 0 80px #3b85ad71,inset -18px -24px 32px #090f28;border:1px solid #9ee0f9;position:relative;display:grid;place-items:center}.orb:before,.orb:after{content:'';position:absolute;width:340px;height:340px;border:1px solid #5bc8ed77;border-radius:50%;transform:rotateX(68deg) rotate(-20deg)}.orb:after{width:385px;height:385px;transform:rotateY(63deg) rotate(20deg);border-color:#b18efe66}.orb strong{letter-spacing:.14em;font-size:18px;text-shadow:0 1px 15px #04102d}.sat{position:absolute;border-radius:50%;border:1px solid #7aacc5;background:#152f44;width:56px;height:56px;display:grid;place-items:center;font-weight:850;color:#b8edf1;box-shadow:0 0 20px #2d749a66}.s1{top:18px;left:20%}.s2{top:45px;right:9%}.s3{bottom:55px;left:3%}.s4{bottom:15px;right:21%}.section{padding:78px 0}.section.alt{background:#0d1623;border-block:1px solid #203046}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:27px}.section h2{letter-spacing:-.055em;line-height:1.1;font-size:clamp(31px,4.7vw,52px);margin:11px 0}.section-head p{max-width:420px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.agent{border:1px solid #31435b;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#192b40,#101c2b);display:flex;flex-direction:column;transition:.18s;position:relative;min-height:380px}.agent:hover,.agent.selected{border-color:#9ae6e7;transform:translateY(-2px);box-shadow:0 0 0 1px #6ed8d83b,0 12px 34px #0005}.portrait{height:192px;position:relative;overflow:hidden;background:radial-gradient(circle at 60% 34%,var(--glow),transparent 48%),linear-gradient(145deg,#17253a,#090f1b)}.portrait:before{content:'';position:absolute;inset:8%;border:1px solid #c5eff31a;border-radius:50%;box-shadow:0 0 0 28px #bbecf00a,0 0 0 57px #bbecf006}.portrait:after{content:'';position:absolute;left:50%;bottom:-36px;transform:translateX(-50%);width:183px;height:180px;border-radius:46% 46% 25% 25%;background:radial-gradient(ellipse at 50% 25%,#e4f5ff89 0,#a4d0e055 15%,transparent 37%),linear-gradient(110deg,#16273c 10%,var(--glow) 48%,#172a48 80%);clip-path:polygon(33% 0,67% 0,72% 26%,100% 57%,100% 100%,0 100%,0 57%,28% 26%);filter:drop-shadow(0 0 16px var(--glow))}.portrait .head{position:absolute;z-index:1;width:83px;height:101px;top:32px;left:50%;transform:translateX(-50%);border-radius:46% 46% 42% 42%;background:linear-gradient(110deg,#203d55,#b4eff6 49%,#1c3655);box-shadow:0 0 30px var(--glow);clip-path:polygon(28% 3%,72% 3%,95% 20%,88% 72%,65% 98%,35% 98%,12% 72%,5% 20%)}.portrait .head:after{content:'';position:absolute;top:46%;left:14%;width:72%;height:5px;background:#d8ffff;box-shadow:0 0 13px 5px var(--glow)}.portrait .glyph{position:absolute;left:18px;top:11px;font-size:45px;color:#e4faff38;font-weight:800}.agent-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}.agent-name{font-size:23px;letter-spacing:.045em;font-weight:900}.agent-type{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--aqua);margin-top:2px}.agent p{color:#acbed1;font-size:13px;line-height:1.6;flex:1}.agent-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#9baec0;font-size:12px}.choose{border:1px solid #668293;background:#1b3245;color:#e3faff;border-radius:8px;padding:9px 13px;font-weight:750}.agent.selected .choose{background:var(--aqua);color:#08141d}.prime{grid-column:span 3;min-height:280px;display:grid;grid-template-columns:1.1fr .9fr;background:radial-gradient(circle at 75% 40%,#2d3e7b,#101c2b 57%);border-color:#766dba}.prime .portrait{height:auto;min-height:278px;order:2;background:radial-gradient(circle at 50% 50%,#657be7aa,transparent 46%),#111b35}.prime .portrait:after{display:none}.prime .portrait .head{width:140px;height:140px;top:60px;border-radius:50%;clip-path:none;background:radial-gradient(circle at 34% 31%,#fff,#98a4ff 11%,#4641a0 38%,#0c1441 70%);box-shadow:0 0 40px #888bf4,0 0 0 27px #7c7add25,0 0 0 57px #7c7add12}.prime .portrait .head:after{display:none}.prime .agent-body{padding:36px 38px}.prime .agent-name{font-size:39px}.prime p{max-width:610px;font-size:15px}.hot{background:#7264b7;color:#fff;border-radius:99px;padding:6px 10px;font-size:10px;letter-spacing:.08em;display:inline-block;width:max-content;margin-bottom:15px}.workgrid{display:grid;grid-template-columns:1fr .8fr;gap:18px}.panel{border:1px solid #31435b;border-radius:15px;background:#132032;padding:26px}.panel h3{font-size:24px;letter-spacing:-.03em;margin:5px 0}.desc{color:#9eb4c9;font-size:13px}.field{display:block;color:#c1d3e3;font-size:12px;font-weight:700;margin:22px 0 8px}textarea{width:100%;height:135px;resize:vertical;background:#0b1625;border:1px solid #40546b;border-radius:9px;color:#fff;padding:14px}input[type=range]{width:100%;accent-color:#9af0ea}.range-head{display:flex;justify-content:space-between;align-items:center;margin-top:18px}.bigmoney{font-size:28px;color:#aefff0;font-weight:850}.tiers{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.quick{background:#1b3145;color:#cde3f2;border:1px solid #48657e;border-radius:7px;padding:8px 13px}.quick.on{background:#a4f5e9;color:#091927}.summary-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #314257;color:#b3c6d8}.summary-row strong{color:#f3fcff;text-align:right}.noticebox{margin-top:18px;padding:14px;background:#0d2a35;border:1px solid #336473;border-radius:8px;color:#c3ebed;font-size:12px}.wide{width:100%;margin-top:20px}.status{display:none;margin-top:16px;padding:14px;border:1px solid #557284;background:#1a3542;border-radius:9px;color:#dff6f7}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{border:1px solid #30435b;background:#132133;border-radius:12px;padding:23px}.feature .num{color:#83e5e6;font-size:12px;letter-spacing:.15em}.feature strong{display:block;font-size:18px;margin:10px 0}.feature p{font-size:13px;color:#a9bdd1}.foot{border-top:1px solid #263950;padding:28px 0;font-size:12px;color:#8a9daf}.foot .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}@media(max-width:850px){.menu a:not(.pill){display:none}.hero-inner{grid-template-columns:1fr;padding:70px 0 40px}.orbit{height:260px}.orb{transform:scale(.72)}.sat{transform:scale(.8)}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.prime{grid-column:span 2}.workgrid{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.wrap{width:calc(100% - 28px)}.logo{font-size:16px}.pill{font-size:11px}.hero h1{font-size:49px}.section{padding:55px 0}.cards{grid-template-columns:1fr}.prime{grid-column:span 1;display:flex;flex-direction:column}.prime .portrait{order:0;min-height:190px}.prime .portrait .head{top:27px}.prime .agent-body{padding:24px}.prime .agent-name{font-size:30px}.features{grid-template-columns:1fr}.section-head{display:block}.panel{padding:19px}}
+</style>
+<style id="nexus-live-environment">
+html{background:#030812}
+body{position:relative;isolation:isolate;background:transparent!important}
+#nexus-scene{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;background:
+radial-gradient(ellipse at 76% 22%,rgba(69,198,231,.13),transparent 31%),
+radial-gradient(ellipse at 19% 73%,rgba(120,92,234,.12),transparent 34%),
+linear-gradient(180deg,#020712 0%,#07111d 48%,#030914 100%)}
+#nexus-scene:before{content:"";position:absolute;inset:-28%;background:
+conic-gradient(from 210deg at 62% 46%,transparent 0 19%,rgba(76,224,232,.07) 25%,transparent 31% 56%,rgba(124,99,244,.07) 63%,transparent 70%);
+filter:blur(42px);animation:nxAurora 20s ease-in-out infinite alternate}
+#nexus-scene:after{content:"";position:absolute;inset:0;background:
+linear-gradient(180deg,rgba(2,7,14,.08),rgba(2,8,16,.2) 45%,rgba(2,7,14,.5)),
+radial-gradient(ellipse at center,transparent 18%,rgba(1,5,12,.22) 73%,rgba(1,4,10,.55) 100%)}
+.nx-svg{position:absolute;inset:-5%;width:110%;height:110%;opacity:.92}
+.nx-grid path{stroke:#5b90ac;stroke-width:.9;opacity:.16;vector-effect:non-scaling-stroke}
+.nx-grid .major{stroke:#7ee9ec;opacity:.23}
+.nx-orbit{transform-origin:1185px 335px;animation:nxOrbit 38s linear infinite}
+.nx-orbit circle{fill:none;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.nx-orbit .o1{stroke:#6ee8eb;opacity:.38;stroke-dasharray:5 12}
+.nx-orbit .o2{stroke:#8b7ff6;opacity:.28;stroke-dasharray:2 15}
+.nx-orbit .o3{stroke:#9eefff;opacity:.17;stroke-dasharray:26 12}
+.nx-core{fill:url(#nxCore);filter:url(#nxGlow);opacity:.78}
+.nx-halo{fill:none;stroke:#9cf5f1;stroke-width:1;opacity:.35;filter:url(#nxGlow)}
+.nx-link{fill:none;stroke:url(#nxLine);stroke-width:1.35;stroke-linecap:round;stroke-dasharray:8 15;opacity:.4;filter:url(#nxSoftGlow);animation:nxFlow 12s linear infinite;vector-effect:non-scaling-stroke}
+.nx-link.alt{stroke:url(#nxLine2);animation-duration:17s;animation-direction:reverse;opacity:.32}
+.nx-node{fill:#b9ffff;filter:url(#nxGlow);animation:nxPulse 3.4s ease-in-out infinite}
+.nx-node.violet{fill:#b8adff;animation-delay:-1.4s}
+.nx-node.dim{opacity:.45;animation-delay:-2.1s}
+.nx-particle{fill:#e7ffff;filter:url(#nxGlow)}
+.nx-p1{animation:nxP1 8s linear infinite}.nx-p2{animation:nxP2 11s linear infinite}.nx-p3{animation:nxP3 9.5s linear infinite}
+.nx-scan{stroke:#8bf3ef;stroke-width:1;opacity:.08;animation:nxScan 7s ease-in-out infinite}
+.top{background:rgba(4,10,18,.70);border-bottom-color:rgba(107,206,220,.18)}
+.hero{background:transparent!important}
+.hero:after{opacity:.13;background-image:radial-gradient(#c8ffffa8 .65px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000 0%,transparent 90%)}
+.section.alt{background:linear-gradient(180deg,rgba(7,17,29,.84),rgba(9,19,32,.91));backdrop-filter:blur(13px);border-block-color:rgba(104,182,210,.16)}
+.agent,.panel,.feature{background-color:rgba(14,28,44,.76);backdrop-filter:blur(12px);box-shadow:inset 0 1px rgba(255,255,255,.025)}
+.agent{background:linear-gradient(180deg,rgba(23,43,63,.78),rgba(9,20,32,.86))}
+.feature{background:rgba(14,29,45,.72)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(2,6,13,.30),transparent 42%,rgba(2,6,13,.07) 68%,rgba(2,6,13,.18))}
+@keyframes nxAurora{0%{transform:translate3d(-2%,-1%,0) rotate(-4deg) scale(1)}100%{transform:translate3d(3%,2%,0) rotate(5deg) scale(1.08)}}
+@keyframes nxOrbit{to{transform:rotate(360deg)}}
+@keyframes nxFlow{to{stroke-dashoffset:-180}}
+@keyframes nxPulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes nxScan{0%,100%{transform:translateY(-180px);opacity:0}18%,72%{opacity:.08}50%{transform:translateY(460px);opacity:.14}}
+@keyframes nxP1{0%{transform:translate(0,0);opacity:0}12%,84%{opacity:1}100%{transform:translate(610px,245px);opacity:0}}
+@keyframes nxP2{0%{transform:translate(0,0);opacity:0}12%,84%{opacity:1}100%{transform:translate(-470px,330px);opacity:0}}
+@keyframes nxP3{0%{transform:translate(0,0);opacity:0}12%,84%{opacity:1}100%{transform:translate(520px,-265px);opacity:0}}
+@media(max-width:760px){.nx-svg{width:155%;height:115%;left:-42%;top:-2%}.nx-grid{opacity:.72}.nx-orbit{opacity:.72}.hero:after{opacity:.09}}
+@media(prefers-reduced-motion:reduce){#nexus-scene:before,.nx-orbit,.nx-link,.nx-node,.nx-particle,.nx-scan{animation:none!important}}
+</style>
+<link rel="canonical" href="https://terqyn.nexus/nexus/">
+<meta property="og:url" content="https://terqyn.nexus/nexus/">
+<style>.reserved-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.reserved-entity{border:1px dashed #6786a5;border-radius:16px;background:linear-gradient(160deg,#1a2b43,#0c1728);overflow:hidden}.reserved-entity h3{margin:14px 0 4px}.reserved-entity p{color:#acbed1;font-size:14px}.reservation-badge{width:max-content;padding:5px 10px;border:1px solid #8b9cb166;border-radius:30px;color:#cbdae7;font-size:11px}.reserved-entity details{border-top:1px solid #ffffff22;padding-top:14px;margin-top:14px}.reserved-entity summary{cursor:pointer;color:#b9e4ff;font-weight:700}.reserved-entity summary:focus-visible{outline:2px solid #fff;outline-offset:4px}@media(max-width:620px){.reserved-grid{grid-template-columns:1fr}}</style><link rel="stylesheet" href="/deck.css"><style>
+/* Compact tutorial key and on-demand player. */
+#viewport.tutorial-room{display:none!important}
+.workspace-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:4px}
+.workspace-heading .kicker{min-width:0}
+.tutorial-bulb{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;min-width:60px;padding:3px 2px 5px;border:0;background:transparent;color:#f5d58d;cursor:pointer;touch-action:manipulation}
+.bulb-key{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;border:1px solid #e8c779b8;background:radial-gradient(circle at 35% 20%,#52606a,#1c2834 52%,#0a111b);box-shadow:inset 0 2px 2px #ffffff40,inset 0 -4px 7px #000b,0 3px 0 #060b12,0 0 20px #e3be6326;transition:transform .15s,box-shadow .15s}
+.bulb-key svg{filter:drop-shadow(0 0 5px #f8c65d88)}
+.bulb-label{font:700 10px/1 Arial,sans-serif;letter-spacing:2px;padding-left:2px;color:#e5cf9e}
+.tutorial-bulb:hover .bulb-key,.tutorial-bulb:focus-visible .bulb-key{box-shadow:inset 0 2px 2px #ffffff50,inset 0 -4px 7px #000b,0 3px 0 #060b12,0 0 25px #efc45b66;transform:translateY(-2px)}
+.tutorial-bulb:active .bulb-key{transform:translateY(2px);box-shadow:inset 0 3px 8px #0009,0 0 18px #e3be6344}
+#nexus-tutorial-dialog{width:min(960px,calc(100vw - 28px));max-height:85dvh;padding:0;border:1px solid #d8bc7a99;border-radius:17px;background:#09131e;color:#eef7ff;box-shadow:0 25px 100px #000b;overflow:auto}
+#nexus-tutorial-dialog::backdrop{background:#02060ee6;backdrop-filter:blur(8px)}
+.tutorial-dialog-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border-bottom:1px solid #88aabb33;background:linear-gradient(110deg,#183044,#0f1c2b);font-weight:700}
+.tutorial-close{width:44px;height:44px;display:grid;place-items:center;flex-shrink:0;border:1px solid #b0c3ce55;border-radius:9px;background:#122333;color:#eef7ff;font-size:20px;cursor:pointer}
+#nexus-tutorial-dialog .tutorial-monitor{border:0;border-radius:0;max-width:none;box-shadow:none}
+#nexus-tutorial-dialog video{max-height:calc(85dvh - 90px);aspect-ratio:16/10;border-radius:0}
+@media(max-width:520px){.workspace-heading{gap:12px}.workspace-heading .kicker{max-width:calc(100% - 72px)}.bulb-key{width:49px;height:49px}.tutorial-dialog-bar{padding:10px 13px}}
+@media(prefers-reduced-motion:reduce){.bulb-key{transition:none}}
+</style><style>.nexus-deck-art{margin:0 0 24px;overflow:hidden;border-block:1px solid #91b8ce44;background:#050c15;box-shadow:0 14px 45px #0004}.nexus-deck-art img{display:block;width:100%;height:auto;object-fit:contain}@media(max-width:760px){.nexus-deck-art{margin:0 0 18px}}</style><style>.workspace-heading .guidance-copy{flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px}.guidance-arrow{font-size:25px;line-height:1;letter-spacing:0;flex-shrink:0;color:var(--gold,#d9bc80)}</style><style>
+/* Quick, synchronized planning-team controls. */
+.agent-team-controls{display:block;width:100%;font:14px/1.45 Arial,sans-serif;letter-spacing:normal}
+.agent-team-controls .current-agent-list{gap:8px;align-items:center}
+#workspace .team-agent-chip.current-agent-name{font-size:15px!important;font-weight:700;gap:8px;padding:9px 11px;border:1px solid #7cc5d459;border-radius:999px;background:linear-gradient(120deg,#193546,#111e2b);color:#f1f7fc;cursor:pointer;min-height:44px;transition:border-color .15s,background .15s}
+#workspace .team-agent-chip:hover{border-color:#e4c37e;background:#23384a}
+.agent-team-controls .current-agent-orb{width:19px;height:19px}
+.team-chip-off{font-size:19px;line-height:1;color:#c8d9e1;margin-left:2px}
+.team-add{min-height:44px;padding:9px 15px;border:1px dashed #ddc080aa;border-radius:999px;background:#d9bc8010;color:#efdaa8;font-size:14px;font-weight:700;cursor:pointer}
+.team-add:hover,.team-add[aria-expanded=true]{background:#d9bc8026;border-style:solid}
+.team-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 17px;margin:12px 0 0}
+.team-count{font-size:12px;font-weight:400;color:#aebec9}
+.team-shortcut{border:0;background:transparent;color:#e3c991;text-decoration:underline;text-underline-offset:3px;padding:5px 0;min-height:32px;font:12px/1.3 Arial,sans-serif;cursor:pointer}
+#public-conversation .team-shortcut:disabled{opacity:.35;cursor:default}
+#workspace .current-agent-empty{font-size:14px;font-weight:400;line-height:1.6;color:#c2d2e0}
+.team-agent-picker{display:block;margin-top:14px;padding:14px;border:1px solid #819caf66;border-radius:13px;background:#091723;box-shadow:0 10px 24px #0003}
+.team-agent-picker[hidden]{display:none!important}
+.team-picker-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;color:#c9d9e4;font-size:12px;font-weight:600}
+.team-picker-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.team-picker-agent{display:flex;align-items:center;gap:8px;min-width:0;min-height:47px;padding:9px 10px;border:1px solid #57728566;border-radius:8px;background:#112431;color:#b9cbd6;text-align:left;font:14px/1.4 Arial,sans-serif;cursor:pointer}
+.team-picker-agent[aria-checked=true]{border-color:#8adbe4b0;background:#173742;color:#f1fbff}
+.team-picker-name{min-width:0;flex:1;overflow-wrap:anywhere}
+.team-switch{display:grid;place-items:center;flex-shrink:0;min-width:30px;height:23px;padding:0 5px;border-radius:99px;background:#213443;border:1px solid #627989;color:#d3e0e8;font-size:12px}
+.team-picker-agent[aria-checked=true] .team-switch{background:#96e6df;border-color:#b8fff7;color:#09212a;font-weight:700}
+@media(max-width:420px){.team-agent-picker{padding:10px}.team-picker-agent{padding:8px 7px;gap:6px;font-size:12px}.agent-team-controls .team-picker-agent .current-agent-orb{width:15px;height:15px}.team-picker-grid{gap:6px}}
+</style></head>
+<body>
+<div id="nexus-scene" aria-hidden="true">
+<svg class="nx-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="nxLine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#63e7e8"/><stop offset=".52" stop-color="#8fdcff"/><stop offset="1" stop-color="#947eff"/></linearGradient>
+  <linearGradient id="nxLine2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e78ff"/><stop offset=".55" stop-color="#65d8ff"/><stop offset="1" stop-color="#6cf0d6"/></linearGradient>
+  <radialGradient id="nxCore"><stop offset="0" stop-color="#dfffff"/><stop offset=".12" stop-color="#7de8ed"/><stop offset=".38" stop-color="#357da2"/><stop offset=".7" stop-color="#192957"/><stop offset="1" stop-color="#091127" stop-opacity=".1"/></radialGradient>
+  <filter id="nxGlow" x="-200%" y="-200%" width="400%" height="400%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="nxSoftGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g class="nx-grid">
+  <path class="major" d="M800 415 L-60 900 M800 415 L180 900 M800 415 L420 900 M800 415 L650 900 M800 415 L950 900 M800 415 L1180 900 M800 415 L1420 900 M800 415 L1660 900"/>
+  <path d="M150 790 H1450 M235 720 H1365 M320 655 H1280 M395 600 H1205 M460 552 H1140 M520 512 H1080 M575 478 H1025 M625 451 H975"/>
+  <path d="M90 160 C420 250 620 250 800 415 C990 590 1240 625 1540 700"/>
+  <path d="M60 255 C390 330 605 315 800 415 C1035 535 1240 485 1570 510"/>
+</g>
+<g class="nx-links">
+  <path class="nx-link" d="M160 206 C430 120 610 265 800 415 S1180 590 1490 420"/>
+  <path class="nx-link alt" d="M85 590 C360 660 560 560 800 415 S1190 160 1510 245"/>
+  <path class="nx-link" d="M265 830 C455 625 575 515 800 415 S1125 350 1400 86"/>
+  <path class="nx-link alt" d="M40 365 C350 390 540 340 800 415 S1210 455 1580 320"/>
+  <path class="nx-link" d="M470 70 C600 235 670 310 800 415 S1010 650 1190 840"/>
+</g>
+<g class="nx-orbit">
+  <circle class="o3" cx="1185" cy="335" r="245"/>
+  <circle class="o2" cx="1185" cy="335" r="185"/>
+  <circle class="o1" cx="1185" cy="335" r="132"/>
+</g>
+<circle class="nx-halo" cx="1185" cy="335" r="82"/>
+<circle class="nx-core" cx="1185" cy="335" r="54"/>
+<g>
+  <circle class="nx-node" cx="160" cy="206" r="4"/><circle class="nx-node violet" cx="85" cy="590" r="5"/>
+  <circle class="nx-node dim" cx="265" cy="830" r="4"/><circle class="nx-node" cx="40" cy="365" r="3.5"/>
+  <circle class="nx-node violet" cx="470" cy="70" r="4"/><circle class="nx-node" cx="800" cy="415" r="5"/>
+  <circle class="nx-node violet" cx="1490" cy="420" r="4"/><circle class="nx-node dim" cx="1510" cy="245" r="5"/>
+  <circle class="nx-node" cx="1400" cy="86" r="3.5"/><circle class="nx-node violet" cx="1580" cy="320" r="4"/>
+  <circle class="nx-node dim" cx="1190" cy="840" r="4"/>
+</g>
+<circle class="nx-particle nx-p1" cx="280" cy="220" r="2.8"/>
+<circle class="nx-particle nx-p2" cx="1320" cy="215" r="2.8"/>
+<circle class="nx-particle nx-p3" cx="630" cy="650" r="2.8"/>
+<line class="nx-scan" x1="130" y1="300" x2="1470" y2="300"/>
+</svg>
+</div>
+<header class="top">
+<div class="wrap top-inner">
+<a class="logo" href="#top">TERQYN <span>NEXUS</span>
+</a>
+<nav class="menu">
+<a href="#agents">The Intelligences</a>
+<a href="/">↶ Return to portals</a>
+<a href="#workspace">Engine Lab</a>
+
+<a class="pill" href="https://terqyn.com">↗ Terqyn HQ</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<section id="entrance" class="entry">
+<div class="entry-coordinates"><span>NEXUS / INTELLIGENCE EXCHANGE</span><span>TERQYN ECOSYSTEM • 001</span></div>
+<p class="kicker">YOUR IDEAS. AN ENTIRE UNIVERSE OF INTELLIGENCE.</p>
+<h1>ENTER THE <em>NEXUS.</em></h1><p class="entry-copy">Multiple minds. One command. Your next possibility starts here.</p>
+<div class="portal-stage" aria-hidden="true"><div class="portal-floor"></div><div class="portal-assembly"><div class="portal-ring ring-back"></div><div class="portal-ring ring-outer"></div><div class="portal-ring ring-teeth"></div><div class="portal-ring ring-inner"></div><div class="portal-core"><div class="door door-left"></div><div class="door door-right"></div><div class="portal-symbol">N</div></div></div><span class="portal-caption">INTELLIGENCE GATEWAY<br>COORDINATES / YOUR NEXT IDEA</span></div>
+<button id="enter-deck" class="primary enter-button">ENTER COMMAND DECK <span>↗</span></button><button id="skip-entry" class="secondary">Open accessible list view</button>
+<p class="micro">Explore freely · Complimentary conversations · Build handoff available · Outcomes require verification</p>
+</section>
+<section id="deck" class="deck" hidden aria-labelledby="deck-title">
+<div class="deck-heading"><div><p class="kicker">TERQYN NEXUS / THE INTELLIGENCE DECK</p><h1 id="deck-title" tabindex="-1">YOUR NEXT <em>POSSIBILITY.</em></h1></div><button id="return-gate" class="secondary">↶ Gateway</button></div>
+<figure class="nexus-deck-art"><img src="/nexus-labs.jpeg" width="1206" height="661" alt="Terqyn Nexus Labs: Colby, Bobby and Will working in the command center" decoding="async" fetchpriority="high"></figure><div class="deck-toolbar"><span class="live-label">◉ NAVIGATION ONLINE</span><span id="bearing" aria-live="off">000°</span><button id="view-toggle" class="secondary" aria-pressed="false">List view</button><button id="motion-toggle" class="secondary" aria-pressed="false">Reduce motion</button></div>
+<div id="viewport" class="viewport tutorial-room" tabindex="0" role="region" aria-label="How To Tutorial"><div class="deck-sky" aria-hidden="true"></div><div class="ceiling" aria-hidden="true"></div><div class="deck-floor" aria-hidden="true"></div><div id="room" class="room"></div></div>
+<div class="deck-controls"><button id="rotate-left" class="secondary" aria-label="Rotate deck left">←</button><p>DRAG TO EXPLORE <span> / SWIPE / ARROW KEYS</span></p><button id="rotate-right" class="secondary" aria-label="Rotate deck right">→</button></div><nav id="quick-nav" class="quick-nav" aria-label="Deck destinations"></nav>
+</section>
+<section class="section wrap" id="orbital-map"><div class="section-head"><div><p class="kicker">YOUR INTELLIGENCE CONSTELLATION</p><h2>Every mind.<br><em>A different orbit.</em></h2></div><p>Select one guide or combine perspectives. Team selection supplies context to one planning conversation; it does not run independent models or tools.</p></div><div class="map-layout"><div id="orbit-map" class="orbit-map" role="group" aria-label="Interactive intelligence orbital map"><div class="map-orbit one"></div><div class="map-orbit two"></div><div class="map-orbit three"></div><button class="map-core" type="button" data-select-agent="prime" aria-label="Team perspectives, select all available guides" aria-pressed="false"><img src="/nexus-center.webp" alt="Nexus"><span class="core-label">Nexus</span></button></div><article id="map-detail" class="panel"><p class="kicker">SELECT A SIGNAL</p><h3>Nexus Prime</h3><p>One coordinated mission. Choose an intelligence on the map to learn more.</p><button id="map-select" class="primary">Meet Nexus Prime ↗</button></article></div></section>
+<section class="section alt" id="workspace">
+<div class="wrap">
+<div class="workspace-heading"><div class="kicker guidance-copy"><span>Need More Guidance?</span><span class="guidance-arrow" aria-hidden="true">→</span></div><button type="button" class="tutorial-bulb" data-open-tutorial aria-label="Open How To Tutorial" aria-haspopup="dialog" aria-controls="nexus-tutorial-dialog"><span class="bulb-key" aria-hidden="true"><svg viewBox="0 0 32 40" width="29" height="36" fill="none"><path d="M10 25c0-4-6-5-6-13a12 12 0 0 1 24 0c0 8-6 9-6 13v3H10z" fill="currentColor" fill-opacity=".22" stroke="currentColor" stroke-width="2"/><path d="m12 15 4 4 4-4m-4 4v9M11 32h10m-9 4h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 1v3M2 8l3 2m25-2-3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="bulb-label">TUT</span></button></div>
+<h2>Plan it. Define it.<br>Bring it to life.</h2>
+<p class="sub" style="margin:0 0 28px">Plan with specialist perspectives, then open the build workbench to create and test a saved project. Payment is not required during testing.</p>
+<div class="workgrid">
+<div class="panel command-panel">
+<div class="stage-tag">02 / BUILD ORDER</div>
+<h3 class="stage-title">Tell Nexus what to build.</h3>
+<p class="stage-intro">Turn your idea into a clear order: what you need, who it is for, and what a finished result should include.</p>
+<div class="brief-checklist"><span>01 · Outcome</span><span>02 · Requirements</span><span>03 · Deliverables</span><span>04 · Budget</span></div>
+<div class="kicker">Selected planning guides</div>
+<h3 id="selectedName">Nexus Prime</h3>
+<p class="desc" id="selectedDesc">Multiple intelligences, one coordinated mission.</p>
+<label class="field" for="request">YOUR BUILD BRIEF</label>
+<p id="build-guidance" class="input-guidance">Include the goal, audience, must-have features, style, final format, and any deadline. Add links or reference details when helpful.</p>
+<textarea id="request" aria-describedby="build-guidance" placeholder="Build a [website / campaign / document / tool] for [audience].&#10;It needs to include: [features, pages, content, or integrations].&#10;The finished result should: [goal and deliverables].&#10;Style, references, and constraints: [details].">
+</textarea>
+<div class="range-head">
+<label class="field" for="budget" style="margin:5px 0">REFERENCE BUDGET · NOT ENFORCED</label>
+<span class="bigmoney" id="budgetDisplay">$10.00</span>
+</div>
+<input type="range" id="budget" min="1" max="100" step="1" value="10" aria-label="Reference budget, not an enforced cap">
+<div class="tiers">
+<button class="quick" data-amount="2">$2</button>
+<button class="quick on" data-amount="10">$10</button>
+<button class="quick" data-amount="25">$25</button>
+<button class="quick" data-amount="50">$50</button>
+<button class="quick" data-amount="100">$100</button>
+</div>
+<button class="primary wide" id="preview">Build My Project ↗</button>
+<p class="build-status"><strong>Testing access</strong> · The button opens the authenticated Systems build workbench. Starting a build there uses company-funded credits. No payment is required.</p>
+<div class="status" id="status" role="status">
+</div>
+</div>
+<aside class="panel">
+<div class="kicker">Execution boundaries</div>
+<h3>Build handoff</h3>
+<p class="desc">Selected guides are perspectives in one planning conversation. Independent provider/tool execution is not activated in this planner.</p>
+<div class="summary-row">
+<span>Intelligence</span>
+<strong id="sumAgent">Nexus Prime</strong>
+</div>
+<div class="summary-row">
+<span>Selected agents</span>
+<strong id="baseCost">$0.94</strong>
+</div>
+<div class="summary-row">
+<span>Payment required</span>
+<strong id="userPrice">$1.25</strong>
+</div>
+<div class="summary-row">
+<span>Mode</span>
+<strong id="missions">8</strong>
+</div>
+<div class="summary-row">
+<span>Reference budget only</span>
+<strong id="maxBudget">$10.00</strong>
+</div>
+<div class="noticebox">
+<strong>Verify each working outcome.</strong>
+<br>The reference budget on this page is not an enforced execution cap. Live usage and billing measurement are not connected to this control.</div>
+<button class="secondary wide" id="wallet">Testing information</button>
+<p class="micro" style="margin-top:15px">Planning guidance · Authenticated build handoff · No payment prerequisite</p>
+</aside>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="foot">
+<div class="wrap">
+<span>© 2026 Terqyn Nexus · Part of the Terqyn ecosystem</span>
+<span>Planning conversation available · Build outcomes require separate verification</span>
+</div>
+</footer>
+<script>
+const agents=[{id:'mina',name:'Mina',type:'Operations Intelligence',desc:'Turn complex plans into organized workflows, task sequences, projects and execution plans.',base:.12,glow:'#75c5c4',glyph:'M'},{id:'vela',name:'Vela',type:'Reasoning & Strategy',desc:'Navigate tough questions, explore possibilities, plan decisions and design practical solutions.',base:.17,glow:'#8ca9ff',glyph:'V'},{id:'soryn',name:'Soryn',type:'Research Intelligence',desc:'Investigate topics, collect evidence, compare claims and build source-aware research briefs.',base:.22,glow:'#5fcfa3',glyph:'S'},{id:'aethon',name:'Atlas',type:'Multimodal Intelligence',desc:'Understand long documents and mixed media; connect ideas across text, images and more.',base:.25,glow:'#7ac8ee',glyph:'A'},{id:'ryx',name:'Ryx',type:'Challenger Intelligence',desc:'Pressure-test ideas, question assumptions and look for perspectives others might miss.',base:.18,glow:'#e89581',glyph:'R'},{id:'prime',name:'Nexus Prime',type:'Unified Intelligence',desc:'Unite multiple specialists in a structured mission: investigate, challenge, synthesize, create and deliver.',base:.94,glow:'#a5a1fa',glyph:'N'},{"id": "vera", "name": "Luca", "type": "The Mentor", "desc": "Design a lesson around the learner\u2019s level, objective, worked example and practice questions.", "base": 0.15, "glow": "#eee3c7", "glyph": "L"},{"id": "caelis", "name": "Jett", "type": "The Discovery Scout", "desc": "Map unexplored questions, useful search queries, competing hypotheses and validation steps. Never invent live search results.", "base": 0.15, "glow": "#78bcff", "glyph": "J"},{"id": "aegis", "name": "Reid", "type": "The Security Guardian", "desc": "Build a defensive threat model with assets, trust boundaries, threats, mitigations and response steps. No claim of live scans.", "base": 0.15, "glow": "#bbd9a4", "glyph": "R"},{"id": "vector", "name": "Axel", "type": "The Systems Engineer", "desc": "Outline interfaces, data contracts, failure paths, reproduction steps and verification. No claim of code execution.", "base": 0.15, "glow": "#e8b78a", "glyph": "A"},{"id": "muse", "name": "Nova", "type": "The Media Director", "desc": "Turn a concept into a shot list with camera, lighting, timing, sound and edit notes. No claim of media generation.", "base": 0.15, "glow": "#d4b4ef", "glyph": "N"}];let active='prime';const $=id=>document.getElementById(id);const fmt=n=>'$'+n.toFixed(2);function price(a){return Math.ceil((a.base*1.3+.02)*20)/20}const selectedAgents=new Set(agents.filter(a=>a.id!=='prime').map(a=>a.id));
+function selection(){return agents.filter(a=>a.id!=='prime'&&selectedAgents.has(a.id))}
+function selectedProfile(){const team=selection();return {name:team.length===agents.length-1?'Nexus Prime':team.map(a=>a.name).join(' + ')||'No agents selected',desc:team.length?team.map(a=>a.name+': '+a.type).join(' · '):'Choose one or more planetary agents above.',base:team.reduce((n,a)=>n+a.base,0)}}
+function syncSelection(){const team=selection();active=team.length===1?team[0].id:'prime';const a=selectedProfile();$('selectedName').textContent=a.name;$('selectedDesc').textContent=a.desc;document.querySelectorAll('[data-select-agent]').forEach(n=>{const id=n.dataset.selectAgent,on=id==='prime'?team.length===agents.length-1:selectedAgents.has(id);n.setAttribute('aria-pressed',String(on));const label=n.querySelector('.selection-label');if(label)label.textContent=n.disabled?'Not activated':on?'Selected ✓':'Choose me';else if(n.classList.contains('map-core'))n.querySelector('.core-label').textContent=on?'Nexus mode ✓':'Nexus';else if(n.id==='map-select')n.textContent=on?'Remove selection':id==='prime'?'Choose Nexus · all agents':'Choose me';});renderActiveTeam();update();$('status').style.display='none';window.dispatchEvent(new CustomEvent('nexus-selection-change',{detail:{ids:team.map(a=>a.id),persona:active,name:a.name}}));}
+function renderActiveTeam(){
+ const team=selection(),available=agents.filter(a=>a.id!=='prime');
+ document.querySelectorAll('#selectedName,#conversation-title').forEach(el=>{
+  const focused=el.contains(document.activeElement),focusKey=document.activeElement?.dataset.focusKey;
+  const open=el.dataset.pickerOpen==='true';el.replaceChildren();
+  if(el.id==='conversation-title'){const label=document.createElement('span');label.className='current-agent-label';label.textContent='Selected planning guides';el.append(label);}
+  const controls=document.createElement('span');controls.className='agent-team-controls';
+  const list=document.createElement('span');list.className='current-agent-list';
+  function orb(a){const icon=document.createElement('i');icon.className='current-agent-orb';icon.style.setProperty('--agent-color',a.glow);icon.setAttribute('aria-hidden','true');return icon;}
+  function button(text,cls,key,handler){const b=document.createElement('button');b.type='button';b.className=cls;b.dataset.focusKey=key;b.textContent=text;b.addEventListener('click',handler);return b;}
+  if(!team.length){const empty=document.createElement('span');empty.className='current-agent-empty';empty.textContent='Your team is off. Add an agent to get started.';list.append(empty);}
+  for(const a of team){
+   const chip=button('','current-agent-name team-agent-chip','chip-'+a.id,()=>choose(a.id));
+   chip.setAttribute('aria-label','Turn off '+a.name);chip.setAttribute('aria-pressed','true');chip.title='Turn off '+a.name;
+   const name=document.createElement('span');name.textContent=a.name;
+   const off=document.createElement('span');off.className='team-chip-off';off.textContent='×';off.setAttribute('aria-hidden','true');
+   chip.append(orb(a),name,off);list.append(chip);
+  }
+  const add=button('+ Add Agent','team-add','add',()=>{el.dataset.pickerOpen=String(!open);renderActiveTeam();});
+  add.setAttribute('aria-expanded',String(open));add.setAttribute('aria-controls',el.id+'-agent-picker');
+  list.append(add);controls.append(list);
+  const actions=document.createElement('span');actions.className='team-actions';
+  const all=button('All agents','team-shortcut','all',()=>{available.forEach(a=>selectedAgents.add(a.id));syncSelection();});
+  all.disabled=team.length===available.length;
+  const clear=button('Turn all off','team-shortcut','clear',()=>{selectedAgents.clear();syncSelection();});clear.disabled=!team.length;
+  const count=document.createElement('span');count.className='team-count';count.textContent=team.length+' selected perspectives'+(team.length===available.length?' · Nexus mode':'');
+  actions.append(count,all,clear);controls.append(actions);
+  const picker=document.createElement('span');picker.className='team-agent-picker';picker.id=el.id+'-agent-picker';picker.hidden=!open;
+  picker.setAttribute('role','group');picker.setAttribute('aria-label','Choose planning agents');
+  const head=document.createElement('span');head.className='team-picker-head';const heading=document.createElement('span');heading.textContent='Switch your agents on or off';
+  const done=button('Done','team-shortcut','done',()=>{el.dataset.pickerOpen='false';renderActiveTeam();});
+  head.append(heading,done);picker.append(head);
+  const grid=document.createElement('span');grid.className='team-picker-grid';
+  for(const a of available){
+   const on=selectedAgents.has(a.id);const row=button('','team-picker-agent','picker-'+a.id,()=>choose(a.id));
+   row.setAttribute('role','switch');row.setAttribute('aria-label',a.name);row.setAttribute('aria-checked',String(on));row.title=a.type;
+   const name=document.createElement('span');name.className='team-picker-name';name.textContent=a.name;
+   const toggle=document.createElement('span');toggle.className='team-switch';toggle.setAttribute('aria-hidden','true');toggle.textContent=on?'On':'+';
+   row.append(orb(a),name,toggle);grid.append(row);
+  }
+  picker.append(grid);controls.append(picker);el.append(controls);
+  if(focused){const target=[...el.querySelectorAll('[data-focus-key]')].find(n=>n.dataset.focusKey===focusKey&&!n.disabled)||add;target.focus({preventScroll:true});}
+ });
+}
+function choose(id){if(id==='prime'){const all=selectedAgents.size===agents.length-1;selectedAgents.clear();if(!all)agents.filter(a=>a.id!=='prime').forEach(a=>selectedAgents.add(a.id));}else if(agents.some(a=>a.id===id)){if(selectedAgents.has(id))selectedAgents.delete(id);else selectedAgents.add(id);}syncSelection()}
+function update(){const team=selection(),budget=Number($('budget').value);$('budgetDisplay').textContent=fmt(budget);$('sumAgent').textContent=selectedProfile().name;$('baseCost').textContent=String(team.length);$('userPrice').textContent='None during testing';$('missions').textContent=team.length===agents.length-1?'Nexus mode':team.length?'Custom selection':'Choose agents';$('maxBudget').textContent=fmt(budget);$('preview').disabled=!team.length;document.querySelectorAll('.quick').forEach(b=>b.classList.toggle('on',Number(b.dataset.amount)===budget))}
+$('budget').addEventListener('input',update);document.querySelectorAll('.quick').forEach(b=>b.addEventListener('click',()=>{$('budget').value=b.dataset.amount;update()}));$('preview').addEventListener('click',()=>{const task=$('request').value.trim();$('status').style.display='block';if(!task){$('status').textContent='Describe what you want to build first.';return}$('status').textContent='Opening the build workbench. Sign in to save your project, then start the build. No payment required during testing.';window.open('https://www.terqynsystems.com/workbench#'+encodeURIComponent(task),'_blank','noopener')});$('wallet').addEventListener('click',()=>{$('status').style.display='block';$('status').textContent='Payment requirements are disabled during testing. Start a build to test the working app.';$('workspace').scrollIntoView({behavior:'smooth'})});syncSelection();
+</script>
+<nav aria-label="About and ecosystem" style="padding:20px 5%;display:flex;flex-wrap:wrap;gap:20px;border-top:1px solid #87939b55;font:14px/1.6 Arial,sans-serif"><a href="/about">About us</a><a href="https://terqyn.com/#/ecosystem">Terqyn HQ &amp; ecosystem</a></nav><script src="/nexus-acceptance.js"></script><script src="/nexus-chat.js" defer></script><script src="/tutorial-player.js" defer></script>
+<div id="transition-shutter" aria-hidden="true"><i></i><i></i></div><script src="/deck.js" defer></script><script src="https://terqyn.com/summon.js" data-terqyn-site="Terqyn Nexus" defer></script><dialog id="nexus-tutorial-dialog" aria-labelledby="tutorial-dialog-title"><div class="tutorial-dialog-bar"><span id="tutorial-dialog-title">How To Tutorial</span><button type="button" class="tutorial-close" aria-label="Close tutorial">✕</button></div><section class="tutorial-monitor" aria-label="Nexus tutorial video"><div class="monitor-glass"><video id="nexus-tutorial" controls playsinline preload="metadata" poster="/tutorial-poster.jpg" aria-label="How to use Nexus: choose agents, plan your idea, and prepare a build brief"><source src="/nexus-tutorial.mp4" type="video/mp4"><track default kind="captions" src="/nexus-tutorial.vtt" srclang="en" label="English guide">Your browser cannot play this video. <a href="/nexus-tutorial.mp4">Open the Nexus tutorial.</a></video></div></section></dialog><script src="https://terqyn.com/site-controls.js?v=1" defer></script>
+</body>
+</html>
+
